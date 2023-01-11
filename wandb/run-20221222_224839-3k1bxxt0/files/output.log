@@ -1,0 +1,56 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+learning rate 0.0000200 -> 0.0000200
+(epoch: 1, iters: 50) pix2pix_G_GAN: 1.530 pix2pix_G_L1: 9.073 pix2pix_D_real: 0.636 pix2pix_D_fake: 0.240 dcgan_d_loss: 0.125 dcgan_g_loss: 2.003
+(epoch: 1, iters: 100) pix2pix_G_GAN: 1.296 pix2pix_G_L1: 8.461 pix2pix_D_real: 0.090 pix2pix_D_fake: 0.478 dcgan_d_loss: 0.613 dcgan_g_loss: 2.665
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 78, in <module>
+    dc_loss, dc_visual = model_dcgan.train_parameters(data)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/dcgan_darts.py", line 225, in train_parameters
+    'dcgan_generated_mask': self.generate_img(z, self.number_of_images)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/dcgan_darts.py", line 250, in generate_img
+    samples = self.G(z)[:number_of_images]
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/dcgan_darts.py", line 43, in forward
+    x = self.main_module(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/model_search_ss.py", line 65, in forward
+    out = self.main_module(input, F.softmax(self.alphas_normal, dim=-1))
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/model_search_ss.py", line 38, in forward
+    states = self._ops[i](states, weights[i,:])
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/model_search_ss.py", line 21, in forward
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+  File "/home/li/workspace/SS-four-stages/models_dcgan/model_search_ss.py", line 21, in <genexpr>
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/operations.py", line 47, in forward
+    return self.op(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 842, in forward
+    output_padding, self.groups, self.dilation)
+KeyboardInterrupt

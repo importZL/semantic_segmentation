@@ -1,0 +1,70 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+learning rate 0.0000200 -> 0.0000200
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+Performance of UNetunet_train_loss: 0.68006 unet_test_score: 0.63816
+Performance of UNetunet_train_loss: 0.49951 unet_test_score: 0.70205
+Performance of UNetunet_train_loss: 0.59524 unet_test_score: 0.84190
+Performance of UNetunet_train_loss: 0.42359 unet_test_score: 0.90605
+Performance of UNetunet_train_loss: 0.47347 unet_test_score: 0.90868
+Performance of UNetunet_train_loss: 0.44920 unet_test_score: 0.92312
+Performance of UNetunet_train_loss: 0.31823 unet_test_score: 0.92740
+Performance of UNetunet_train_loss: 0.33788 unet_test_score: 0.93195
+Performance of UNetunet_train_loss: 0.26533 unet_test_score: 0.92576
+Performance of UNetunet_train_loss: 0.25968 unet_test_score: 0.94569
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.30564 unet_test_score: 0.94889
+Performance of UNetunet_train_loss: 0.32987 unet_test_score: 0.94702
+Performance of UNetunet_train_loss: 0.28918 unet_test_score: 0.95424
+Performance of UNetunet_train_loss: 0.23044 unet_test_score: 0.95126
+Performance of UNetunet_train_loss: 0.35376 unet_test_score: 0.95680
+Performance of UNetunet_train_loss: 0.16565 unet_test_score: 0.96085
+Performance of UNetunet_train_loss: 0.20588 unet_test_score: 0.95525
+Performance of UNetunet_train_loss: 0.19288 unet_test_score: 0.96129
+Performance of UNetunet_train_loss: 0.20382 unet_test_score: 0.96454
+Performance of UNetunet_train_loss: 0.24484 unet_test_score: 0.96519
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.19090 unet_test_score: 0.96287
+Performance of UNetunet_train_loss: 0.15210 unet_test_score: 0.96609
+Performance of UNetunet_train_loss: 0.17143 unet_test_score: 0.96485
+Performance of UNetunet_train_loss: 0.12605 unet_test_score: 0.95847
+Performance of UNetunet_train_loss: 0.26172 unet_test_score: 0.96461
+Performance of UNetunet_train_loss: 0.11453 unet_test_score: 0.96594
+Performance of UNetunet_train_loss: 0.23630 unet_test_score: 0.96835
+Performance of UNetunet_train_loss: 0.11125 unet_test_score: 0.96825
+Performance of UNetunet_train_loss: 0.13550 unet_test_score: 0.96422
+Performance of UNetunet_train_loss: 0.13722 unet_test_score: 0.96831
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.23752 unet_test_score: 0.97016
+Performance of UNetunet_train_loss: 0.23376 unet_test_score: 0.96985
+Performance of UNetunet_train_loss: 0.14116 unet_test_score: 0.96841
+Performance of UNetunet_train_loss: 0.16633 unet_test_score: 0.96936
+Performance of UNetunet_train_loss: 0.14797 unet_test_score: 0.96895
+Performance of UNetunet_train_loss: 0.14497 unet_test_score: 0.96774
+Performance of UNetunet_train_loss: 0.12620 unet_test_score: 0.96854
+Performance of UNetunet_train_loss: 0.16456 unet_test_score: 0.96922
+Performance of UNetunet_train_loss: 0.16623 unet_test_score: 0.96986
+Performance of UNetunet_train_loss: 0.13867 unet_test_score: 0.96914
+learning rate 0.0000200 -> 0.0000000
+Performance of UNetunet_train_loss: 0.13576 unet_test_score: 0.96768
+Performance of UNetunet_train_loss: 0.15974 unet_test_score: 0.96910
+Performance of UNetunet_train_loss: 0.11901 unet_test_score: 0.96920
+Performance of UNetunet_train_loss: 0.11297 unet_test_score: 0.96857
+Performance of UNetunet_train_loss: 0.11565 unet_test_score: 0.97023
+Performance of UNetunet_train_loss: 0.10855 unet_test_score: 0.97006
+Performance of UNetunet_train_loss: 0.14102 unet_test_score: 0.96949
+Performance of UNetunet_train_loss: 0.15457 unet_test_score: 0.96951
+Performance of UNetunet_train_loss: 0.11173 unet_test_score: 0.96612
+Performance of UNetunet_train_loss: 0.21736 unet_test_score: 0.96805

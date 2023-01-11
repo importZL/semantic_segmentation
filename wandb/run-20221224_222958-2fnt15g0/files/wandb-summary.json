@@ -1,0 +1,1 @@
+{"generate_mapping": {"_type": "image-file", "sha256": "5d6fe7f0c1714fd46c2f06003f2c8ee33018b0a021496787a6cfb408df4a80ba", "size": 27723, "path": "media/images/generate_mapping_0_5d6fe7f0c1714fd46c2f.png", "format": "png", "width": 256, "height": 256}, "_timestamp": 1671949828.8108516, "_runtime": 30.353259563446045, "_step": 0, "_wandb": {"runtime": 30}}

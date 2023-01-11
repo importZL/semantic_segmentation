@@ -1,0 +1,31 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+learning rate 0.0000200 -> 0.0000200
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+tensor([[[[0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          ...,
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0]]]], device='cuda:0')
+tensor([[[[-0.8759, -0.9713, -0.9662,  ..., -0.9824, -0.9794, -0.9512],
+          [-0.9883, -0.9955, -0.9904,  ..., -0.9952, -0.9711, -0.9872],
+          [-0.9878, -0.9931, -0.9954,  ..., -0.9637, -0.9908, -0.9932],
+          ...,
+          [-0.9931, -0.9990, -0.9980,  ..., -0.9970, -0.9901, -0.9640],
+          [-0.9956, -0.9976, -0.9970,  ..., -0.9968, -0.9961, -0.9862],
+          [-0.9425, -0.9768, -0.9868,  ..., -0.9858, -0.9858, -0.9570]]]],
+       device='cuda:0', grad_fn=<UnsqueezeBackward0>)

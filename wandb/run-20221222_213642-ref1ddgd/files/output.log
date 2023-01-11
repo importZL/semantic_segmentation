@@ -1,0 +1,28 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 88, in <module>
+    real_loss = criterion_unet(masks_pred, true_masks) \
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/loss.py", line 1048, in forward
+    ignore_index=self.ignore_index, reduction=self.reduction)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/functional.py", line 2693, in cross_entropy
+    return nll_loss(log_softmax(input, 1), target, weight, None, ignore_index, None, reduction)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/functional.py", line 2390, in nll_loss
+    ret = torch._C._nn.nll_loss2d(input, target, weight, _Reduction.get_enum(reduction), ignore_index)
+RuntimeError: 1only batches of spatial targets supported (3D tensors) but got targets of size: : [1, 1, 256, 256]

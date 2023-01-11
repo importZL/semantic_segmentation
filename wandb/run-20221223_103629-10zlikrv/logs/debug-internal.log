@@ -1,0 +1,189 @@
+2022-12-23 10:36:30,012 INFO    StreamThr :64018 [internal.py:wandb_internal():91] W&B internal server running at pid: 64018, started at: 2022-12-23 10:36:30.011446
+2022-12-23 10:36:30,014 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: status
+2022-12-23 10:36:30,016 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: status
+2022-12-23 10:36:30,018 DEBUG   SenderThread:64018 [sender.py:send():303] send: header
+2022-12-23 10:36:30,018 INFO    WriterThread:64018 [datastore.py:open_for_write():75] open: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/run-10zlikrv.wandb
+2022-12-23 10:36:30,036 DEBUG   SenderThread:64018 [sender.py:send():303] send: run
+2022-12-23 10:36:30,039 INFO    SenderThread:64018 [sender.py:_maybe_setup_resume():594] checking resume status for None/ss-four-stages/10zlikrv
+2022-12-23 10:36:30,404 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: check_version
+2022-12-23 10:36:30,409 INFO    SenderThread:64018 [dir_watcher.py:__init__():216] watching files in: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files
+2022-12-23 10:36:30,409 INFO    SenderThread:64018 [sender.py:_start_run_threads():931] run started: 10zlikrv with start time 1671820590.00961
+2022-12-23 10:36:30,409 DEBUG   SenderThread:64018 [sender.py:send():303] send: summary
+2022-12-23 10:36:30,410 INFO    SenderThread:64018 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-23 10:36:30,410 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: check_version
+2022-12-23 10:36:30,468 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: run_start
+2022-12-23 10:36:30,484 DEBUG   HandlerThread:64018 [system_info.py:__init__():31] System info init
+2022-12-23 10:36:30,485 DEBUG   HandlerThread:64018 [system_info.py:__init__():46] System info init done
+2022-12-23 10:36:30,485 INFO    HandlerThread:64018 [system_monitor.py:start():150] Starting system monitor
+2022-12-23 10:36:30,485 INFO    SystemMonitor:64018 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-23 10:36:30,485 INFO    HandlerThread:64018 [system_monitor.py:probe():168] Collecting system info
+2022-12-23 10:36:30,486 INFO    SystemMonitor:64018 [interfaces.py:start():168] Started cpu
+2022-12-23 10:36:30,486 INFO    SystemMonitor:64018 [interfaces.py:start():168] Started disk
+2022-12-23 10:36:30,487 INFO    SystemMonitor:64018 [interfaces.py:start():168] Started gpu
+2022-12-23 10:36:30,488 INFO    SystemMonitor:64018 [interfaces.py:start():168] Started memory
+2022-12-23 10:36:30,491 INFO    SystemMonitor:64018 [interfaces.py:start():168] Started network
+2022-12-23 10:36:30,551 DEBUG   HandlerThread:64018 [system_info.py:probe():195] Probing system
+2022-12-23 10:36:30,559 DEBUG   HandlerThread:64018 [system_info.py:_probe_git():180] Probing git
+2022-12-23 10:36:30,572 DEBUG   HandlerThread:64018 [system_info.py:_probe_git():188] Probing git done
+2022-12-23 10:36:30,572 DEBUG   HandlerThread:64018 [system_info.py:probe():241] Probing system done
+2022-12-23 10:36:30,572 DEBUG   HandlerThread:64018 [system_monitor.py:probe():177] {'os': 'Linux-5.4.0-110-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-23T18:36:30.551828', 'startedAt': '2022-12-23T18:36:29.998875', 'docker': None, 'cuda': None, 'args': ('--model', 'pix2pix', '--is_train', 'True', '--cuda', 'True', '--gpu_ids', '0', '--cuda_index', '0', '--dataroot', '../data/JSRT', '--amp', '--n_epochs', '5', '--n_epochs_decay', '0'), 'state': 'running', 'program': 'train_dcgan_pix2pix.py', 'codePath': 'train_dcgan_pix2pix.py', 'git': {'remote': 'https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix', 'commit': 'e2c7618a2f2bf4ee012f43f96d1f62fd3c3bec89'}, 'email': None, 'root': '/home/li/workspace/SS-four-stages', 'host': 'ece228-4', 'username': 'li', 'executable': '/home/li/anaconda3/envs/semantic/bin/python', 'cpu_count': 48, 'cpu_count_logical': 96, 'cpu_freq': {'current': 2658.1457604166667, 'min': 1200.0, 'max': 4000.0}, 'cpu_freq_per_core': [{'current': 3686.096, 'min': 1200.0, 'max': 4000.0}, {'current': 3414.551, 'min': 1200.0, 'max': 4000.0}, {'current': 3686.096, 'min': 1200.0, 'max': 4000.0}, {'current': 2974.529, 'min': 1200.0, 'max': 4000.0}, {'current': 3476.857, 'min': 1200.0, 'max': 4000.0}, {'current': 2642.493, 'min': 1200.0, 'max': 4000.0}, {'current': 3686.201, 'min': 1200.0, 'max': 4000.0}, {'current': 2742.515, 'min': 1200.0, 'max': 4000.0}, {'current': 3686.183, 'min': 1200.0, 'max': 4000.0}, {'current': 3504.435, 'min': 1200.0, 'max': 4000.0}, {'current': 3686.187, 'min': 1200.0, 'max': 4000.0}, {'current': 3449.462, 'min': 1200.0, 'max': 4000.0}, {'current': 3442.15, 'min': 1200.0, 'max': 4000.0}, {'current': 2832.826, 'min': 1200.0, 'max': 4000.0}, {'current': 3334.146, 'min': 1200.0, 'max': 4000.0}, {'current': 3437.056, 'min': 1200.0, 'max': 4000.0}, {'current': 3217.449, 'min': 1200.0, 'max': 4000.0}, {'current': 3447.218, 'min': 1200.0, 'max': 4000.0}, {'current': 2560.244, 'min': 1200.0, 'max': 4000.0}, {'current': 1755.787, 'min': 1200.0, 'max': 4000.0}, {'current': 2499.639, 'min': 1200.0, 'max': 4000.0}, {'current': 3097.567, 'min': 1200.0, 'max': 4000.0}, {'current': 2295.969, 'min': 1200.0, 'max': 4000.0}, {'current': 3686.522, 'min': 1200.0, 'max': 4000.0}, {'current': 3503.098, 'min': 1200.0, 'max': 4000.0}, {'current': 3476.877, 'min': 1200.0, 'max': 4000.0}, {'current': 3000.0, 'min': 1200.0, 'max': 4000.0}, {'current': 1887.724, 'min': 1200.0, 'max': 4000.0}, {'current': 1514.376, 'min': 1200.0, 'max': 4000.0}, {'current': 1201.108, 'min': 1200.0, 'max': 4000.0}, {'current': 3079.906, 'min': 1200.0, 'max': 4000.0}, {'current': 3474.209, 'min': 1200.0, 'max': 4000.0}, {'current': 3080.13, 'min': 1200.0, 'max': 4000.0}, {'current': 1201.254, 'min': 1200.0, 'max': 4000.0}, {'current': 1467.047, 'min': 1200.0, 'max': 4000.0}, {'current': 2270.037, 'min': 1200.0, 'max': 4000.0}, {'current': 1900.45, 'min': 1200.0, 'max': 4000.0}, {'current': 1200.71, 'min': 1200.0, 'max': 4000.0}, {'current': 1373.843, 'min': 1200.0, 'max': 4000.0}, {'current': 1243.4, 'min': 1200.0, 'max': 4000.0}, {'current': 1200.517, 'min': 1200.0, 'max': 4000.0}, {'current': 1288.84, 'min': 1200.0, 'max': 4000.0}, {'current': 3001.315, 'min': 1200.0, 'max': 4000.0}, {'current': 2994.579, 'min': 1200.0, 'max': 4000.0}, {'current': 1243.921, 'min': 1200.0, 'max': 4000.0}, {'current': 1242.202, 'min': 1200.0, 'max': 4000.0}, {'current': 2941.601, 'min': 1200.0, 'max': 4000.0}, {'current': 3328.226, 'min': 1200.0, 'max': 4000.0}, {'current': 3655.663, 'min': 1200.0, 'max': 4000.0}, {'current': 3342.694, 'min': 1200.0, 'max': 4000.0}, {'current': 3618.834, 'min': 1200.0, 'max': 4000.0}, {'current': 2136.099, 'min': 1200.0, 'max': 4000.0}, {'current': 3352.241, 'min': 1200.0, 'max': 4000.0}, {'current': 1369.737, 'min': 1200.0, 'max': 4000.0}, {'current': 3706.801, 'min': 1200.0, 'max': 4000.0}, {'current': 2986.964, 'min': 1200.0, 'max': 4000.0}, {'current': 3712.14, 'min': 1200.0, 'max': 4000.0}, {'current': 3498.694, 'min': 1200.0, 'max': 4000.0}, {'current': 3684.108, 'min': 1200.0, 'max': 4000.0}, {'current': 3302.082, 'min': 1200.0, 'max': 4000.0}, {'current': 3440.434, 'min': 1200.0, 'max': 4000.0}, {'current': 2365.253, 'min': 1200.0, 'max': 4000.0}, {'current': 3036.079, 'min': 1200.0, 'max': 4000.0}, {'current': 3296.836, 'min': 1200.0, 'max': 4000.0}, {'current': 3169.107, 'min': 1200.0, 'max': 4000.0}, {'current': 3301.981, 'min': 1200.0, 'max': 4000.0}, {'current': 2563.991, 'min': 1200.0, 'max': 4000.0}, {'current': 1470.601, 'min': 1200.0, 'max': 4000.0}, {'current': 2675.964, 'min': 1200.0, 'max': 4000.0}, {'current': 3109.181, 'min': 1200.0, 'max': 4000.0}, {'current': 2283.472, 'min': 1200.0, 'max': 4000.0}, {'current': 3598.97, 'min': 1200.0, 'max': 4000.0}, {'current': 3502.586, 'min': 1200.0, 'max': 4000.0}, {'current': 3618.94, 'min': 1200.0, 'max': 4000.0}, {'current': 3000.343, 'min': 1200.0, 'max': 4000.0}, {'current': 1853.69, 'min': 1200.0, 'max': 4000.0}, {'current': 1545.384, 'min': 1200.0, 'max': 4000.0}, {'current': 1200.609, 'min': 1200.0, 'max': 4000.0}, {'current': 2891.486, 'min': 1200.0, 'max': 4000.0}, {'current': 3430.466, 'min': 1200.0, 'max': 4000.0}, {'current': 2870.675, 'min': 1200.0, 'max': 4000.0}, {'current': 1201.178, 'min': 1200.0, 'max': 4000.0}, {'current': 1351.967, 'min': 1200.0, 'max': 4000.0}, {'current': 2243.946, 'min': 1200.0, 'max': 4000.0}, {'current': 1472.916, 'min': 1200.0, 'max': 4000.0}, {'current': 1200.519, 'min': 1200.0, 'max': 4000.0}, {'current': 1306.447, 'min': 1200.0, 'max': 4000.0}, {'current': 1288.825, 'min': 1200.0, 'max': 4000.0}, {'current': 1201.201, 'min': 1200.0, 'max': 4000.0}, {'current': 1285.496, 'min': 1200.0, 'max': 4000.0}, {'current': 2989.944, 'min': 1200.0, 'max': 4000.0}, {'current': 3000.0, 'min': 1200.0, 'max': 4000.0}, {'current': 1345.066, 'min': 1200.0, 'max': 4000.0}, {'current': 1247.513, 'min': 1200.0, 'max': 4000.0}, {'current': 2316.133, 'min': 1200.0, 'max': 4000.0}, {'current': 3464.941, 'min': 1200.0, 'max': 4000.0}], 'disk': {'total': 1876.7851104736328, 'used': 1111.2195777893066}, 'gpu': 'NVIDIA A100-PCIE-40GB', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}], 'memory': {'total': 251.55714416503906}}
+2022-12-23 10:36:30,573 INFO    HandlerThread:64018 [system_monitor.py:probe():178] Finished collecting system info
+2022-12-23 10:36:30,573 INFO    HandlerThread:64018 [system_monitor.py:probe():181] Publishing system info
+2022-12-23 10:36:30,573 DEBUG   HandlerThread:64018 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-23 10:36:30,573 DEBUG   HandlerThread:64018 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-23 10:36:30,573 DEBUG   HandlerThread:64018 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-23 10:36:31,413 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_created():275] file/dir created: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-summary.json
+2022-12-23 10:36:31,414 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_created():275] file/dir created: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/conda-environment.yaml
+2022-12-23 10:36:31,414 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_created():275] file/dir created: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/requirements.txt
+2022-12-23 10:36:33,042 DEBUG   HandlerThread:64018 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-23 10:36:33,044 INFO    HandlerThread:64018 [system_monitor.py:probe():183] Finished publishing system info
+2022-12-23 10:36:33,071 DEBUG   SenderThread:64018 [sender.py:send():303] send: files
+2022-12-23 10:36:33,072 INFO    SenderThread:64018 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-23 10:36:33,081 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:36:33,082 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:36:33,173 DEBUG   SenderThread:64018 [sender.py:send():303] send: telemetry
+2022-12-23 10:36:33,174 DEBUG   SenderThread:64018 [sender.py:send():303] send: config
+2022-12-23 10:36:33,415 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/conda-environment.yaml
+2022-12-23 10:36:33,416 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_created():275] file/dir created: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-metadata.json
+2022-12-23 10:36:33,416 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_created():275] file/dir created: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:36:33,532 INFO    Thread-16 :64018 [upload_job.py:push():143] Uploaded file /tmp/tmp5yq24vcawandb/3tqfoxpe-wandb-metadata.json
+2022-12-23 10:36:35,416 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:36:45,421 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:36:47,423 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:36:48,178 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:36:48,179 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:37:00,429 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/config.yaml
+2022-12-23 10:37:03,265 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:37:03,266 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:37:18,354 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:37:18,355 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:37:30,491 DEBUG   SystemMonitor:64018 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-23 10:37:30,496 DEBUG   SenderThread:64018 [sender.py:send():303] send: stats
+2022-12-23 10:37:33,441 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:37:33,442 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:37:48,531 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:37:48,532 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:38:00,498 DEBUG   SenderThread:64018 [sender.py:send():303] send: stats
+2022-12-23 10:38:03,628 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:38:03,628 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:38:05,463 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:38:18,717 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-23 10:38:18,717 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: stop_status
+2022-12-23 10:38:24,875 DEBUG   SenderThread:64018 [sender.py:send():303] send: exit
+2022-12-23 10:38:24,876 INFO    SenderThread:64018 [sender.py:send_exit():442] handling exit code: 255
+2022-12-23 10:38:24,876 INFO    SenderThread:64018 [sender.py:send_exit():444] handling runtime: 114
+2022-12-23 10:38:24,879 INFO    SenderThread:64018 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-23 10:38:24,879 INFO    SenderThread:64018 [sender.py:send_exit():450] send defer
+2022-12-23 10:38:24,880 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:24,880 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-23 10:38:24,880 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:24,880 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-23 10:38:24,880 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 1
+2022-12-23 10:38:24,881 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:24,881 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-23 10:38:24,881 INFO    HandlerThread:64018 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-23 10:38:24,882 DEBUG   SystemMonitor:64018 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-23 10:38:24,882 DEBUG   SystemMonitor:64018 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-23 10:38:24,886 INFO    HandlerThread:64018 [interfaces.py:finish():173] Joined cpu
+2022-12-23 10:38:24,886 INFO    HandlerThread:64018 [interfaces.py:finish():173] Joined disk
+2022-12-23 10:38:25,091 INFO    HandlerThread:64018 [interfaces.py:finish():173] Joined gpu
+2022-12-23 10:38:25,091 INFO    HandlerThread:64018 [interfaces.py:finish():173] Joined memory
+2022-12-23 10:38:25,091 INFO    HandlerThread:64018 [interfaces.py:finish():173] Joined network
+2022-12-23 10:38:25,092 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,092 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-23 10:38:25,093 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 2
+2022-12-23 10:38:25,093 DEBUG   SenderThread:64018 [sender.py:send():303] send: stats
+2022-12-23 10:38:25,095 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:25,095 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-23 10:38:25,095 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,096 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-23 10:38:25,096 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 3
+2022-12-23 10:38:25,096 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:25,096 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-23 10:38:25,096 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,096 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-23 10:38:25,096 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 4
+2022-12-23 10:38:25,097 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:25,097 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-23 10:38:25,097 DEBUG   SenderThread:64018 [sender.py:send():303] send: summary
+2022-12-23 10:38:25,097 INFO    SenderThread:64018 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-23 10:38:25,098 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,098 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-23 10:38:25,098 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 5
+2022-12-23 10:38:25,098 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:25,098 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-23 10:38:25,098 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,098 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-23 10:38:25,098 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 6
+2022-12-23 10:38:25,099 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:25,099 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-23 10:38:25,099 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:25,099 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-23 10:38:25,473 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-summary.json
+2022-12-23 10:38:25,877 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-23 10:38:27,474 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:38:28,599 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 7
+2022-12-23 10:38:28,599 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: poll_exit
+2022-12-23 10:38:28,600 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:28,601 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-23 10:38:28,601 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:28,601 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-23 10:38:28,601 INFO    SenderThread:64018 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-23 10:38:29,474 INFO    Thread-13 :64018 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:38:29,475 INFO    SenderThread:64018 [dir_watcher.py:finish():392] scan: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files
+2022-12-23 10:38:29,475 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-summary.json wandb-summary.json
+2022-12-23 10:38:29,475 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/requirements.txt requirements.txt
+2022-12-23 10:38:29,475 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log output.log
+2022-12-23 10:38:29,475 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/config.yaml config.yaml
+2022-12-23 10:38:29,476 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/conda-environment.yaml conda-environment.yaml
+2022-12-23 10:38:29,476 INFO    SenderThread:64018 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-metadata.json wandb-metadata.json
+2022-12-23 10:38:29,476 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 8
+2022-12-23 10:38:29,484 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:29,489 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-23 10:38:29,494 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:29,498 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-23 10:38:29,499 INFO    SenderThread:64018 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-23 10:38:29,865 INFO    Thread-21 :64018 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/conda-environment.yaml
+2022-12-23 10:38:29,870 INFO    Thread-20 :64018 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/config.yaml
+2022-12-23 10:38:29,878 INFO    Thread-17 :64018 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/wandb-summary.json
+2022-12-23 10:38:29,894 INFO    Thread-18 :64018 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/requirements.txt
+2022-12-23 10:38:29,963 INFO    Thread-19 :64018 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/files/output.log
+2022-12-23 10:38:30,163 INFO    Thread-12 :64018 [sender.py:transition_state():463] send defer: 9
+2022-12-23 10:38:30,164 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:30,165 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-23 10:38:30,165 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:30,165 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-23 10:38:30,165 INFO    SenderThread:64018 [file_pusher.py:join():173] waiting for file pusher
+2022-12-23 10:38:30,165 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 10
+2022-12-23 10:38:30,166 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:30,166 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-23 10:38:30,166 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:30,166 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-23 10:38:30,451 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 11
+2022-12-23 10:38:30,452 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:30,452 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-23 10:38:30,452 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:30,452 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-23 10:38:30,452 INFO    SenderThread:64018 [sender.py:transition_state():463] send defer: 12
+2022-12-23 10:38:30,453 DEBUG   SenderThread:64018 [sender.py:send():303] send: final
+2022-12-23 10:38:30,453 DEBUG   SenderThread:64018 [sender.py:send():303] send: footer
+2022-12-23 10:38:30,453 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: defer
+2022-12-23 10:38:30,454 INFO    HandlerThread:64018 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-23 10:38:30,454 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: defer
+2022-12-23 10:38:30,454 INFO    SenderThread:64018 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-23 10:38:30,455 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-23 10:38:30,455 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: server_info
+2022-12-23 10:38:30,456 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: poll_exit
+2022-12-23 10:38:30,456 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-23 10:38:30,456 DEBUG   SenderThread:64018 [sender.py:send_request():317] send_request: server_info
+2022-12-23 10:38:30,460 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-23 10:38:30,644 INFO    MainThread:64018 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-12-23 10:38:30,644 INFO    MainThread:64018 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-12-23 10:38:30,644 INFO    MainThread:64018 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-12-23 10:38:30,645 DEBUG   HandlerThread:64018 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-23 10:38:30,645 INFO    HandlerThread:64018 [handler.py:finish():814] shutting down handler
+2022-12-23 10:38:31,454 INFO    WriterThread:64018 [datastore.py:close():279] close: /home/li/workspace/SS-four-stages/wandb/run-20221223_103629-10zlikrv/run-10zlikrv.wandb
+2022-12-23 10:38:31,643 INFO    SenderThread:64018 [sender.py:finish():1331] shutting down sender
+2022-12-23 10:38:31,644 INFO    SenderThread:64018 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-23 10:38:31,644 INFO    SenderThread:64018 [file_pusher.py:join():173] waiting for file pusher
+2022-12-23 10:38:31,650 INFO    MainThread:64018 [internal.py:handle_exit():78] Internal process exited

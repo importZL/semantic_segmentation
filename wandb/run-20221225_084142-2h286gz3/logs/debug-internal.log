@@ -1,0 +1,101 @@
+2022-12-25 08:41:42,403 INFO    StreamThr :31605 [internal.py:wandb_internal():91] W&B internal server running at pid: 31605, started at: 2022-12-25 08:41:42.402861
+2022-12-25 08:41:42,406 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: status
+2022-12-25 08:41:42,408 DEBUG   SenderThread:31605 [sender.py:send_request():317] send_request: status
+2022-12-25 08:41:42,410 DEBUG   SenderThread:31605 [sender.py:send():303] send: header
+2022-12-25 08:41:42,410 INFO    WriterThread:31605 [datastore.py:open_for_write():75] open: /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/run-2h286gz3.wandb
+2022-12-25 08:41:42,424 DEBUG   SenderThread:31605 [sender.py:send():303] send: run
+2022-12-25 08:41:42,428 INFO    SenderThread:31605 [sender.py:_maybe_setup_resume():594] checking resume status for None/ss-four-stages/2h286gz3
+2022-12-25 08:41:42,516 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:41:42,517 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:41:43,735 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:41:43,736 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:41:47,426 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:41:52,428 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:41:57,429 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:42:02,431 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:42:07,432 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:42:09,870 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:42:09,871 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:42:09,871 ERROR   SenderThread:31605 [retry.py:__call__():154] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 113, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 210, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://api.wandb.ai/graphql
+2022-12-25 08:42:12,434 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:42:14,070 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:42:14,071 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:42:18,286 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-25 08:42:23,142 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:42:23,142 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:42:23,287 DEBUG   HandlerThread:31605 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:42:23,449 WARNING StreamThr :31605 [internal.py:is_dead():386] Internal process exiting, parent pid 31530 disappeared
+2022-12-25 08:42:23,449 ERROR   StreamThr :31605 [internal.py:wandb_internal():147] Internal process shutdown.
+2022-12-25 08:42:24,287 INFO    WriterThread:31605 [datastore.py:close():279] close: /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/run-2h286gz3.wandb
+2022-12-25 08:42:24,289 INFO    HandlerThread:31605 [handler.py:finish():814] shutting down handler
+2022-12-25 08:42:39,435 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:42:39,436 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:12,370 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:12,371 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:44:24,952 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:44:24,953 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:52:26,372 ERROR   SenderThread:31605 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 08:52:26,372 ERROR   SenderThread:31605 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 08:58:18,183 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:58:18,183 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:04:10,963 ERROR   SenderThread:31605 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 09:04:10,963 ERROR   SenderThread:31605 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 09:10:08,070 ERROR   SenderThread:31605 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 09:10:08,071 ERROR   SenderThread:31605 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 09:20:31,050 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 09:20:31,051 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:25:51,705 ERROR   SenderThread:31605 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 09:25:51,706 ERROR   SenderThread:31605 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:31:01,735 INFO    SenderThread:31605 [dir_watcher.py:__init__():216] watching files in: /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/files
+2022-12-25 09:31:01,735 INFO    SenderThread:31605 [sender.py:_start_run_threads():931] run started: 2h286gz3 with start time 1671986502.397789
+2022-12-25 09:31:01,736 INFO    SenderThread:31605 [sender.py:finish():1331] shutting down sender
+2022-12-25 09:31:01,736 INFO    SenderThread:31605 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-25 09:31:02,736 INFO    SenderThread:31605 [dir_watcher.py:finish():392] scan: /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/files
+2022-12-25 09:31:02,736 INFO    SenderThread:31605 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/files/config.yaml config.yaml
+2022-12-25 09:31:02,736 INFO    SenderThread:31605 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-25 09:31:02,737 INFO    SenderThread:31605 [file_pusher.py:join():173] waiting for file pusher
+2022-12-25 09:31:03,111 INFO    Thread-15 :31605 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221225_084142-2h286gz3/files/config.yaml

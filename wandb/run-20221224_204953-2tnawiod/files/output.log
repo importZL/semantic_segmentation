@@ -1,0 +1,28 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0000200 -> 0.0000200
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+(epoch: 1, iters: 50) pix2pix_G_GAN: 1.150 pix2pix_G_L1: 29.263 pix2pix_D_real: 0.451 pix2pix_D_fake: 0.437 dcgan_d_loss: 0.135 dcgan_g_loss: 4.070
+(epoch: 1, iters: 100) pix2pix_G_GAN: 1.354 pix2pix_G_L1: 18.776 pix2pix_D_real: 0.405 pix2pix_D_fake: 0.351 dcgan_d_loss: 0.438 dcgan_g_loss: 6.817
+(epoch: 1, iters: 150) pix2pix_G_GAN: 1.357 pix2pix_G_L1: 14.430 pix2pix_D_real: 0.308 pix2pix_D_fake: 0.386 dcgan_d_loss: 0.115 dcgan_g_loss: 4.023
+INFO: saving the model at the end of epoch 1, iters 172
+learning rate 0.0000200 -> 0.0000200
+INFO: End of epoch 1 / 15 	 Time Taken: 67 sec
+Traceback (most recent call last):
+  File "train_four_stages.py", line 77, in <module>
+    dc_loss, dc_visual = model_dcgan.train_parameters(data)
+  File "/home/li/workspace/SS-four-stages/models_dcgan/dcgan_darts.py", line 203, in train_parameters
+    z = Variable(torch.randn(self.batch_size, 100, 1, 1)).cuda(self.cuda_index)
+KeyboardInterrupt

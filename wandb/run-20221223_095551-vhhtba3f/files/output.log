@@ -1,0 +1,39 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+learning rate 0.0000200 -> 0.0000200
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+U-net Performance: unet_train_loss: 0.543 unet_test_score: 0.558
+U-net Performance: unet_train_loss: 0.414 unet_test_score: 0.477
+U-net Performance: unet_train_loss: 0.252 unet_test_score: 0.508
+U-net Performance: unet_train_loss: 0.284 unet_test_score: 0.586
+U-net Performance: unet_train_loss: 0.224 unet_test_score: 0.712
+U-net Performance: unet_train_loss: 0.201 unet_test_score: 0.617
+U-net Performance: unet_train_loss: 0.188 unet_test_score: 0.687
+U-net Performance: unet_train_loss: 0.248 unet_test_score: 0.751
+U-net Performance: unet_train_loss: 0.180 unet_test_score: 0.853
+U-net Performance: unet_train_loss: 0.151 unet_test_score: 0.836
+learning rate 0.0000200 -> 0.0000200
+U-net Performance: unet_train_loss: 0.155 unet_test_score: 0.791
+U-net Performance: unet_train_loss: 0.142 unet_test_score: 0.868
+U-net Performance: unet_train_loss: 0.180 unet_test_score: 0.900
+U-net Performance: unet_train_loss: 0.137 unet_test_score: 0.860
+U-net Performance: unet_train_loss: 0.185 unet_test_score: 0.757
+U-net Performance: unet_train_loss: 0.104 unet_test_score: 0.862
+U-net Performance: unet_train_loss: 0.165 unet_test_score: 0.858
+U-net Performance: unet_train_loss: 0.126 unet_test_score: 0.875
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 94, in <module>
+    F.one_hot(true_masks.squeeze(1), net.n_classes).permute(0, 3, 1, 2).float(),
+KeyboardInterrupt

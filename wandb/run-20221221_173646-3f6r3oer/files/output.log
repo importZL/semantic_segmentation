@@ -1,0 +1,24 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+(epoch: 1, iters: 100) pix2pix_G_GAN: 0.738 pix2pix_G_L1: 12.122 pix2pix_D_real: 0.525 pix2pix_D_fake: 0.695 dcgan_d_loss: 0.477 dcgan_g_loss: 3.331
+INFO: saving the model at the end of epoch 1, iters 149
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 133, in <module>
+    model.save_model(save_path)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/pix2pix_model.py", line 168, in save_model
+    os.mkdir(save_path)
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoint/20221221-173649'

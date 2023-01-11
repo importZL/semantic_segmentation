@@ -1,0 +1,133 @@
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 54.408 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: Creating dataset with 247 examples
+INFO: saved: 0
+INFO: saved: 1
+INFO: saved: 2
+INFO: saved: 3
+INFO: saved: 4
+INFO: saved: 5
+INFO: saved: 6
+INFO: saved: 7
+INFO: saved: 8
+INFO: saved: 9
+INFO: saved: 10
+INFO: saved: 11
+INFO: saved: 12
+INFO: saved: 13
+INFO: saved: 14
+INFO: saved: 15
+INFO: saved: 16
+INFO: saved: 17
+INFO: saved: 18
+INFO: saved: 19
+INFO: saved: 20
+INFO: saved: 21
+INFO: saved: 22
+INFO: saved: 23
+INFO: saved: 24
+INFO: saved: 25
+INFO: saved: 26
+INFO: saved: 27
+INFO: saved: 28
+INFO: saved: 29
+INFO: saved: 30
+INFO: saved: 31
+INFO: saved: 32
+INFO: saved: 33
+INFO: saved: 34
+INFO: saved: 35
+INFO: saved: 36
+INFO: saved: 37
+INFO: saved: 38
+INFO: saved: 39
+INFO: saved: 40
+INFO: saved: 41
+INFO: saved: 42
+INFO: saved: 43
+INFO: saved: 44
+INFO: saved: 45
+INFO: saved: 46
+INFO: saved: 47
+INFO: saved: 48
+INFO: saved: 49
+INFO: saved: 50
+INFO: saved: 51
+INFO: saved: 52
+INFO: saved: 53
+INFO: saved: 54
+INFO: saved: 55
+INFO: saved: 56
+INFO: saved: 57
+INFO: saved: 58
+INFO: saved: 59
+INFO: saved: 60
+INFO: saved: 61
+INFO: saved: 62
+INFO: saved: 63
+INFO: saved: 64
+INFO: saved: 65
+INFO: saved: 66
+INFO: saved: 67
+INFO: saved: 68
+INFO: saved: 69
+INFO: saved: 70
+INFO: saved: 71
+INFO: saved: 72
+INFO: saved: 73
+INFO: saved: 74
+INFO: saved: 75
+INFO: saved: 76
+INFO: saved: 77
+INFO: saved: 78
+INFO: saved: 79
+INFO: saved: 80
+INFO: saved: 81
+INFO: saved: 82
+INFO: saved: 83
+INFO: saved: 84
+INFO: saved: 85
+INFO: saved: 86
+INFO: saved: 87
+INFO: saved: 88
+INFO: saved: 89
+INFO: saved: 90
+INFO: saved: 91
+INFO: saved: 92
+INFO: saved: 93
+INFO: saved: 94
+INFO: saved: 95
+INFO: saved: 96
+INFO: saved: 97
+INFO: saved: 98
+INFO: saved: 99
+INFO: Creating dataset with 566 examples
+INFO: Creating dataset with 100 examples
+INFO: Creating dataset with 138 examples
+INFO: Creating dataset with 100 examples
+INFO: The number of training images = 175
+INFO: The number of validate images = 0
+INFO: The number of test images = 72
+INFO: The number of overall training images = 841
+INFO: The number of NLM images = 138
+INFO: The number of NIH images = 100
+INFO: The number of SZ images = 566
+Traceback (most recent call last):
+  File "train_unet.py", line 214, in <module>
+    masks_pred = net(images)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/unet/unet_model.py", line 26, in forward
+    x1 = self.inc(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/unet/unet_parts.py", line 25, in forward
+    return self.double_conv(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 139, in forward

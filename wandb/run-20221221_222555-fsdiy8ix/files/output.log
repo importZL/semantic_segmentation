@@ -1,0 +1,76 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+(epoch: 1, iters: 100) pix2pix_G_GAN: 0.925 pix2pix_G_L1: 15.359 pix2pix_D_real: 0.777 pix2pix_D_fake: 0.628 dcgan_d_loss: 5.183 dcgan_g_loss: 3.336
+INFO: saving the model at the end of epoch 1, iters 149
+learning rate 0.0002000 -> 0.0002000
+INFO: End of epoch 1 / 20 	 Time Taken: 80 sec
+(epoch: 2, iters: 51) pix2pix_G_GAN: 1.180 pix2pix_G_L1: 12.802 pix2pix_D_real: 1.427 pix2pix_D_fake: 0.235 dcgan_d_loss: 0.609 dcgan_g_loss: 1.390
+INFO: saving the model at the end of epoch 2, iters 298
+INFO: End of epoch 2 / 20 	 Time Taken: 76 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 3, iters: 2) pix2pix_G_GAN: 1.143 pix2pix_G_L1: 11.143 pix2pix_D_real: 0.249 pix2pix_D_fake: 0.627 dcgan_d_loss: 0.659 dcgan_g_loss: 2.113
+(epoch: 3, iters: 102) pix2pix_G_GAN: 1.069 pix2pix_G_L1: 12.838 pix2pix_D_real: 0.846 pix2pix_D_fake: 0.393 dcgan_d_loss: 1.394 dcgan_g_loss: 0.536
+INFO: saving the model at the end of epoch 3, iters 447
+INFO: End of epoch 3 / 20 	 Time Taken: 75 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 4, iters: 53) pix2pix_G_GAN: 1.664 pix2pix_G_L1: 12.140 pix2pix_D_real: 0.179 pix2pix_D_fake: 0.511 dcgan_d_loss: 1.645 dcgan_g_loss: 2.975
+INFO: saving the model at the end of epoch 4, iters 596
+INFO: End of epoch 4 / 20 	 Time Taken: 76 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 5, iters: 4) pix2pix_G_GAN: 1.595 pix2pix_G_L1: 16.662 pix2pix_D_real: 0.756 pix2pix_D_fake: 0.315 dcgan_d_loss: 1.519 dcgan_g_loss: 1.851
+(epoch: 5, iters: 104) pix2pix_G_GAN: 1.536 pix2pix_G_L1: 12.275 pix2pix_D_real: 0.481 pix2pix_D_fake: 0.231 dcgan_d_loss: 0.693 dcgan_g_loss: 0.603
+INFO: saving the model at the end of epoch 5, iters 745
+learning rate 0.0002000 -> 0.0002000
+INFO: End of epoch 5 / 20 	 Time Taken: 75 sec
+(epoch: 6, iters: 55) pix2pix_G_GAN: 1.845 pix2pix_G_L1: 9.710 pix2pix_D_real: 0.450 pix2pix_D_fake: 0.256 dcgan_d_loss: 2.162 dcgan_g_loss: 1.677
+INFO: saving the model at the end of epoch 6, iters 894
+learning rate 0.0002000 -> 0.0002000
+INFO: End of epoch 6 / 20 	 Time Taken: 75 sec
+(epoch: 7, iters: 6) pix2pix_G_GAN: 2.374 pix2pix_G_L1: 19.059 pix2pix_D_real: 0.240 pix2pix_D_fake: 0.163 dcgan_d_loss: 0.734 dcgan_g_loss: 1.719
+(epoch: 7, iters: 106) pix2pix_G_GAN: 1.122 pix2pix_G_L1: 11.952 pix2pix_D_real: 0.732 pix2pix_D_fake: 0.337 dcgan_d_loss: 1.671 dcgan_g_loss: 3.964
+INFO: saving the model at the end of epoch 7, iters 1043
+learning rate 0.0002000 -> 0.0002000
+INFO: End of epoch 7 / 20 	 Time Taken: 76 sec
+(epoch: 8, iters: 57) pix2pix_G_GAN: 1.395 pix2pix_G_L1: 9.281 pix2pix_D_real: 1.748 pix2pix_D_fake: 0.114 dcgan_d_loss: 0.103 dcgan_g_loss: 0.604
+INFO: saving the model at the end of epoch 8, iters 1192
+INFO: End of epoch 8 / 20 	 Time Taken: 75 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 9, iters: 8) pix2pix_G_GAN: 0.969 pix2pix_G_L1: 9.048 pix2pix_D_real: 1.306 pix2pix_D_fake: 0.239 dcgan_d_loss: 1.854 dcgan_g_loss: 0.939
+(epoch: 9, iters: 108) pix2pix_G_GAN: 1.770 pix2pix_G_L1: 20.800 pix2pix_D_real: 0.677 pix2pix_D_fake: 0.327 dcgan_d_loss: 0.429 dcgan_g_loss: 1.740
+INFO: saving the model at the end of epoch 9, iters 1341
+INFO: End of epoch 9 / 20 	 Time Taken: 75 sec
+learning rate 0.0002000 -> 0.0001818
+(epoch: 10, iters: 59) pix2pix_G_GAN: 1.290 pix2pix_G_L1: 8.929 pix2pix_D_real: 0.241 pix2pix_D_fake: 0.857 dcgan_d_loss: 0.209 dcgan_g_loss: 1.290
+INFO: saving the model at the end of epoch 10, iters 1490
+INFO: End of epoch 10 / 20 	 Time Taken: 75 sec
+learning rate 0.0001818 -> 0.0001636
+(epoch: 11, iters: 10) pix2pix_G_GAN: 1.957 pix2pix_G_L1: 10.629 pix2pix_D_real: 0.181 pix2pix_D_fake: 0.723 dcgan_d_loss: 2.447 dcgan_g_loss: 0.017
+(epoch: 11, iters: 110) pix2pix_G_GAN: 0.823 pix2pix_G_L1: 11.966 pix2pix_D_real: 0.545 pix2pix_D_fake: 0.597 dcgan_d_loss: 0.613 dcgan_g_loss: 1.328
+INFO: saving the model at the end of epoch 11, iters 1639
+INFO: End of epoch 11 / 20 	 Time Taken: 75 sec
+learning rate 0.0001636 -> 0.0001455
+(epoch: 12, iters: 61) pix2pix_G_GAN: 0.612 pix2pix_G_L1: 9.969 pix2pix_D_real: 1.493 pix2pix_D_fake: 0.262 dcgan_d_loss: 0.103 dcgan_g_loss: 0.983
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 106, in <module>
+    model.optimize_architect(valid_data)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/pix2pix_model.py", line 159, in optimize_architect
+    loss_G.backward()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/autograd/__init__.py", line 147, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+KeyboardInterrupt

@@ -1,0 +1,42 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 97, in <module>
+    fake_loss = criterion_unet(fake_masks_pred, fake_mapping.squeeze(1)) \
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/loss.py", line 1048, in forward
+    ignore_index=self.ignore_index, reduction=self.reduction)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/functional.py", line 2693, in cross_entropy
+    return nll_loss(log_softmax(input, 1), target, weight, None, ignore_index, None, reduction)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/functional.py", line 2390, in nll_loss
+tensor(1.3418, device='cuda:0', grad_fn=<AddBackward0>)
+tensor([[[[0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          ...,
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0],
+          [0, 0, 0,  ..., 0, 0, 0]]]], device='cuda:0')
+tensor([[[[ 0.1120,  0.3071,  0.0764,  ...,  0.2147,  0.1032,  0.3413],
+          [ 0.0208,  0.5684, -0.5375,  ...,  0.5495, -0.3286,  0.3644],
+          [ 0.3330,  0.1377,  0.4279,  ...,  0.1115,  0.2493,  0.0007],
+          ...,
+          [ 0.1270,  0.5419, -0.3115,  ...,  0.3256, -0.3115,  0.2629],
+          [ 0.2224,  0.0081, -0.0231,  ...,  0.1967,  0.1547,  0.1248],
+          [ 0.1276,  0.3854, -0.3002,  ...,  0.5055, -0.3776,  0.3520]]]],
+       device='cuda:0', grad_fn=<TanhBackward>)

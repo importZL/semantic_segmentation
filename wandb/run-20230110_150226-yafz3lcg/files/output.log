@@ -1,0 +1,602 @@
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 54.408 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: Creating dataset with 247 examples
+INFO: saved: 0
+INFO: saved: 1
+INFO: saved: 2
+INFO: saved: 3
+INFO: saved: 4
+INFO: saved: 5
+INFO: saved: 6
+INFO: saved: 7
+INFO: saved: 8
+INFO: saved: 9
+INFO: saved: 10
+INFO: saved: 11
+INFO: saved: 12
+INFO: saved: 13
+INFO: saved: 14
+INFO: saved: 15
+INFO: saved: 16
+INFO: saved: 17
+INFO: saved: 18
+INFO: saved: 19
+INFO: saved: 20
+INFO: saved: 21
+INFO: saved: 22
+INFO: saved: 23
+INFO: saved: 24
+INFO: saved: 25
+INFO: saved: 26
+INFO: saved: 27
+INFO: saved: 28
+INFO: saved: 29
+INFO: saved: 30
+INFO: saved: 31
+INFO: saved: 32
+INFO: saved: 33
+INFO: saved: 34
+INFO: saved: 35
+INFO: saved: 36
+INFO: saved: 37
+INFO: saved: 38
+INFO: saved: 39
+INFO: saved: 40
+INFO: saved: 41
+INFO: saved: 42
+INFO: saved: 43
+INFO: saved: 44
+INFO: saved: 45
+INFO: saved: 46
+INFO: saved: 47
+INFO: saved: 48
+INFO: saved: 49
+INFO: saved: 50
+INFO: saved: 51
+INFO: saved: 52
+INFO: saved: 53
+INFO: saved: 54
+INFO: saved: 55
+INFO: saved: 56
+INFO: saved: 57
+INFO: saved: 58
+INFO: saved: 59
+INFO: saved: 60
+INFO: saved: 61
+INFO: saved: 62
+INFO: saved: 63
+INFO: saved: 64
+INFO: saved: 65
+INFO: saved: 66
+INFO: saved: 67
+INFO: saved: 68
+INFO: saved: 69
+INFO: saved: 70
+INFO: saved: 71
+INFO: saved: 72
+INFO: saved: 73
+INFO: saved: 74
+INFO: saved: 75
+INFO: saved: 76
+INFO: saved: 77
+INFO: saved: 78
+INFO: saved: 79
+INFO: saved: 80
+INFO: saved: 81
+INFO: saved: 82
+INFO: saved: 83
+INFO: saved: 84
+INFO: saved: 85
+INFO: saved: 86
+INFO: saved: 87
+INFO: saved: 88
+INFO: saved: 89
+INFO: saved: 90
+INFO: saved: 91
+INFO: saved: 92
+INFO: saved: 93
+INFO: saved: 94
+INFO: saved: 95
+INFO: saved: 96
+INFO: saved: 97
+INFO: saved: 98
+INFO: saved: 99
+INFO: saved: 100
+INFO: saved: 101
+INFO: saved: 102
+INFO: saved: 103
+INFO: saved: 104
+INFO: saved: 105
+INFO: saved: 106
+INFO: saved: 107
+INFO: saved: 108
+INFO: saved: 109
+INFO: saved: 110
+INFO: saved: 111
+INFO: saved: 112
+INFO: saved: 113
+INFO: saved: 114
+INFO: saved: 115
+INFO: saved: 116
+INFO: saved: 117
+INFO: saved: 118
+INFO: saved: 119
+INFO: saved: 120
+INFO: saved: 121
+INFO: saved: 122
+INFO: saved: 123
+INFO: saved: 124
+INFO: saved: 125
+INFO: saved: 126
+INFO: saved: 127
+INFO: saved: 128
+INFO: saved: 129
+INFO: saved: 130
+INFO: saved: 131
+INFO: saved: 132
+INFO: saved: 133
+INFO: saved: 134
+INFO: saved: 135
+INFO: saved: 136
+INFO: saved: 137
+INFO: saved: 138
+INFO: saved: 139
+INFO: saved: 140
+INFO: saved: 141
+INFO: saved: 142
+INFO: saved: 143
+INFO: saved: 144
+INFO: saved: 145
+INFO: saved: 146
+INFO: saved: 147
+INFO: saved: 148
+INFO: saved: 149
+INFO: saved: 150
+INFO: saved: 151
+INFO: saved: 152
+INFO: saved: 153
+INFO: saved: 154
+INFO: saved: 155
+INFO: saved: 156
+INFO: saved: 157
+INFO: saved: 158
+INFO: saved: 159
+INFO: saved: 160
+INFO: saved: 161
+INFO: saved: 162
+INFO: saved: 163
+INFO: saved: 164
+INFO: saved: 165
+INFO: saved: 166
+INFO: saved: 167
+INFO: saved: 168
+INFO: saved: 169
+INFO: saved: 170
+INFO: saved: 171
+INFO: saved: 172
+INFO: saved: 173
+INFO: saved: 174
+INFO: saved: 175
+INFO: saved: 176
+INFO: saved: 177
+INFO: saved: 178
+INFO: saved: 179
+INFO: saved: 180
+INFO: saved: 181
+INFO: saved: 182
+INFO: saved: 183
+INFO: saved: 184
+INFO: saved: 185
+INFO: saved: 186
+INFO: saved: 187
+INFO: saved: 188
+INFO: saved: 189
+INFO: saved: 190
+INFO: saved: 191
+INFO: saved: 192
+INFO: saved: 193
+INFO: saved: 194
+INFO: saved: 195
+INFO: saved: 196
+INFO: saved: 197
+INFO: saved: 198
+INFO: saved: 199
+INFO: saved: 200
+INFO: saved: 201
+INFO: saved: 202
+INFO: saved: 203
+INFO: saved: 204
+INFO: saved: 205
+INFO: saved: 206
+INFO: saved: 207
+INFO: saved: 208
+INFO: saved: 209
+INFO: saved: 210
+INFO: saved: 211
+INFO: saved: 212
+INFO: saved: 213
+INFO: saved: 214
+INFO: saved: 215
+INFO: saved: 216
+INFO: saved: 217
+INFO: saved: 218
+INFO: saved: 219
+INFO: saved: 220
+INFO: saved: 221
+INFO: saved: 222
+INFO: saved: 223
+INFO: saved: 224
+INFO: saved: 225
+INFO: saved: 226
+INFO: saved: 227
+INFO: saved: 228
+INFO: saved: 229
+INFO: saved: 230
+INFO: saved: 231
+INFO: saved: 232
+INFO: saved: 233
+INFO: saved: 234
+INFO: saved: 235
+INFO: saved: 236
+INFO: saved: 237
+INFO: saved: 238
+INFO: saved: 239
+INFO: saved: 240
+INFO: saved: 241
+INFO: saved: 242
+INFO: saved: 243
+INFO: saved: 244
+INFO: saved: 245
+INFO: saved: 246
+INFO: saved: 247
+INFO: saved: 248
+INFO: saved: 249
+INFO: saved: 250
+INFO: saved: 251
+INFO: saved: 252
+INFO: saved: 253
+INFO: saved: 254
+INFO: saved: 255
+INFO: saved: 256
+INFO: saved: 257
+INFO: saved: 258
+INFO: saved: 259
+INFO: saved: 260
+INFO: saved: 261
+INFO: saved: 262
+INFO: saved: 263
+INFO: saved: 264
+INFO: saved: 265
+INFO: saved: 266
+INFO: saved: 267
+INFO: saved: 268
+INFO: saved: 269
+INFO: saved: 270
+INFO: saved: 271
+INFO: saved: 272
+INFO: saved: 273
+INFO: saved: 274
+INFO: saved: 275
+INFO: saved: 276
+INFO: saved: 277
+INFO: saved: 278
+INFO: saved: 279
+INFO: saved: 280
+INFO: saved: 281
+INFO: saved: 282
+INFO: saved: 283
+INFO: saved: 284
+INFO: saved: 285
+INFO: saved: 286
+INFO: saved: 287
+INFO: saved: 288
+INFO: saved: 289
+INFO: saved: 290
+INFO: saved: 291
+INFO: saved: 292
+INFO: saved: 293
+INFO: saved: 294
+INFO: saved: 295
+INFO: saved: 296
+INFO: saved: 297
+INFO: saved: 298
+INFO: saved: 299
+INFO: saved: 300
+INFO: saved: 301
+INFO: saved: 302
+INFO: saved: 303
+INFO: saved: 304
+INFO: saved: 305
+INFO: saved: 306
+INFO: saved: 307
+INFO: saved: 308
+INFO: saved: 309
+INFO: saved: 310
+INFO: saved: 311
+INFO: saved: 312
+INFO: saved: 313
+INFO: saved: 314
+INFO: saved: 315
+INFO: saved: 316
+INFO: saved: 317
+INFO: saved: 318
+INFO: saved: 319
+INFO: saved: 320
+INFO: saved: 321
+INFO: saved: 322
+INFO: saved: 323
+INFO: saved: 324
+INFO: saved: 325
+INFO: saved: 326
+INFO: saved: 327
+INFO: saved: 328
+INFO: saved: 329
+INFO: saved: 330
+INFO: saved: 331
+INFO: saved: 332
+INFO: saved: 333
+INFO: saved: 334
+INFO: saved: 335
+INFO: saved: 336
+INFO: saved: 337
+INFO: saved: 338
+INFO: saved: 339
+INFO: saved: 340
+INFO: saved: 341
+INFO: saved: 342
+INFO: saved: 343
+INFO: saved: 344
+INFO: saved: 345
+INFO: saved: 346
+INFO: saved: 347
+INFO: saved: 348
+INFO: saved: 349
+INFO: saved: 350
+INFO: saved: 351
+INFO: saved: 352
+INFO: saved: 353
+INFO: saved: 354
+INFO: saved: 355
+INFO: saved: 356
+INFO: saved: 357
+INFO: saved: 358
+INFO: saved: 359
+INFO: saved: 360
+INFO: saved: 361
+INFO: saved: 362
+INFO: saved: 363
+INFO: saved: 364
+INFO: saved: 365
+INFO: saved: 366
+INFO: saved: 367
+INFO: saved: 368
+INFO: saved: 369
+INFO: saved: 370
+INFO: saved: 371
+INFO: saved: 372
+INFO: saved: 373
+INFO: saved: 374
+INFO: saved: 375
+INFO: saved: 376
+INFO: saved: 377
+INFO: saved: 378
+INFO: saved: 379
+INFO: saved: 380
+INFO: saved: 381
+INFO: saved: 382
+INFO: saved: 383
+INFO: saved: 384
+INFO: saved: 385
+INFO: saved: 386
+INFO: saved: 387
+INFO: saved: 388
+INFO: saved: 389
+INFO: saved: 390
+INFO: saved: 391
+INFO: saved: 392
+INFO: saved: 393
+INFO: saved: 394
+INFO: saved: 395
+INFO: saved: 396
+INFO: saved: 397
+INFO: saved: 398
+INFO: saved: 399
+INFO: Creating dataset with 566 examples
+INFO: Creating dataset with 100 examples
+INFO: Creating dataset with 138 examples
+INFO: Creating dataset with 400 examples
+INFO: The number of training images = 175
+INFO: The number of validate images = 0
+INFO: The number of test images = 72
+INFO: The number of overall training images = 595
+INFO: The number of NLM images = 138
+INFO: The number of NIH images = 100
+INFO: The number of SZ images = 566
+INFO: Performance of UNet: unet_train_loss: 0.58470 unet_test_score: 0.44571 unet_best_score: 0.44571
+INFO: Performance of UNet: unet_train_loss: 0.65617 unet_test_score: 0.55232 unet_best_score: 0.55232
+INFO: Performance of UNet: unet_train_loss: 0.63843 unet_test_score: 0.84943 unet_best_score: 0.84943
+INFO: Performance of UNet: unet_train_loss: 0.58898 unet_test_score: 0.92559 unet_best_score: 0.92559
+INFO: Performance of UNet: unet_train_loss: 0.82623 unet_test_score: 0.89932 unet_best_score: 0.92559
+INFO: Performance of UNet: unet_train_loss: 0.77985 unet_test_score: 0.93126 unet_best_score: 0.93126
+INFO: Performance of UNet: unet_train_loss: 0.52824 unet_test_score: 0.93528 unet_best_score: 0.93528
+INFO: Performance of UNet: unet_train_loss: 0.43080 unet_test_score: 0.93113 unet_best_score: 0.93528
+INFO: Performance of UNet: unet_train_loss: 0.44364 unet_test_score: 0.93700 unet_best_score: 0.93700
+INFO: Performance of UNet: unet_train_loss: 0.37007 unet_test_score: 0.93916 unet_best_score: 0.93916
+INFO: Performance of UNet: unet_train_loss: 0.66530 unet_test_score: 0.91907 unet_best_score: 0.93916
+INFO: Performance of UNet: unet_train_loss: 0.35594 unet_test_score: 0.94069 unet_best_score: 0.94069
+INFO: Performance of UNet: unet_train_loss: 0.50070 unet_test_score: 0.91920 unet_best_score: 0.94069
+INFO: Performance of UNet: unet_train_loss: 0.39594 unet_test_score: 0.95419 unet_best_score: 0.95419
+INFO: Performance of UNet: unet_train_loss: 0.38768 unet_test_score: 0.95494 unet_best_score: 0.95494
+INFO: Performance of UNet: unet_train_loss: 0.72445 unet_test_score: 0.95322 unet_best_score: 0.95494
+INFO: Performance of UNet: unet_train_loss: 0.33344 unet_test_score: 0.95275 unet_best_score: 0.95494
+INFO: Performance of UNet: unet_train_loss: 0.46692 unet_test_score: 0.95586 unet_best_score: 0.95586
+INFO: Performance of UNet: unet_train_loss: 0.67401 unet_test_score: 0.95336 unet_best_score: 0.95586
+INFO: Performance of UNet: unet_train_loss: 0.32224 unet_test_score: 0.95683 unet_best_score: 0.95683
+INFO: Performance of UNet: unet_train_loss: 0.37677 unet_test_score: 0.90908 unet_best_score: 0.95683
+INFO: Performance of UNet: unet_train_loss: 0.33808 unet_test_score: 0.95051 unet_best_score: 0.95683
+INFO: Performance of UNet: unet_train_loss: 0.27769 unet_test_score: 0.95487 unet_best_score: 0.95683
+INFO: Performance of UNet: unet_train_loss: 0.30299 unet_test_score: 0.95779 unet_best_score: 0.95779
+INFO: Performance of UNet: unet_train_loss: 0.34257 unet_test_score: 0.95505 unet_best_score: 0.95779
+INFO: Performance of UNet: unet_train_loss: 0.44687 unet_test_score: 0.95430 unet_best_score: 0.95779
+INFO: Performance of UNet: unet_train_loss: 0.22527 unet_test_score: 0.95025 unet_best_score: 0.95779
+INFO: Performance of UNet: unet_train_loss: 0.29724 unet_test_score: 0.95283 unet_best_score: 0.95779
+INFO: Performance of UNet: unet_train_loss: 0.21172 unet_test_score: 0.95828 unet_best_score: 0.95828
+INFO: Performance on out-domain dataset: NLM_score: 0.80365 NLM_best_score: 0.80365 SZ_score: 0.91194 SZ_best_score: 0.91194
+INFO: End of epoch 0 / 100 	 Time Taken: 130 sec
+INFO: Performance of UNet: unet_train_loss: 0.23904 unet_test_score: 0.95787 unet_best_score: 0.95828
+INFO: Performance of UNet: unet_train_loss: 0.30724 unet_test_score: 0.95995 unet_best_score: 0.95995
+INFO: Performance of UNet: unet_train_loss: 0.25261 unet_test_score: 0.96068 unet_best_score: 0.96068
+INFO: Performance of UNet: unet_train_loss: 0.17221 unet_test_score: 0.95653 unet_best_score: 0.96068
+INFO: Performance of UNet: unet_train_loss: 0.32960 unet_test_score: 0.96120 unet_best_score: 0.96120
+INFO: Performance of UNet: unet_train_loss: 0.21108 unet_test_score: 0.95994 unet_best_score: 0.96120
+INFO: Performance of UNet: unet_train_loss: 0.16299 unet_test_score: 0.96408 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.16720 unet_test_score: 0.96229 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.25152 unet_test_score: 0.96248 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.20309 unet_test_score: 0.95751 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.29280 unet_test_score: 0.96058 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.26968 unet_test_score: 0.80088 unet_best_score: 0.96408
+INFO: Performance of UNet: unet_train_loss: 0.18702 unet_test_score: 0.96461 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.15305 unet_test_score: 0.95920 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.12326 unet_test_score: 0.96440 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.34796 unet_test_score: 0.96168 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.16309 unet_test_score: 0.95723 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.27160 unet_test_score: 0.94982 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.12625 unet_test_score: 0.96169 unet_best_score: 0.96461
+INFO: Performance of UNet: unet_train_loss: 0.10756 unet_test_score: 0.96768 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.09658 unet_test_score: 0.96662 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.16787 unet_test_score: 0.95674 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.18391 unet_test_score: 0.95575 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.11645 unet_test_score: 0.94518 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.31023 unet_test_score: 0.96706 unet_best_score: 0.96768
+INFO: Performance of UNet: unet_train_loss: 0.13739 unet_test_score: 0.96906 unet_best_score: 0.96906
+INFO: Performance of UNet: unet_train_loss: 0.10970 unet_test_score: 0.96911 unet_best_score: 0.96911
+INFO: Performance of UNet: unet_train_loss: 0.08845 unet_test_score: 0.96921 unet_best_score: 0.96921
+INFO: Performance of UNet: unet_train_loss: 0.14194 unet_test_score: 0.96967 unet_best_score: 0.96967
+INFO: Performance of UNet: unet_train_loss: 0.18271 unet_test_score: 0.96926 unet_best_score: 0.96967
+INFO: Performance on out-domain dataset: NLM_score: 0.90386 NLM_best_score: 0.90386 SZ_score: 0.92691 SZ_best_score: 0.92691
+INFO: End of epoch 1 / 100 	 Time Taken: 125 sec
+INFO: Performance of UNet: unet_train_loss: 0.15620 unet_test_score: 0.97063 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.18603 unet_test_score: 0.96931 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.12469 unet_test_score: 0.96669 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.10212 unet_test_score: 0.96584 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.15861 unet_test_score: 0.96646 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.08289 unet_test_score: 0.96949 unet_best_score: 0.97063
+INFO: Performance of UNet: unet_train_loss: 0.20765 unet_test_score: 0.97150 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.14700 unet_test_score: 0.95279 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.13630 unet_test_score: 0.96963 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.13633 unet_test_score: 0.96684 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.07517 unet_test_score: 0.96420 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.09524 unet_test_score: 0.96182 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.25843 unet_test_score: 0.96350 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.08915 unet_test_score: 0.96874 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.08921 unet_test_score: 0.96778 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.11150 unet_test_score: 0.96828 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.09988 unet_test_score: 0.96964 unet_best_score: 0.97150
+INFO: Performance of UNet: unet_train_loss: 0.07686 unet_test_score: 0.97185 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.09661 unet_test_score: 0.96937 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.07622 unet_test_score: 0.97103 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.11646 unet_test_score: 0.96408 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.11130 unet_test_score: 0.96990 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.11563 unet_test_score: 0.96831 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.09210 unet_test_score: 0.96909 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.08553 unet_test_score: 0.96942 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.12147 unet_test_score: 0.96781 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.07784 unet_test_score: 0.97063 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.09837 unet_test_score: 0.96928 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.09827 unet_test_score: 0.97067 unet_best_score: 0.97185
+INFO: Performance of UNet: unet_train_loss: 0.05240 unet_test_score: 0.97231 unet_best_score: 0.97231
+INFO: Performance on out-domain dataset: NLM_score: 0.93768 NLM_best_score: 0.93768 SZ_score: 0.90779 SZ_best_score: 0.92691
+INFO: End of epoch 2 / 100 	 Time Taken: 122 sec
+INFO: Performance of UNet: unet_train_loss: 0.15703 unet_test_score: 0.96602 unet_best_score: 0.97231
+INFO: Performance of UNet: unet_train_loss: 0.07274 unet_test_score: 0.97089 unet_best_score: 0.97231
+INFO: Performance of UNet: unet_train_loss: 0.08906 unet_test_score: 0.97268 unet_best_score: 0.97268
+INFO: Performance of UNet: unet_train_loss: 0.04926 unet_test_score: 0.97236 unet_best_score: 0.97268
+INFO: Performance of UNet: unet_train_loss: 0.06651 unet_test_score: 0.97311 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.06050 unet_test_score: 0.96942 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.05847 unet_test_score: 0.96850 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.05618 unet_test_score: 0.97274 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.07142 unet_test_score: 0.97028 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.05898 unet_test_score: 0.96386 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.08914 unet_test_score: 0.97271 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.09574 unet_test_score: 0.97280 unet_best_score: 0.97311
+INFO: Performance of UNet: unet_train_loss: 0.08914 unet_test_score: 0.97363 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.04823 unet_test_score: 0.97212 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.05433 unet_test_score: 0.97332 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.11618 unet_test_score: 0.97123 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.07089 unet_test_score: 0.97046 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.05793 unet_test_score: 0.97254 unet_best_score: 0.97363
+INFO: Performance of UNet: unet_train_loss: 0.04091 unet_test_score: 0.97458 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.04968 unet_test_score: 0.97165 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05981 unet_test_score: 0.97244 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.06468 unet_test_score: 0.96907 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05336 unet_test_score: 0.97166 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05516 unet_test_score: 0.96866 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.14096 unet_test_score: 0.96788 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.08319 unet_test_score: 0.96853 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.08146 unet_test_score: 0.97311 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.04978 unet_test_score: 0.97073 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.06795 unet_test_score: 0.97439 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.04199 unet_test_score: 0.97418 unet_best_score: 0.97458
+INFO: Performance on out-domain dataset: NLM_score: 0.92048 NLM_best_score: 0.93768 SZ_score: 0.93483 SZ_best_score: 0.93483
+INFO: End of epoch 3 / 100 	 Time Taken: 127 sec
+INFO: Performance of UNet: unet_train_loss: 0.05280 unet_test_score: 0.97401 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05636 unet_test_score: 0.96897 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05141 unet_test_score: 0.95513 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.05994 unet_test_score: 0.97060 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.60627 unet_test_score: 0.97201 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.04320 unet_test_score: 0.97179 unet_best_score: 0.97458
+INFO: Performance of UNet: unet_train_loss: 0.03583 unet_test_score: 0.97467 unet_best_score: 0.97467
+INFO: Performance of UNet: unet_train_loss: 0.06975 unet_test_score: 0.97351 unet_best_score: 0.97467
+INFO: Performance of UNet: unet_train_loss: 0.04222 unet_test_score: 0.97528 unet_best_score: 0.97528
+INFO: Performance of UNet: unet_train_loss: 0.04616 unet_test_score: 0.97584 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.05461 unet_test_score: 0.97482 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.04888 unet_test_score: 0.97475 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.05839 unet_test_score: 0.97580 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.05464 unet_test_score: 0.97392 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.15711 unet_test_score: 0.97364 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.06910 unet_test_score: 0.97390 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.04528 unet_test_score: 0.97275 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.06594 unet_test_score: 0.97459 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.04102 unet_test_score: 0.97294 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.05499 unet_test_score: 0.97220 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.06155 unet_test_score: 0.97348 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.09119 unet_test_score: 0.97406 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.03569 unet_test_score: 0.97566 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.03450 unet_test_score: 0.97343 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.06815 unet_test_score: 0.97561 unet_best_score: 0.97584
+INFO: Performance of UNet: unet_train_loss: 0.07336 unet_test_score: 0.97701 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05976 unet_test_score: 0.97512 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.04530 unet_test_score: 0.97589 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.04411 unet_test_score: 0.97237 unet_best_score: 0.97701
+INFO: Performance on out-domain dataset: NLM_score: 0.94829 NLM_best_score: 0.94829 SZ_score: 0.86607 SZ_best_score: 0.93483
+INFO: End of epoch 4 / 100 	 Time Taken: 122 sec
+INFO: Performance of UNet: unet_train_loss: 0.05880 unet_test_score: 0.97288 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05600 unet_test_score: 0.97362 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.04442 unet_test_score: 0.97053 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.07768 unet_test_score: 0.97368 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05575 unet_test_score: 0.97451 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05864 unet_test_score: 0.97460 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05125 unet_test_score: 0.97088 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.04648 unet_test_score: 0.97214 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05449 unet_test_score: 0.97323 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.06099 unet_test_score: 0.97165 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.05429 unet_test_score: 0.97199 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.03350 unet_test_score: 0.97410 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.03134 unet_test_score: 0.97427 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.03919 unet_test_score: 0.97429 unet_best_score: 0.97701
+INFO: Performance of UNet: unet_train_loss: 0.09402 unet_test_score: 0.97300 unet_best_score: 0.97701
+Traceback (most recent call last):
+  File "train_unet.py", line 242, in <module>
+    test_score = evaluate(net, test_loader, device, opt.amp)
+  File "/home/li/workspace/SS-four-stages/unet/evaluate.py", line 27, in evaluate
+    mask_pred = net(image)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/unet/unet_model.py", line 25, in forward
+    def forward(self, x):
+KeyboardInterrupt

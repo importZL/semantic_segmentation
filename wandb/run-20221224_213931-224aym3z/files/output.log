@@ -1,0 +1,282 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+learning rate 0.0000200 -> 0.0000200
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+Performance of UNet: unet_train_loss: 0.36305 unet_test_score: 0.63993
+Performance of UNet: unet_train_loss: 0.29755 unet_test_score: 0.67921
+(epoch: 1, iters: 50) pix2pix_G_GAN: 1.420 pix2pix_G_L1: 7.628 pix2pix_D_real: 0.150 pix2pix_D_fake: 0.335 dcgan_d_loss: 0.060 dcgan_g_loss: 3.595
+Performance of UNet: unet_train_loss: 0.22899 unet_test_score: 0.87178
+Performance of UNet: unet_train_loss: 0.32171 unet_test_score: 0.90681
+Performance of UNet: unet_train_loss: 0.38839 unet_test_score: 0.92402
+(epoch: 1, iters: 100) pix2pix_G_GAN: 1.261 pix2pix_G_L1: 7.649 pix2pix_D_real: 0.204 pix2pix_D_fake: 0.416 dcgan_d_loss: 0.012 dcgan_g_loss: 6.889
+Performance of UNet: unet_train_loss: 0.24181 unet_test_score: 0.91570
+Performance of UNet: unet_train_loss: 0.17232 unet_test_score: 0.93827
+Performance of UNet: unet_train_loss: 0.17273 unet_test_score: 0.95040
+(epoch: 1, iters: 150) pix2pix_G_GAN: 1.077 pix2pix_G_L1: 7.355 pix2pix_D_real: 0.931 pix2pix_D_fake: 0.468 dcgan_d_loss: 0.001 dcgan_g_loss: 5.711
+Performance of UNet: unet_train_loss: 0.17092 unet_test_score: 0.93832
+INFO: saving the model at the end of epoch 1, iters 172
+Performance of UNet: unet_train_loss: 0.17896 unet_test_score: 0.94839
+INFO: End of epoch 1 / 15 	 Time Taken: 74 sec
+learning rate 0.0000200 -> 0.0000200
+Performance of UNet: unet_train_loss: 0.16082 unet_test_score: 0.95130
+(epoch: 2, iters: 28) pix2pix_G_GAN: 1.767 pix2pix_G_L1: 8.281 pix2pix_D_real: 0.302 pix2pix_D_fake: 0.190 dcgan_d_loss: 0.002 dcgan_g_loss: 6.614
+Performance of UNet: unet_train_loss: 0.11987 unet_test_score: 0.94958
+Performance of UNet: unet_train_loss: 0.13679 unet_test_score: 0.93844
+Performance of UNet: unet_train_loss: 0.20082 unet_test_score: 0.95370
+(epoch: 2, iters: 78) pix2pix_G_GAN: 1.676 pix2pix_G_L1: 9.762 pix2pix_D_real: 0.195 pix2pix_D_fake: 0.234 dcgan_d_loss: 0.016 dcgan_g_loss: 7.048
+Performance of UNet: unet_train_loss: 0.11026 unet_test_score: 0.94838
+Performance of UNet: unet_train_loss: 0.08770 unet_test_score: 0.96064
+Performance of UNet: unet_train_loss: 0.11317 unet_test_score: 0.95647
+(epoch: 2, iters: 128) pix2pix_G_GAN: 1.017 pix2pix_G_L1: 15.484 pix2pix_D_real: 0.014 pix2pix_D_fake: 0.644 dcgan_d_loss: 0.000 dcgan_g_loss: 5.381
+Performance of UNet: unet_train_loss: 0.12106 unet_test_score: 0.95804
+Performance of UNet: unet_train_loss: 0.09301 unet_test_score: 0.96104
+Performance of UNet: unet_train_loss: 0.13100 unet_test_score: 0.96302
+INFO: saving the model at the end of epoch 2, iters 344
+learning rate 0.0000200 -> 0.0000200
+INFO: End of epoch 2 / 15 	 Time Taken: 65 sec
+(epoch: 3, iters: 6) pix2pix_G_GAN: 1.098 pix2pix_G_L1: 6.167 pix2pix_D_real: 0.803 pix2pix_D_fake: 0.439 dcgan_d_loss: 0.002 dcgan_g_loss: 8.584
+Performance of UNet: unet_train_loss: 0.13572 unet_test_score: 0.96271
+Performance of UNet: unet_train_loss: 0.07741 unet_test_score: 0.96203
+Performance of UNet: unet_train_loss: 0.09664 unet_test_score: 0.96504
+(epoch: 3, iters: 56) pix2pix_G_GAN: 1.369 pix2pix_G_L1: 7.345 pix2pix_D_real: 0.514 pix2pix_D_fake: 0.296 dcgan_d_loss: 0.000 dcgan_g_loss: 9.885
+Performance of UNet: unet_train_loss: 0.08132 unet_test_score: 0.96070
+Performance of UNet: unet_train_loss: 0.08252 unet_test_score: 0.95977
+Performance of UNet: unet_train_loss: 0.09428 unet_test_score: 0.96363
+(epoch: 3, iters: 106) pix2pix_G_GAN: 2.294 pix2pix_G_L1: 7.282 pix2pix_D_real: 0.249 pix2pix_D_fake: 0.126 dcgan_d_loss: 0.000 dcgan_g_loss: 7.621
+Performance of UNet: unet_train_loss: 0.07791 unet_test_score: 0.96793
+Performance of UNet: unet_train_loss: 0.05591 unet_test_score: 0.96908
+Performance of UNet: unet_train_loss: 0.07617 unet_test_score: 0.96963
+(epoch: 3, iters: 156) pix2pix_G_GAN: 1.407 pix2pix_G_L1: 6.477 pix2pix_D_real: 0.221 pix2pix_D_fake: 0.419 dcgan_d_loss: 0.000 dcgan_g_loss: 8.817
+Performance of UNet: unet_train_loss: 0.10623 unet_test_score: 0.96969
+INFO: saving the model at the end of epoch 3, iters 516
+learning rate 0.0000200 -> 0.0000200
+INFO: End of epoch 3 / 15 	 Time Taken: 67 sec
+Performance of UNet: unet_train_loss: 0.06688 unet_test_score: 0.96823
+Performance of UNet: unet_train_loss: 0.08221 unet_test_score: 0.97005
+(epoch: 4, iters: 34) pix2pix_G_GAN: 1.613 pix2pix_G_L1: 8.256 pix2pix_D_real: 0.096 pix2pix_D_fake: 0.276 dcgan_d_loss: 0.001 dcgan_g_loss: 11.302
+Performance of UNet: unet_train_loss: 0.08010 unet_test_score: 0.97041
+Performance of UNet: unet_train_loss: 0.08286 unet_test_score: 0.96996
+Performance of UNet: unet_train_loss: 0.09101 unet_test_score: 0.97052
+(epoch: 4, iters: 84) pix2pix_G_GAN: 1.297 pix2pix_G_L1: 8.151 pix2pix_D_real: 1.026 pix2pix_D_fake: 0.358 dcgan_d_loss: 0.000 dcgan_g_loss: 9.695
+Performance of UNet: unet_train_loss: 0.06032 unet_test_score: 0.96811
+Performance of UNet: unet_train_loss: 0.08711 unet_test_score: 0.97110
+Performance of UNet: unet_train_loss: 0.05829 unet_test_score: 0.96994
+(epoch: 4, iters: 134) pix2pix_G_GAN: 1.008 pix2pix_G_L1: 6.597 pix2pix_D_real: 0.284 pix2pix_D_fake: 0.567 dcgan_d_loss: 0.000 dcgan_g_loss: 8.617
+Performance of UNet: unet_train_loss: 0.06771 unet_test_score: 0.97077
+Performance of UNet: unet_train_loss: 0.06804 unet_test_score: 0.96979
+INFO: saving the model at the end of epoch 4, iters 688
+learning rate 0.0000200 -> 0.0000182
+INFO: End of epoch 4 / 15 	 Time Taken: 66 sec
+Performance of UNet: unet_train_loss: 0.05715 unet_test_score: 0.97085
+(epoch: 5, iters: 12) pix2pix_G_GAN: 1.937 pix2pix_G_L1: 10.823 pix2pix_D_real: 0.015 pix2pix_D_fake: 0.204 dcgan_d_loss: 0.000 dcgan_g_loss: 10.659
+Performance of UNet: unet_train_loss: 0.06942 unet_test_score: 0.97052
+Performance of UNet: unet_train_loss: 0.07933 unet_test_score: 0.97086
+Performance of UNet: unet_train_loss: 0.06606 unet_test_score: 0.97001
+(epoch: 5, iters: 62) pix2pix_G_GAN: 1.399 pix2pix_G_L1: 7.719 pix2pix_D_real: 0.157 pix2pix_D_fake: 0.473 dcgan_d_loss: 0.000 dcgan_g_loss: 10.696
+Performance of UNet: unet_train_loss: 0.07329 unet_test_score: 0.97083
+Performance of UNet: unet_train_loss: 0.05969 unet_test_score: 0.97042
+Performance of UNet: unet_train_loss: 0.09455 unet_test_score: 0.97023
+(epoch: 5, iters: 112) pix2pix_G_GAN: 1.858 pix2pix_G_L1: 8.829 pix2pix_D_real: 0.082 pix2pix_D_fake: 0.216 dcgan_d_loss: 0.002 dcgan_g_loss: 10.184
+Performance of UNet: unet_train_loss: 0.06554 unet_test_score: 0.97021
+Performance of UNet: unet_train_loss: 0.06068 unet_test_score: 0.97108
+Performance of UNet: unet_train_loss: 0.07180 unet_test_score: 0.97108
+(epoch: 5, iters: 162) pix2pix_G_GAN: 1.659 pix2pix_G_L1: 8.595 pix2pix_D_real: 0.298 pix2pix_D_fake: 0.209 dcgan_d_loss: 0.000 dcgan_g_loss: 9.910
+INFO: saving the model at the end of epoch 5, iters 860
+learning rate 0.0000182 -> 0.0000164
+INFO: End of epoch 5 / 15 	 Time Taken: 66 sec
+Performance of UNet: unet_train_loss: 0.18656 unet_test_score: 0.96123
+Performance of UNet: unet_train_loss: 0.21730 unet_test_score: 0.96165
+(epoch: 6, iters: 40) pix2pix_G_GAN: 1.610 pix2pix_G_L1: 6.297 pix2pix_D_real: 0.317 pix2pix_D_fake: 0.268 dcgan_d_loss: 0.000 dcgan_g_loss: 11.244
+Performance of UNet: unet_train_loss: 0.22608 unet_test_score: 0.95480
+Performance of UNet: unet_train_loss: 0.19096 unet_test_score: 0.93638
+Performance of UNet: unet_train_loss: 0.18489 unet_test_score: 0.95603
+(epoch: 6, iters: 90) pix2pix_G_GAN: 1.806 pix2pix_G_L1: 14.739 pix2pix_D_real: 0.060 pix2pix_D_fake: 0.246 dcgan_d_loss: 0.000 dcgan_g_loss: 10.571
+Performance of UNet: unet_train_loss: 0.15686 unet_test_score: 0.93608
+Performance of UNet: unet_train_loss: 0.16312 unet_test_score: 0.94827
+Performance of UNet: unet_train_loss: 0.16822 unet_test_score: 0.95474
+(epoch: 6, iters: 140) pix2pix_G_GAN: 1.496 pix2pix_G_L1: 7.168 pix2pix_D_real: 0.358 pix2pix_D_fake: 0.357 dcgan_d_loss: 0.000 dcgan_g_loss: 10.638
+Performance of UNet: unet_train_loss: 0.18905 unet_test_score: 0.95147
+Performance of UNet: unet_train_loss: 0.17243 unet_test_score: 0.95107
+INFO: saving the model at the end of epoch 6, iters 1032
+learning rate 0.0000164 -> 0.0000145
+INFO: End of epoch 6 / 15 	 Time Taken: 97 sec
+Performance of UNet: unet_train_loss: 0.15610 unet_test_score: 0.95517
+(epoch: 7, iters: 18) pix2pix_G_GAN: 1.956 pix2pix_G_L1: 6.750 pix2pix_D_real: 0.806 pix2pix_D_fake: 0.136 dcgan_d_loss: 0.000 dcgan_g_loss: 8.696
+Performance of UNet: unet_train_loss: 0.17695 unet_test_score: 0.95159
+Performance of UNet: unet_train_loss: 0.19722 unet_test_score: 0.93887
+Performance of UNet: unet_train_loss: 0.20379 unet_test_score: 0.95022
+(epoch: 7, iters: 68) pix2pix_G_GAN: 1.530 pix2pix_G_L1: 8.211 pix2pix_D_real: 0.053 pix2pix_D_fake: 0.407 dcgan_d_loss: 0.001 dcgan_g_loss: 12.191
+Performance of UNet: unet_train_loss: 0.19840 unet_test_score: 0.94311
+Performance of UNet: unet_train_loss: 0.15962 unet_test_score: 0.95986
+Performance of UNet: unet_train_loss: 0.20396 unet_test_score: 0.94332
+(epoch: 7, iters: 118) pix2pix_G_GAN: 1.673 pix2pix_G_L1: 6.241 pix2pix_D_real: 0.804 pix2pix_D_fake: 0.155 dcgan_d_loss: 0.000 dcgan_g_loss: 11.574
+Performance of UNet: unet_train_loss: 0.17337 unet_test_score: 0.95134
+Performance of UNet: unet_train_loss: 0.16060 unet_test_score: 0.95077
+Performance of UNet: unet_train_loss: 0.19805 unet_test_score: 0.94744
+(epoch: 7, iters: 168) pix2pix_G_GAN: 1.380 pix2pix_G_L1: 7.472 pix2pix_D_real: 0.361 pix2pix_D_fake: 0.344 dcgan_d_loss: 0.000 dcgan_g_loss: 9.901
+INFO: saving the model at the end of epoch 7, iters 1204
+INFO: End of epoch 7 / 15 	 Time Taken: 111 sec
+learning rate 0.0000145 -> 0.0000127
+Performance of UNet: unet_train_loss: 0.15962 unet_test_score: 0.95460
+Performance of UNet: unet_train_loss: 0.16989 unet_test_score: 0.95775
+Performance of UNet: unet_train_loss: 0.16112 unet_test_score: 0.94687
+(epoch: 8, iters: 46) pix2pix_G_GAN: 1.318 pix2pix_G_L1: 23.323 pix2pix_D_real: 0.042 pix2pix_D_fake: 0.426 dcgan_d_loss: 0.000 dcgan_g_loss: 9.634
+Performance of UNet: unet_train_loss: 0.18442 unet_test_score: 0.94956
+Performance of UNet: unet_train_loss: 0.16473 unet_test_score: 0.95503
+Performance of UNet: unet_train_loss: 0.18465 unet_test_score: 0.95431
+(epoch: 8, iters: 96) pix2pix_G_GAN: 1.524 pix2pix_G_L1: 17.957 pix2pix_D_real: 0.559 pix2pix_D_fake: 0.302 dcgan_d_loss: 0.000 dcgan_g_loss: 10.102
+Performance of UNet: unet_train_loss: 0.23739 unet_test_score: 0.95440
+Performance of UNet: unet_train_loss: 0.19893 unet_test_score: 0.94534
+Performance of UNet: unet_train_loss: 0.16444 unet_test_score: 0.94167
+(epoch: 8, iters: 146) pix2pix_G_GAN: 1.673 pix2pix_G_L1: 6.739 pix2pix_D_real: 0.951 pix2pix_D_fake: 0.190 dcgan_d_loss: 0.000 dcgan_g_loss: 10.067
+Performance of UNet: unet_train_loss: 0.16459 unet_test_score: 0.94551
+INFO: saving the model at the end of epoch 8, iters 1376
+INFO: End of epoch 8 / 15 	 Time Taken: 112 sec
+learning rate 0.0000127 -> 0.0000109
+Performance of UNet: unet_train_loss: 0.18134 unet_test_score: 0.94664
+Performance of UNet: unet_train_loss: 0.16917 unet_test_score: 0.94262
+(epoch: 9, iters: 24) pix2pix_G_GAN: 1.253 pix2pix_G_L1: 13.421 pix2pix_D_real: 0.033 pix2pix_D_fake: 0.460 dcgan_d_loss: 0.000 dcgan_g_loss: 11.131
+Performance of UNet: unet_train_loss: 0.19218 unet_test_score: 0.95508
+Performance of UNet: unet_train_loss: 0.17072 unet_test_score: 0.94604
+Performance of UNet: unet_train_loss: 0.14321 unet_test_score: 0.95332
+(epoch: 9, iters: 74) pix2pix_G_GAN: 2.064 pix2pix_G_L1: 8.128 pix2pix_D_real: 0.089 pix2pix_D_fake: 0.170 dcgan_d_loss: 0.000 dcgan_g_loss: 11.597
+Performance of UNet: unet_train_loss: 0.19223 unet_test_score: 0.93767
+Performance of UNet: unet_train_loss: 0.19915 unet_test_score: 0.93916
+Performance of UNet: unet_train_loss: 0.21799 unet_test_score: 0.95068
+(epoch: 9, iters: 124) pix2pix_G_GAN: 1.927 pix2pix_G_L1: 14.030 pix2pix_D_real: 0.059 pix2pix_D_fake: 0.220 dcgan_d_loss: 0.000 dcgan_g_loss: 10.639
+Performance of UNet: unet_train_loss: 0.15068 unet_test_score: 0.94587
+Performance of UNet: unet_train_loss: 0.19520 unet_test_score: 0.95422
+INFO: saving the model at the end of epoch 9, iters 1548
+Performance of UNet: unet_train_loss: 0.19585 unet_test_score: 0.95421
+learning rate 0.0000109 -> 0.0000091
+INFO: End of epoch 9 / 15 	 Time Taken: 112 sec
+(epoch: 10, iters: 2) pix2pix_G_GAN: 1.199 pix2pix_G_L1: 8.175 pix2pix_D_real: 0.240 pix2pix_D_fake: 0.429 dcgan_d_loss: 0.000 dcgan_g_loss: 11.367
+Performance of UNet: unet_train_loss: 0.16729 unet_test_score: 0.93699
+Performance of UNet: unet_train_loss: 0.15756 unet_test_score: 0.95158
+Performance of UNet: unet_train_loss: 0.16949 unet_test_score: 0.94243
+(epoch: 10, iters: 52) pix2pix_G_GAN: 1.450 pix2pix_G_L1: 17.610 pix2pix_D_real: 0.019 pix2pix_D_fake: 0.394 dcgan_d_loss: 0.000 dcgan_g_loss: 10.533
+Performance of UNet: unet_train_loss: 0.19132 unet_test_score: 0.94892
+Performance of UNet: unet_train_loss: 0.16839 unet_test_score: 0.93894
+Performance of UNet: unet_train_loss: 0.17233 unet_test_score: 0.95153
+(epoch: 10, iters: 102) pix2pix_G_GAN: 0.878 pix2pix_G_L1: 8.229 pix2pix_D_real: 0.398 pix2pix_D_fake: 0.714 dcgan_d_loss: 0.000 dcgan_g_loss: 13.774
+Performance of UNet: unet_train_loss: 0.16814 unet_test_score: 0.95635
+Performance of UNet: unet_train_loss: 0.17901 unet_test_score: 0.95455
+Performance of UNet: unet_train_loss: 0.17771 unet_test_score: 0.94989
+(epoch: 10, iters: 152) pix2pix_G_GAN: 1.173 pix2pix_G_L1: 13.548 pix2pix_D_real: 0.165 pix2pix_D_fake: 0.462 dcgan_d_loss: 0.000 dcgan_g_loss: 11.012
+Performance of UNet: unet_train_loss: 0.17150 unet_test_score: 0.94712
+INFO: saving the model at the end of epoch 10, iters 1720
+INFO: End of epoch 10 / 15 	 Time Taken: 107 sec
+learning rate 0.0000091 -> 0.0000073
+Performance of UNet: unet_train_loss: 0.17036 unet_test_score: 0.94924
+(epoch: 11, iters: 30) pix2pix_G_GAN: 0.626 pix2pix_G_L1: 6.234 pix2pix_D_real: 0.706 pix2pix_D_fake: 0.958 dcgan_d_loss: 0.000 dcgan_g_loss: 11.736
+Performance of UNet: unet_train_loss: 0.20712 unet_test_score: 0.93835
+Performance of UNet: unet_train_loss: 0.16733 unet_test_score: 0.94104
+Performance of UNet: unet_train_loss: 0.16864 unet_test_score: 0.95477
+(epoch: 11, iters: 80) pix2pix_G_GAN: 1.574 pix2pix_G_L1: 7.581 pix2pix_D_real: 0.380 pix2pix_D_fake: 0.265 dcgan_d_loss: 0.000 dcgan_g_loss: 11.376
+Performance of UNet: unet_train_loss: 0.15344 unet_test_score: 0.94571
+Performance of UNet: unet_train_loss: 0.19678 unet_test_score: 0.95120
+Performance of UNet: unet_train_loss: 0.19000 unet_test_score: 0.95235
+(epoch: 11, iters: 130) pix2pix_G_GAN: 1.631 pix2pix_G_L1: 8.031 pix2pix_D_real: 0.610 pix2pix_D_fake: 0.321 dcgan_d_loss: 0.000 dcgan_g_loss: 11.642
+Performance of UNet: unet_train_loss: 0.16066 unet_test_score: 0.95061
+Performance of UNet: unet_train_loss: 0.15559 unet_test_score: 0.94503
+Performance of UNet: unet_train_loss: 0.23357 unet_test_score: 0.94530
+INFO: saving the model at the end of epoch 11, iters 1892
+learning rate 0.0000073 -> 0.0000055
+INFO: End of epoch 11 / 15 	 Time Taken: 72 sec
+(epoch: 12, iters: 8) pix2pix_G_GAN: 0.776 pix2pix_G_L1: 18.221 pix2pix_D_real: 0.931 pix2pix_D_fake: 0.901 dcgan_d_loss: 0.000 dcgan_g_loss: 11.508
+Performance of UNet: unet_train_loss: 0.18849 unet_test_score: 0.94373
+Performance of UNet: unet_train_loss: 0.14711 unet_test_score: 0.94519
+Performance of UNet: unet_train_loss: 0.16561 unet_test_score: 0.95377
+(epoch: 12, iters: 58) pix2pix_G_GAN: 1.952 pix2pix_G_L1: 13.995 pix2pix_D_real: 1.135 pix2pix_D_fake: 0.200 dcgan_d_loss: 0.000 dcgan_g_loss: 10.208
+Performance of UNet: unet_train_loss: 0.19106 unet_test_score: 0.95255
+Performance of UNet: unet_train_loss: 0.17068 unet_test_score: 0.94726
+Performance of UNet: unet_train_loss: 0.15705 unet_test_score: 0.95275
+(epoch: 12, iters: 108) pix2pix_G_GAN: 1.471 pix2pix_G_L1: 8.067 pix2pix_D_real: 0.456 pix2pix_D_fake: 0.332 dcgan_d_loss: 0.000 dcgan_g_loss: 8.885
+Performance of UNet: unet_train_loss: 0.17037 unet_test_score: 0.94691
+Performance of UNet: unet_train_loss: 0.15329 unet_test_score: 0.94699
+Performance of UNet: unet_train_loss: 0.16016 unet_test_score: 0.94387
+(epoch: 12, iters: 158) pix2pix_G_GAN: 1.386 pix2pix_G_L1: 6.998 pix2pix_D_real: 0.251 pix2pix_D_fake: 0.375 dcgan_d_loss: 0.000 dcgan_g_loss: 13.753
+Performance of UNet: unet_train_loss: 0.18618 unet_test_score: 0.94696
+INFO: saving the model at the end of epoch 12, iters 2064
+INFO: End of epoch 12 / 15 	 Time Taken: 71 sec
+learning rate 0.0000055 -> 0.0000036
+Performance of UNet: unet_train_loss: 0.15831 unet_test_score: 0.93823
+Performance of UNet: unet_train_loss: 0.14687 unet_test_score: 0.95238
+(epoch: 13, iters: 36) pix2pix_G_GAN: 1.068 pix2pix_G_L1: 6.459 pix2pix_D_real: 0.125 pix2pix_D_fake: 0.525 dcgan_d_loss: 0.000 dcgan_g_loss: 11.938
+Performance of UNet: unet_train_loss: 0.17482 unet_test_score: 0.95443
+Performance of UNet: unet_train_loss: 0.16509 unet_test_score: 0.94784
+Performance of UNet: unet_train_loss: 0.16759 unet_test_score: 0.95629
+(epoch: 13, iters: 86) pix2pix_G_GAN: 1.577 pix2pix_G_L1: 6.367 pix2pix_D_real: 0.317 pix2pix_D_fake: 0.271 dcgan_d_loss: 0.000 dcgan_g_loss: 13.608
+Performance of UNet: unet_train_loss: 0.17187 unet_test_score: 0.95126
+Performance of UNet: unet_train_loss: 0.16164 unet_test_score: 0.95541
+Performance of UNet: unet_train_loss: 0.14122 unet_test_score: 0.94996
+(epoch: 13, iters: 136) pix2pix_G_GAN: 0.272 pix2pix_G_L1: 9.881 pix2pix_D_real: 0.629 pix2pix_D_fake: 1.747 dcgan_d_loss: 0.000 dcgan_g_loss: 11.993
+Performance of UNet: unet_train_loss: 0.15004 unet_test_score: 0.95356
+Performance of UNet: unet_train_loss: 0.17280 unet_test_score: 0.95166
+INFO: saving the model at the end of epoch 13, iters 2236
+learning rate 0.0000036 -> 0.0000018
+INFO: End of epoch 13 / 15 	 Time Taken: 71 sec
+Performance of UNet: unet_train_loss: 0.14760 unet_test_score: 0.94889
+(epoch: 14, iters: 14) pix2pix_G_GAN: 1.282 pix2pix_G_L1: 7.897 pix2pix_D_real: 0.379 pix2pix_D_fake: 0.370 dcgan_d_loss: 0.000 dcgan_g_loss: 10.911
+Performance of UNet: unet_train_loss: 0.14292 unet_test_score: 0.94916
+Performance of UNet: unet_train_loss: 0.17680 unet_test_score: 0.95049
+Performance of UNet: unet_train_loss: 0.15812 unet_test_score: 0.94324
+(epoch: 14, iters: 64) pix2pix_G_GAN: 0.957 pix2pix_G_L1: 20.269 pix2pix_D_real: 0.646 pix2pix_D_fake: 0.561 dcgan_d_loss: 0.000 dcgan_g_loss: 10.471
+Performance of UNet: unet_train_loss: 0.15762 unet_test_score: 0.94675
+Performance of UNet: unet_train_loss: 0.15240 unet_test_score: 0.95485
+Performance of UNet: unet_train_loss: 0.16220 unet_test_score: 0.95180
+(epoch: 14, iters: 114) pix2pix_G_GAN: 1.302 pix2pix_G_L1: 6.485 pix2pix_D_real: 0.112 pix2pix_D_fake: 0.381 dcgan_d_loss: 0.000 dcgan_g_loss: 13.848
+Performance of UNet: unet_train_loss: 0.14646 unet_test_score: 0.94577
+Performance of UNet: unet_train_loss: 0.18465 unet_test_score: 0.95212
+Performance of UNet: unet_train_loss: 0.16206 unet_test_score: 0.95033
+(epoch: 14, iters: 164) pix2pix_G_GAN: 1.110 pix2pix_G_L1: 11.605 pix2pix_D_real: 0.312 pix2pix_D_fake: 0.484 dcgan_d_loss: 0.000 dcgan_g_loss: 10.977
+INFO: saving the model at the end of epoch 14, iters 2408
+INFO: End of epoch 14 / 15 	 Time Taken: 71 sec
+learning rate 0.0000018 -> 0.0000000
+Performance of UNet: unet_train_loss: 0.18171 unet_test_score: 0.95484
+Performance of UNet: unet_train_loss: 0.16660 unet_test_score: 0.93685
+Performance of UNet: unet_train_loss: 0.14676 unet_test_score: 0.94142
+(epoch: 15, iters: 42) pix2pix_G_GAN: 1.737 pix2pix_G_L1: 6.293 pix2pix_D_real: 0.791 pix2pix_D_fake: 0.229 dcgan_d_loss: 0.000 dcgan_g_loss: 12.421
+Performance of UNet: unet_train_loss: 0.17247 unet_test_score: 0.94054
+Performance of UNet: unet_train_loss: 0.16606 unet_test_score: 0.94660
+Performance of UNet: unet_train_loss: 0.16716 unet_test_score: 0.95530
+(epoch: 15, iters: 92) pix2pix_G_GAN: 0.829 pix2pix_G_L1: 16.455 pix2pix_D_real: 0.648 pix2pix_D_fake: 0.746 dcgan_d_loss: 0.000 dcgan_g_loss: 13.125
+Performance of UNet: unet_train_loss: 0.15213 unet_test_score: 0.95309
+Performance of UNet: unet_train_loss: 0.17269 unet_test_score: 0.94703
+Performance of UNet: unet_train_loss: 0.16213 unet_test_score: 0.94476
+(epoch: 15, iters: 142) pix2pix_G_GAN: 1.216 pix2pix_G_L1: 8.727 pix2pix_D_real: 0.484 pix2pix_D_fake: 0.407 dcgan_d_loss: 0.000 dcgan_g_loss: 11.916
+Performance of UNet: unet_train_loss: 0.16122 unet_test_score: 0.95747
+INFO: saving the model at the end of epoch 15, iters 2580
+INFO: End of epoch 15 / 15 	 Time Taken: 71 sec
+INFO: architecture of upconv:
+INFO: tensor([[ 1.1478e-04, -5.9503e-04, -7.1300e-04],
+        [ 4.3765e-04,  2.0684e-04,  9.8856e-04],
+        [ 1.3190e-04,  1.9033e-04,  8.9575e-05],
+        [ 3.4896e-04, -3.6812e-05,  4.9153e-04],
+        [-5.4686e-04, -1.9315e-03, -2.2724e-05],
+        [ 5.1226e-04, -2.0912e-04, -1.3754e-04],
+        [ 5.0999e-04,  8.0372e-04, -1.2276e-03],
+        [-6.8782e-04,  1.4073e-04, -2.6070e-04]], device='cuda:0',
+       grad_fn=<CopyBackwards>)
+INFO: architecture of conv:
+INFO: tensor([[-2.1271e-04, -8.8762e-04,  5.2874e-04],
+        [-1.2463e-04,  7.7086e-04, -7.0852e-04],
+        [ 3.1067e-04,  6.5589e-04,  1.5853e-03],
+        [-5.3269e-04, -9.0969e-04, -1.2105e-03],
+        [-4.8967e-04, -3.4592e-04,  4.1728e-04],
+        [ 1.4862e-03,  7.8073e-04,  3.5420e-06],
+        [-8.4870e-04,  5.2030e-05,  1.1728e-03],
+        [ 3.0052e-04,  8.7829e-04, -5.6930e-04]], device='cuda:0',
+       grad_fn=<CopyBackwards>)

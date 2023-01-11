@@ -1,0 +1,28 @@
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Configure stats pid to 79600
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Loading settings from /home/li/.config/wandb/settings
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Loading settings from /home/li/workspace/SS-four-stages/wandb/settings
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'train_unet.py', 'program': 'train_unet.py'}
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_setup.py:_flush():68] Applying login settings: {'anonymous': 'must'}
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_init.py:_log_setup():476] Logging user logs to /home/li/workspace/SS-four-stages/wandb/run-20230110_001312-jwnp9iz6/logs/debug.log
+2023-01-10 00:13:12,633 INFO    MainThread:79600 [wandb_init.py:_log_setup():477] Logging internal logs to /home/li/workspace/SS-four-stages/wandb/run-20230110_001312-jwnp9iz6/logs/debug-internal.log
+2023-01-10 00:13:12,634 INFO    MainThread:79600 [wandb_init.py:init():516] calling init triggers
+2023-01-10 00:13:12,634 INFO    MainThread:79600 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2023-01-10 00:13:12,634 INFO    MainThread:79600 [wandb_init.py:init():569] starting backend
+2023-01-10 00:13:12,634 INFO    MainThread:79600 [wandb_init.py:init():573] setting up manager
+2023-01-10 00:13:12,639 INFO    MainThread:79600 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-01-10 00:13:12,642 INFO    MainThread:79600 [wandb_init.py:init():580] backend started and connected
+2023-01-10 00:13:12,645 INFO    MainThread:79600 [wandb_init.py:init():658] updated telemetry
+2023-01-10 00:13:12,667 INFO    MainThread:79600 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2023-01-10 00:13:12,958 INFO    MainThread:79600 [wandb_run.py:_on_init():2000] communicating current version
+2023-01-10 00:13:13,037 INFO    MainThread:79600 [wandb_run.py:_on_init():2004] got version response upgrade_message: "wandb version 0.13.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-01-10 00:13:13,037 INFO    MainThread:79600 [wandb_init.py:init():728] starting run threads in backend
+2023-01-10 00:13:16,267 INFO    MainThread:79600 [wandb_run.py:_console_start():1980] atexit reg
+2023-01-10 00:13:16,267 INFO    MainThread:79600 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2023-01-10 00:13:16,267 INFO    MainThread:79600 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2023-01-10 00:13:16,268 INFO    MainThread:79600 [wandb_run.py:_redirect():1925] Redirects installed.
+2023-01-10 00:13:16,268 INFO    MainThread:79600 [wandb_init.py:init():765] run started, returning control to user process
+2023-01-10 00:13:16,277 INFO    MainThread:79600 [wandb_run.py:_config_callback():1160] config_cb None None {'dataroot': '../data/JSRT', 'name': 'experiment_name', 'gpu_ids': [0], 'checkpoints_dir': './checkpoints', 'model': 'pix2pix', 'input_nc': 1, 'output_nc': 1, 'ngf': 64, 'ndf': 64, 'netD': 'basic', 'netG': 'unet_256', 'n_layers_D': 3, 'norm': 'batch', 'init_type': 'normal', 'init_gain': 0.02, 'no_dropout': False, 'direction': 'AtoB', 'batch_size': 1, 'load_size': 286, 'epoch': 'latest', 'load_iter': 0, 'verbose': False, 'suffix': '', 'display_freq': 20, 'print_freq': 50, 'save_latest_freq': 5000, 'save_epoch_freq': 1, 'save_by_iter': False, 'continue_train': False, 'epoch_count': 1, 'phase': 'train', 'n_epochs': 20, 'n_epochs_decay': 80, 'unet_epochs': 20, 'beta1': 0.5, 'lr': 2e-05, 'gan_mode': 'vanilla', 'pool_size': 0, 'lr_policy': 'linear', 'lr_decay_iters': 50, 'lr_dcgan': 4e-05, 'lr_d_dcgan': 0.0, 'model_1': 'DCGAN', 'download': 'False', 'epochs': 50, 'cuda': True, 'cuda_index': 0, 'channels': 1, 'load_D': 'False', 'load_G': 'False', 'generator_iters': 10000, 'momentum': 0.9, 'weight_decay': 0.0003, 'arch_learning_rate': 0.0003, 'arch_weight_decay': 0.001, 'is_train': 'True', 'unet_learning_rate': 1e-05, 'scale': 1.0, 'test_percent': 29.2, 'val_percent': 5.0, 'amp': True, 'bilinear': False, 'classes': 1, 'loss_lambda': 1.0, 'lambda_L1': 100.0, 'dataset_mode': 'aligned', 'isTrain': True}
+2023-01-10 03:51:50,954 WARNING MsgRouterThr:79600 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,66 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 161
+INFO: The number of validate images = 12
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+learning rate 0.0000200 -> 0.0000200
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+Performance of UNetunet_train_loss: 0.65044 unet_test_score: 0.20781
+Performance of UNetunet_train_loss: 0.58664 unet_test_score: 0.63108
+Performance of UNetunet_train_loss: 0.46616 unet_test_score: 0.69296
+Performance of UNetunet_train_loss: 0.58422 unet_test_score: 0.70892
+Performance of UNetunet_train_loss: 0.39030 unet_test_score: 0.81446
+Performance of UNetunet_train_loss: 0.31878 unet_test_score: 0.85986
+Performance of UNetunet_train_loss: 0.32823 unet_test_score: 0.82191
+Performance of UNetunet_train_loss: 0.29973 unet_test_score: 0.84088
+Performance of UNetunet_train_loss: 0.28768 unet_test_score: 0.83543
+Performance of UNetunet_train_loss: 0.27546 unet_test_score: 0.83057
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.28624 unet_test_score: 0.80482
+Performance of UNetunet_train_loss: 0.29789 unet_test_score: 0.83692
+Performance of UNetunet_train_loss: 0.27169 unet_test_score: 0.83557
+Performance of UNetunet_train_loss: 0.29365 unet_test_score: 0.86412
+Performance of UNetunet_train_loss: 0.30809 unet_test_score: 0.86756
+Performance of UNetunet_train_loss: 0.27621 unet_test_score: 0.83644
+Performance of UNetunet_train_loss: 0.31621 unet_test_score: 0.84805
+Performance of UNetunet_train_loss: 0.26863 unet_test_score: 0.85422
+Performance of UNetunet_train_loss: 0.24905 unet_test_score: 0.84772
+Performance of UNetunet_train_loss: 0.25429 unet_test_score: 0.83956
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.26373 unet_test_score: 0.81766
+Performance of UNetunet_train_loss: 0.28345 unet_test_score: 0.84490
+Performance of UNetunet_train_loss: 0.26050 unet_test_score: 0.87727
+Performance of UNetunet_train_loss: 0.26406 unet_test_score: 0.83339
+Performance of UNetunet_train_loss: 0.29962 unet_test_score: 0.83034
+Performance of UNetunet_train_loss: 0.28099 unet_test_score: 0.83036
+Performance of UNetunet_train_loss: 0.27470 unet_test_score: 0.82850
+Performance of UNetunet_train_loss: 0.26199 unet_test_score: 0.81492
+Performance of UNetunet_train_loss: 0.25919 unet_test_score: 0.83363
+Performance of UNetunet_train_loss: 0.25775 unet_test_score: 0.85491
+learning rate 0.0000200 -> 0.0000200
+Performance of UNetunet_train_loss: 0.24843 unet_test_score: 0.84034
+Performance of UNetunet_train_loss: 0.27906 unet_test_score: 0.82747
+Performance of UNetunet_train_loss: 0.29725 unet_test_score: 0.84838
+Performance of UNetunet_train_loss: 0.30939 unet_test_score: 0.86727
+Performance of UNetunet_train_loss: 0.26853 unet_test_score: 0.85444
+Performance of UNetunet_train_loss: 0.25496 unet_test_score: 0.85507
+Performance of UNetunet_train_loss: 0.27406 unet_test_score: 0.80072
+Performance of UNetunet_train_loss: 0.28036 unet_test_score: 0.82344
+Performance of UNetunet_train_loss: 0.27567 unet_test_score: 0.84441
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 107, in <module>
+    unet_loss = real_loss + fake_loss
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/autograd/__init__.py", line 147, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+KeyboardInterrupt

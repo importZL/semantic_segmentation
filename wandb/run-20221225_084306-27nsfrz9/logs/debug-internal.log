@@ -1,0 +1,161 @@
+2022-12-25 08:43:06,959 INFO    StreamThr :34670 [internal.py:wandb_internal():91] W&B internal server running at pid: 34670, started at: 2022-12-25 08:43:06.958361
+2022-12-25 08:43:06,962 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: status
+2022-12-25 08:43:06,964 DEBUG   SenderThread:34670 [sender.py:send_request():317] send_request: status
+2022-12-25 08:43:06,966 DEBUG   SenderThread:34670 [sender.py:send():303] send: header
+2022-12-25 08:43:06,966 INFO    WriterThread:34670 [datastore.py:open_for_write():75] open: /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/run-27nsfrz9.wandb
+2022-12-25 08:43:06,977 DEBUG   SenderThread:34670 [sender.py:send():303] send: run
+2022-12-25 08:43:06,980 INFO    SenderThread:34670 [sender.py:_maybe_setup_resume():594] checking resume status for None/ss-four-stages/27nsfrz9
+2022-12-25 08:43:07,070 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:07,071 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:08,193 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:08,194 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:10,375 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:10,375 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:10,375 ERROR   SenderThread:34670 [retry.py:__call__():154] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 113, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 210, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://api.wandb.ai/graphql
+2022-12-25 08:43:11,978 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:14,611 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:14,612 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:16,980 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:21,983 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:23,031 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:23,031 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:26,985 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:31,987 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:36,988 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:41,990 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:43,043 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:43:43,044 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:43:46,992 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:51,993 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:43:56,995 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:01,997 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:08,008 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-25 08:44:13,010 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:18,012 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:18,550 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:44:18,550 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"errors":[{"message":"internal database error","path":["model"]}],"data":{"model":null}}
+2022-12-25 08:44:23,015 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:28,017 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:33,019 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:38,021 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:43,023 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:48,025 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:53,027 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:44:58,028 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:03,030 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:08,031 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:13,033 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:18,035 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:23,036 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:28,038 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:33,040 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:34,418 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:45:34,418 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:45:38,042 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:43,044 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:48,046 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:53,048 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:45:58,050 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:03,051 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:08,053 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:13,055 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:18,057 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:23,058 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:28,060 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:33,061 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:38,063 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:43,065 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:48,067 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:53,070 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:46:58,071 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:03,074 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:08,075 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:13,078 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:18,079 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:23,081 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:28,083 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:33,085 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:38,087 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:43,089 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:48,091 DEBUG   HandlerThread:34670 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:47:48,265 WARNING StreamThr :34670 [internal.py:is_dead():386] Internal process exiting, parent pid 34502 disappeared
+2022-12-25 08:47:48,265 ERROR   StreamThr :34670 [internal.py:wandb_internal():147] Internal process shutdown.
+2022-12-25 08:47:49,048 INFO    WriterThread:34670 [datastore.py:close():279] close: /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/run-27nsfrz9.wandb
+2022-12-25 08:47:49,091 INFO    HandlerThread:34670 [handler.py:finish():814] shutting down handler
+2022-12-25 08:48:11,842 ERROR   SenderThread:34670 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 08:48:11,842 ERROR   SenderThread:34670 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 08:52:38,659 ERROR   SenderThread:34670 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 08:52:38,659 ERROR   SenderThread:34670 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 08:58:32,828 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:58:32,828 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:04:08,650 ERROR   SenderThread:34670 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 09:04:08,651 ERROR   SenderThread:34670 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 09:10:32,353 ERROR   SenderThread:34670 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 09:10:32,354 ERROR   SenderThread:34670 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 09:16:01,711 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 09:16:01,712 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:21:45,484 ERROR   SenderThread:34670 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 09:21:45,485 ERROR   SenderThread:34670 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 09:26:53,893 INFO    SenderThread:34670 [dir_watcher.py:__init__():216] watching files in: /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/files
+2022-12-25 09:26:53,893 INFO    SenderThread:34670 [sender.py:_start_run_threads():931] run started: 27nsfrz9 with start time 1671986586.95265
+2022-12-25 09:26:53,894 INFO    SenderThread:34670 [sender.py:finish():1331] shutting down sender
+2022-12-25 09:26:53,894 INFO    SenderThread:34670 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-25 09:26:54,894 INFO    SenderThread:34670 [dir_watcher.py:finish():392] scan: /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/files
+2022-12-25 09:26:54,894 INFO    SenderThread:34670 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/files/config.yaml config.yaml
+2022-12-25 09:26:54,895 INFO    SenderThread:34670 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-25 09:26:54,895 INFO    SenderThread:34670 [file_pusher.py:join():173] waiting for file pusher
+2022-12-25 09:26:55,285 INFO    Thread-15 :34670 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221225_084306-27nsfrz9/files/config.yaml

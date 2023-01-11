@@ -1,0 +1,123 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 149
+INFO: The number of validate images = 24
+INFO: The number of test images = 74
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+(epoch: 1, iters: 50) pix2pix_G_GAN: 2.532 pix2pix_G_L1: 17.149 pix2pix_D_real: 0.180 pix2pix_D_fake: 0.110 dcgan_d_loss: 0.023 dcgan_g_loss: 2.761
+(epoch: 1, iters: 100) pix2pix_G_GAN: 1.158 pix2pix_G_L1: 19.204 pix2pix_D_real: 1.229 pix2pix_D_fake: 0.415 dcgan_d_loss: 0.922 dcgan_g_loss: 3.339
+INFO: saving the model at the end of epoch 1, iters 149
+learning rate 0.0002000 -> 0.0002000
+INFO: End of epoch 1 / 15 	 Time Taken: 49 sec
+(epoch: 2, iters: 1) pix2pix_G_GAN: 0.815 pix2pix_G_L1: 16.710 pix2pix_D_real: 0.625 pix2pix_D_fake: 0.762 dcgan_d_loss: 5.753 dcgan_g_loss: 3.898
+(epoch: 2, iters: 51) pix2pix_G_GAN: 0.746 pix2pix_G_L1: 15.167 pix2pix_D_real: 0.538 pix2pix_D_fake: 0.704 dcgan_d_loss: 0.630 dcgan_g_loss: 2.108
+(epoch: 2, iters: 101) pix2pix_G_GAN: 0.935 pix2pix_G_L1: 12.810 pix2pix_D_real: 0.331 pix2pix_D_fake: 0.751 dcgan_d_loss: 1.733 dcgan_g_loss: 0.502
+INFO: saving the model at the end of epoch 2, iters 298
+INFO: End of epoch 2 / 15 	 Time Taken: 77 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 3, iters: 2) pix2pix_G_GAN: 0.990 pix2pix_G_L1: 11.422 pix2pix_D_real: 0.549 pix2pix_D_fake: 0.459 dcgan_d_loss: 0.986 dcgan_g_loss: 1.282
+(epoch: 3, iters: 52) pix2pix_G_GAN: 0.365 pix2pix_G_L1: 12.906 pix2pix_D_real: 0.670 pix2pix_D_fake: 0.550 dcgan_d_loss: 0.097 dcgan_g_loss: 4.664
+(epoch: 3, iters: 102) pix2pix_G_GAN: 0.975 pix2pix_G_L1: 7.657 pix2pix_D_real: 1.079 pix2pix_D_fake: 0.228 dcgan_d_loss: 0.494 dcgan_g_loss: 2.824
+INFO: saving the model at the end of epoch 3, iters 447
+INFO: End of epoch 3 / 15 	 Time Taken: 77 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 4, iters: 3) pix2pix_G_GAN: 0.570 pix2pix_G_L1: 10.123 pix2pix_D_real: 0.708 pix2pix_D_fake: 0.751 dcgan_d_loss: 0.926 dcgan_g_loss: 1.913
+(epoch: 4, iters: 53) pix2pix_G_GAN: 1.200 pix2pix_G_L1: 10.333 pix2pix_D_real: 0.349 pix2pix_D_fake: 0.438 dcgan_d_loss: 0.854 dcgan_g_loss: 0.252
+(epoch: 4, iters: 103) pix2pix_G_GAN: 1.314 pix2pix_G_L1: 20.811 pix2pix_D_real: 0.848 pix2pix_D_fake: 0.212 dcgan_d_loss: 4.157 dcgan_g_loss: 0.729
+INFO: saving the model at the end of epoch 4, iters 596
+INFO: End of epoch 4 / 15 	 Time Taken: 76 sec
+learning rate 0.0002000 -> 0.0002000
+(epoch: 5, iters: 4) pix2pix_G_GAN: 0.802 pix2pix_G_L1: 8.757 pix2pix_D_real: 0.354 pix2pix_D_fake: 1.059 dcgan_d_loss: 1.234 dcgan_g_loss: 2.709
+(epoch: 5, iters: 54) pix2pix_G_GAN: 1.524 pix2pix_G_L1: 10.769 pix2pix_D_real: 0.200 pix2pix_D_fake: 0.679 dcgan_d_loss: 0.843 dcgan_g_loss: 2.409
+Traceback (most recent call last):
+  File "train_dcgan_pix2pix.py", line 76, in <module>
+    model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/pix2pix_model.py", line 129, in optimize_parameters
+    self.forward()                   # compute fake images: G(A)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/pix2pix_model.py", line 100, in forward
+    self.fake_image = self.netG(self.real_mask)  # G(A)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 165, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 546, in forward
+    return self.model(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 611, in forward
+    return self.model(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 506, in forward
+    states = self._ops(input, weight)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 492, in forward
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 492, in <genexpr>
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/architecture_pix2pix/operations.py", line 39, in forward
+    return self.op(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 842, in forward
+    output_padding, self.groups, self.dilation)
+KeyboardInterrupt

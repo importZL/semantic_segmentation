@@ -1,0 +1,122 @@
+2022-12-25 08:39:17,576 INFO    StreamThr :26961 [internal.py:wandb_internal():91] W&B internal server running at pid: 26961, started at: 2022-12-25 08:39:17.575927
+2022-12-25 08:39:17,579 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: status
+2022-12-25 08:39:17,580 DEBUG   SenderThread:26961 [sender.py:send_request():317] send_request: status
+2022-12-25 08:39:17,582 DEBUG   SenderThread:26961 [sender.py:send():303] send: header
+2022-12-25 08:39:17,582 INFO    WriterThread:26961 [datastore.py:open_for_write():75] open: /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/run-1kgq5fvn.wandb
+2022-12-25 08:39:17,601 DEBUG   SenderThread:26961 [sender.py:send():303] send: run
+2022-12-25 08:39:17,604 INFO    SenderThread:26961 [sender.py:_maybe_setup_resume():594] checking resume status for None/ss-four-stages/1kgq5fvn
+2022-12-25 08:39:17,778 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:39:17,779 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:39:22,603 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:27,605 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:32,606 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:37,608 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:42,609 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:47,931 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-25 08:39:52,767 ERROR   SenderThread:26961 [retry.py:__call__():154] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 451, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/urllib3/connectionpool.py", line 341, in _raise_timeout
+    self, url, "Read timed out. (read timeout=%s)" % timeout_value
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 113, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 210, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 38, in execute
+    request = requests.post(self.url, **post_args)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/requests/adapters.py", line 578, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=10)
+2022-12-25 08:39:52,933 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:39:57,181 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:39:57,182 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:39:57,935 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:02,937 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:06,724 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:40:06,724 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:40:07,939 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:12,940 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:17,942 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:22,944 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:24,962 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:40:24,962 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:40:27,945 DEBUG   HandlerThread:26961 [handler.py:handle_request():139] handle_request: keepalive
+2022-12-25 08:40:30,657 WARNING StreamThr :26961 [internal.py:is_dead():386] Internal process exiting, parent pid 26866 disappeared
+2022-12-25 08:40:30,658 ERROR   StreamThr :26961 [internal.py:wandb_internal():147] Internal process shutdown.
+2022-12-25 08:40:30,938 INFO    WriterThread:26961 [datastore.py:close():279] close: /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/run-1kgq5fvn.wandb
+2022-12-25 08:40:30,949 INFO    HandlerThread:26961 [handler.py:finish():814] shutting down handler
+2022-12-25 08:42:24,846 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:42:24,846 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"errors":[{"message":"internal database error","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2022-12-25 08:44:49,929 ERROR   SenderThread:26961 [internal_api.py:execute():213] 500 response executing GraphQL.
+2022-12-25 08:44:49,930 ERROR   SenderThread:26961 [internal_api.py:execute():214] {"error":"internal database error"}
+2022-12-25 08:49:28,029 ERROR   SenderThread:26961 [internal_api.py:execute():213] 502 response executing GraphQL.
+2022-12-25 08:49:28,029 ERROR   SenderThread:26961 [internal_api.py:execute():214] 
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>502 Server Error</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Server Error</h1>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+<h2></h2>
+</body></html>
+
+2022-12-25 08:55:31,551 INFO    SenderThread:26961 [dir_watcher.py:__init__():216] watching files in: /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/files
+2022-12-25 08:55:31,551 INFO    SenderThread:26961 [sender.py:_start_run_threads():931] run started: 1kgq5fvn with start time 1671986357.573451
+2022-12-25 08:55:31,551 INFO    SenderThread:26961 [sender.py:finish():1331] shutting down sender
+2022-12-25 08:55:31,551 INFO    SenderThread:26961 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-25 08:55:32,552 INFO    SenderThread:26961 [dir_watcher.py:finish():392] scan: /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/files
+2022-12-25 08:55:32,552 INFO    SenderThread:26961 [dir_watcher.py:finish():406] scan save: /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/files/config.yaml config.yaml
+2022-12-25 08:55:32,552 INFO    SenderThread:26961 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-25 08:55:32,553 INFO    SenderThread:26961 [file_pusher.py:join():173] waiting for file pusher
+2022-12-25 08:55:32,929 INFO    Thread-15 :26961 [upload_job.py:push():143] Uploaded file /home/li/workspace/SS-four-stages/wandb/run-20221225_083917-1kgq5fvn/files/config.yaml

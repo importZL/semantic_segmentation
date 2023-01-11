@@ -1,0 +1,66 @@
+INFO: Creating dataset with 247 examples
+INFO: The number of training images = 172
+INFO: The number of validate images = 1
+INFO: The number of test images = 74
+initialize network with normal
+initialize network with normal
+model [Pix2PixModel] was created
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 394.395 M
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+INFO: DCGAN model initalization.
+INFO: Cuda enabled flag: True
+/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+learning rate 0.0000200 -> 0.0000200
+Performance of UNet: unet_train_loss: 0.47181 unet_test_score: 0.55291
+Performance of UNet: unet_train_loss: 0.38579 unet_test_score: 0.54421
+Performance of UNet: unet_train_loss: 0.51367 unet_test_score: 0.59187
+Performance of UNet: unet_train_loss: 0.32544 unet_test_score: 0.63154
+Performance of UNet: unet_train_loss: 0.44088 unet_test_score: 0.74945
+Performance of UNet: unet_train_loss: 0.31540 unet_test_score: 0.68199
+Performance of UNet: unet_train_loss: 0.29090 unet_test_score: 0.79430
+Performance of UNet: unet_train_loss: 0.23392 unet_test_score: 0.72445
+Performance of UNet: unet_train_loss: 0.19010 unet_test_score: 0.87546
+Performance of UNet: unet_train_loss: 0.23122 unet_test_score: 0.72785
+learning rate 0.0000200 -> 0.0000200
+INFO: End of epoch 1 / 15 	 Time Taken: 30 sec
+Traceback (most recent call last):
+  File "train_unet.py", line 75, in <module>
+    fake_images = model.netG(fake_mapping)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 165, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 546, in forward
+    return self.model(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 611, in forward
+    return self.model(x)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 613, in forward
+    return torch.cat([x, self.model(x)], 1)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 506, in forward
+    states = self._ops(input, weight)
+  File "/home/li/anaconda3/envs/semantic/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 492, in forward
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+  File "/home/li/workspace/SS-four-stages/models_pix2pix/networks.py", line 492, in <genexpr>
+    return sum(w * op(x) for w, op in zip(weights, self._ops))
+RuntimeError: CUDA out of memory. Tried to allocate 688.00 MiB (GPU 1; 39.41 GiB total capacity; 36.96 GiB already allocated; 110.50 MiB free; 37.42 GiB reserved in total by PyTorch)
