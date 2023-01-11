@@ -1,1 +1,0 @@
-{"unet_train_loss": 0.28142428398132324, "unet_test_score": 0.9456508755683899, "_timestamp": 1673334092.2566633, "_runtime": 205.28803038597107, "_step": 13, "_wandb": {"runtime": 204}}
