@@ -33,6 +33,11 @@ from model_wgan.wgan_gradient_penalty import WGAN_GP
 
 
 if __name__ == '__main__':
+
+    n_epochs = 10
+    n_fake = 10
+    n_train = 175
+
     opt = TrainOptions().parse()   # get training options
     assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
     device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
@@ -42,7 +47,7 @@ if __name__ == '__main__':
     unet_save_path = save_path+'/unet_175.pkl'  
 
     ##### Initialize logging #####
-    logger = wandb.init(project='semantic_seg_project', name="Train-Unet-only-80", entity="semantic_seg", resume='allow', anonymous='must')
+    logger = wandb.init(project='semantic_seg_project', name="Train-Unet-test-basu", entity="semantic_seg", resume='allow', anonymous='must')
     logger.config.update(vars(opt))
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -51,8 +56,8 @@ if __name__ == '__main__':
     model.setup(opt)               # regular setup: load and print networks; create schedulers
     model.load_model('./checkpoint/20221230-125431-pix2pix/discriminator.pkl', './checkpoint/20221230-125431-pix2pix/generator.pkl')
 
-    model_wgan = WGAN_GP(opt)
-    model_wgan.load_model('./checkpoint/20221230-125431-wgan/discriminator.pkl', './checkpoint/20221230-125431-wgan/generator.pkl')
+    # model_wgan = WGAN_GP(opt)
+    # model_wgan.load_model('./checkpoint/20221230-125431-wgan/discriminator.pkl', './checkpoint/20221230-125431-wgan/generator.pkl')
 
     net = UNet(n_channels=opt.input_nc, n_classes=opt.classes, bilinear=opt.bilinear)
     net = net.to(device=device)
@@ -66,8 +71,8 @@ if __name__ == '__main__':
 
     ##### prepare dataloader #####
     dataset = BasicDataset(opt.dataroot+'/Images', opt.dataroot+'/Masks', 1.0)
-    n_test = int(len(dataset)*(opt.test_percent/100))
-    n_train = 175
+    # n_test = int(len(dataset)*(opt.test_percent/100))
+    n_test = 0
     n_val = len(dataset) - n_train - n_test # int(len(dataset)*(opt.val_percent/100))
     train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
     loader_args = dict(batch_size=opt.batch_size, num_workers=4, pin_memory=True)
@@ -90,37 +95,39 @@ if __name__ == '__main__':
         iaa.Affine(rotate=(-25, 25),),
         iaa.Affine(shear=(-15, 15),)
     ], random_order=True) # apply augmenters in random order
-    # Data generate
-    n_fake = 400
-    generate_path = './generate_data3'
-    shutil.rmtree(generate_path+'/Images')
-    shutil.rmtree(generate_path+'/Masks')
+
+    # Generating Fake images
+    generate_path = './fake_images'
+    if not os.path.exists(generate_path):
+        os.makedirs(generate_path)
+    shutil.rmtree(generate_path+'/Images', ignore_errors=True)
+    shutil.rmtree(generate_path+'/Masks', ignore_errors=True)
     os.mkdir(generate_path+'/Images')
     os.mkdir(generate_path+'/Masks')
     generate_index = 0
-    if n_val > 0:
-        for i, data in enumerate(val_loader):
-            # fake_mapping = data['mask'].type(torch.cuda.FloatTensor).unsqueeze(0).to(device=device)
-            fake_mapping = data['mask'].type(torch.cuda.FloatTensor).to(device=device)
+    # if n_val > 0:
+    #     for i, data in enumerate(val_loader):
+    #         # fake_mapping = data['mask'].type(torch.cuda.FloatTensor).unsqueeze(0).to(device=device)
+    #         fake_mapping = data['mask'].type(torch.cuda.FloatTensor).to(device=device)
 
-            fake_images = model.netG(fake_mapping)
+    #         fake_images = model.netG(fake_mapping)
             
-            fake_train_mask = fake_mapping
-            fake_images = fake_images
+    #         fake_train_mask = fake_mapping
+    #         fake_images = fake_images
 
-            save_mask = fake_train_mask.squeeze()
-            save_image = fake_images.squeeze()
-            save_mask = Image.fromarray(save_mask.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-            save_image = Image.fromarray(save_image.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-            save_mask.convert('L').save(generate_path+'/Masks/%s.gif' % generate_index)
-            save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
-            logging.info('saved: %s' % generate_index)
-            generate_index = generate_index + 1
+    #         save_mask = fake_train_mask.squeeze()
+    #         save_image = fake_images.squeeze()
+    #         save_mask = Image.fromarray(save_mask.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
+    #         save_image = Image.fromarray(save_image.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
+    #         save_mask.convert('L').save(generate_path+'/Masks/%s.gif' % generate_index)
+    #         save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
+    #         # logging.info('saved: %s' % generate_index)
+    #         generate_index = generate_index + 1
     for i in range(n_fake):
-        if n_val > 0:
-            data = next(iter(val_loader))
-        else:
-            data = next(iter(train_loader))
+        # if n_val > 0:
+        #     data = next(iter(val_loader))
+        # else:
+        data = next(iter(train_loader))
         
         # fake_mapping = data['mask'].to('cpu', torch.float).numpy()
         fake_mapping = data['mask'].to('cpu', torch.float).squeeze(0).numpy()
@@ -192,7 +199,7 @@ if __name__ == '__main__':
     NIH_best_score = 0.0           # the best score of NIH dataset
     SZ_best_score = 0.0            # the best score of SZ dataset
 
-    for epoch in range(100):    # outer loop for different epochs; we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>
+    for epoch in range(n_epochs):    # outer loop for different epochs; we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>
         epoch_start_time = time.time()  # timer for entire epoch
         epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch        
         
@@ -228,7 +235,7 @@ if __name__ == '__main__':
             
             # Evaluation round
             if total_iters % opt.display_freq == 0:
-                test_score = evaluate(net, test_loader, device, opt.amp)                
+                test_score = evaluate(net, val_loader, device, opt.amp)                
                 if test_score > unet_best_score:
                     unet_best_score = test_score
                     torch.save(net.state_dict(), unet_save_path)
