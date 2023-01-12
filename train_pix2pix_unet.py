@@ -36,13 +36,13 @@ if __name__ == '__main__':
     opt = TrainOptions().parse()   # get training options
     assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
     device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-    save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-80')
+    save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-00')
     if not os.path.exists(save_path):
         os.mkdir(save_path) 
     unet_save_path = save_path+'/unet_175.pkl'  
 
     ##### Initialize logging #####
-    logger = wandb.init(project='semantic_seg_project', name="Train-Pix2Pix-Unet-80", entity="semantic_seg", resume='allow', anonymous='must')
+    logger = wandb.init(project='semantic_seg_project', name="Train-Pix2Pix-Unet-00", entity="semantic_seg", resume='allow', anonymous='must')
     logger.config.update(vars(opt))
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -126,12 +126,13 @@ if __name__ == '__main__':
     ], random_order=True) # apply augmenters in random order
     # Data generate
     n_fake = 400
-    generate_path = './generate_data3'
+    generate_path = './generate_data'
     shutil.rmtree(generate_path+'/Images')
     shutil.rmtree(generate_path+'/Masks')
     os.mkdir(generate_path+'/Images')
     os.mkdir(generate_path+'/Masks')
     generate_index = 0
+    '''
     if n_val > 0:
         for i, data in enumerate(val_loader):
             # fake_mapping = data['mask'].type(torch.cuda.FloatTensor).unsqueeze(0).to(device=device)
@@ -150,12 +151,15 @@ if __name__ == '__main__':
             save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
             logging.info('saved: %s' % generate_index)
             generate_index = generate_index + 1
+    '''
     for i in range(n_fake):
+        '''
         if n_val > 0:
             data = next(iter(val_loader))
         else:
             data = next(iter(train_loader))
-        
+        '''
+        data = next(iter(train_loader))
         # fake_mapping = data['mask'].to('cpu', torch.float).numpy()
         fake_mapping = data['mask'].to('cpu', torch.float).squeeze(0).numpy()
         fake_mapping = seq(images=fake_mapping)
@@ -201,7 +205,7 @@ if __name__ == '__main__':
     NIH_dataset = BasicDataset('../data/NIH/Images', '../data/NIH/Masks', 1.0, '_mask')
     NLM_dataset = BasicDataset('../data/NLM/Images', '../data/NLM/Masks', 1.0)
 
-    len_extra = int(len(NIH_dataset) * 0.8)
+    len_extra = int(len(NIH_dataset) * 0.0)
     extra_dataset, _ = random_split(NIH_dataset, [len_extra, len(NIH_dataset)-len_extra], generator=torch.Generator().manual_seed(0))
     fake_dataset = BasicDataset(generate_path+'/Images', generate_path+'/Masks', 1.0)
     train_set = torch.utils.data.ConcatDataset([train_set, fake_dataset, extra_dataset])
