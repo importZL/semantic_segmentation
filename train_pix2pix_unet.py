@@ -83,20 +83,28 @@ if __name__ == '__main__':
             epoch_iter += opt.batch_size
             model.set_input(data)         # unpack data from dataset and apply preprocessing
             model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
+            
             '''
-            if total_iters % opt.display_freq == 0:   # display images on visdom and save images to a HTML file
-                save_result = total_iters % opt.update_html_freq == 0
+            # display images on wandb
+            if total_iters % opt.display_freq == 0:
                 model.compute_visuals()
-                visualizer.display_current_results(model.get_current_visuals(), epoch, save_result)
+                visuals = model.get_current_visuals()
+                ims_dict = {}
+                for label, image in visuals.items():
+                    image_numpy = image[0].mul(255).add_(0.5).clamp_(0, 255).permute(1, 2, 0).to('cpu', torch.uint8).numpy()
+                    wandb_image = wandb.Image(image_numpy)
+                    ims_dict[label] = wandb_image
+                self.wandb_run.log(ims_dict)
             '''
-            if total_iters % opt.print_freq == 0:    # print training losses and save logging information to the disk
+            # print training losses
+            if total_iters % opt.print_freq == 0: 
                 losses = model.get_current_losses()
                 message = '(epoch: %d, iters: %d ) ' % (epoch, epoch_iter)
                 for k, v in losses.items():
                     message += '%s: %.3f ' % (k, v)
                 logging.info(message)
-
-            if total_iters % opt.save_latest_freq == 0:   # cache our latest model every <save_latest_freq> iterations
+            # save our latest model
+            if total_iters % opt.save_latest_freq == 0: 
                 logging.info('saving the model')
                 model.save_model(save_path)
     logging.info('##### End of Pix2Pix model Train #####')
