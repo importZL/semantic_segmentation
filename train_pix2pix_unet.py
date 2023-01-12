@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
             if total_iters % opt.save_latest_freq == 0:   # cache our latest model every <save_latest_freq> iterations
                 logging.info('saving the model')
-                torch.save(model.state_dict(), save_path+'/pix2pix_model.pkl')
+                model.save_model(save_path)
     logging.info('##### End of Pix2Pix model Train #####')
 
     ##### create fake data samples #####

@@ -13,7 +13,7 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--display_freq', type=int, default=50, help='frequency of showing training results on screen')
         parser.add_argument('--print_freq', type=int, default=50, help='frequency of showing training results on console')
         # network saving and loading parameters
-        parser.add_argument('--save_latest_freq', type=int, default=5000, help='frequency of saving the latest results')
+        parser.add_argument('--save_latest_freq', type=int, default=500, help='frequency of saving the latest results')
         parser.add_argument('--save_epoch_freq', type=int, default=1, help='frequency of saving checkpoints at the end of epochs')
         parser.add_argument('--save_by_iter', action='store_true', help='whether saves model by iteration')
         parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')
