@@ -89,10 +89,10 @@ class Pix2PixModel(BaseModel):
 
         The option 'direction' can be used to swap images in domain A and domain B.
         """
-        self.real_mask = input['mask'].type(torch.cuda.FloatTensor).to(self.device)
-        self.real_image = input['image'].type(torch.cuda.FloatTensor).to(self.device)
-        self.real_mask = self.trans(self.real_mask)
-        self.real_image = self.trans(self.real_image)
+        self.real_mask = input['mask_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
+        self.real_image = input['image_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
+        # self.real_mask = self.trans(self.real_mask)
+        # self.real_image = self.trans(self.real_image)
         # self.image_paths = input['A_paths' if AtoB else 'B_paths']
 
     def forward(self):
@@ -139,10 +139,10 @@ class Pix2PixModel(BaseModel):
         self.optimizer_G.step()             # udpate G's weights
 
     def optimize_architect(self, valid_data):
-        real_mask = valid_data['mask'].type(torch.cuda.FloatTensor).to(self.device)
-        real_image = valid_data['image'].type(torch.cuda.FloatTensor).to(self.device)
-        real_mask = self.trans(real_mask)
-        real_image = self.trans(real_image)
+        real_mask = valid_data['mask_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
+        real_image = valid_data['image_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
+        # real_mask = self.trans(real_mask)
+        # real_image = self.trans(real_image)
 
         self.set_requires_grad(self.netD, False)  # D requires no gradients when optimizing G
         self.optimizer_arch_upconv.zero_grad()     # set arch's gradienets to zero

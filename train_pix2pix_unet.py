@@ -84,7 +84,7 @@ if __name__ == '__main__':
             model.set_input(data)         # unpack data from dataset and apply preprocessing
             model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
             
-            '''
+            
             # display images on wandb
             if total_iters % opt.display_freq == 0:
                 model.compute_visuals()
@@ -94,8 +94,8 @@ if __name__ == '__main__':
                     image_numpy = image[0].mul(255).add_(0.5).clamp_(0, 255).permute(1, 2, 0).to('cpu', torch.uint8).numpy()
                     wandb_image = wandb.Image(image_numpy)
                     ims_dict[label] = wandb_image
-                self.wandb_run.log(ims_dict)
-            '''
+                logger.log(ims_dict)
+            
             # print training losses
             if total_iters % opt.print_freq == 0: 
                 losses = model.get_current_losses()

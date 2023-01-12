@@ -62,6 +62,16 @@ class BasicDataset(Dataset):
             return transforms.functional.adjust_gamma(ImageOps.equalize(Image.open(filename)), 0.5)
             # return Image.open(filename)
 
+    @staticmethod
+    def load_pix2pix(filename):
+        ext = splitext(filename)[1]
+        if ext == '.npy':
+            return Image.fromarray(np.load(filename))
+        elif ext in ['.pt', '.pth']:
+            return Image.fromarray(torch.load(filename).numpy())
+        else:
+            return Image.open(filename)
+
     def __getitem__(self, idx):
         name = self.ids[idx]
         mask_file = list(self.masks_dir.glob(name + self.mask_suffix + '.*'))
@@ -73,12 +83,21 @@ class BasicDataset(Dataset):
         img = self.load(img_file[0]).convert('L').resize((256, 256))
         assert img.size == mask.size, \
             f'Image and mask {name} should be the same size, but are {img.size} and {mask.size}'
-
         img = self.preprocess(img, self.scale, is_mask=False)
         mask = self.preprocess(mask, self.scale, is_mask=True)
+
+        mask_pix2pix = self.load_pix2pix(mask_file[0]).convert('L').resize((256, 256))
+        img_pix2pix = self.load_pix2pix(img_file[0]).convert('L').resize((256, 256))
+        assert img_pix2pix.size == mask_pix2pix.size, \
+            f'Image and mask {name} should be the same size, but are {img_pix2pix.size} and {mask_pix2pix.size}'
+
+        img_pix2pix = self.preprocess(img_pix2pix, self.scale, is_mask=False)
+        mask_pix2pix = self.preprocess(mask_pix2pix, self.scale, is_mask=True)
         return {
             'image': torch.as_tensor(img.copy()).float().contiguous(),
             'mask': torch.as_tensor(mask.copy()).long().contiguous(),
+            'image_pix2pix': torch.as_tensor(img_pix2pix.copy()).float().contiguous(),
+            'mask_pix2pix': torch.as_tensor(mask_pix2pix.copy()).long().contiguous(),
         }
 
 
