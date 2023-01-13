@@ -36,13 +36,13 @@ if __name__ == '__main__':
     opt = TrainOptions().parse()   # get training options
     assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
     device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-    save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-00')
+    save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-35-80')
     if not os.path.exists(save_path):
         os.mkdir(save_path) 
     unet_save_path = save_path+'/unet_175.pkl'  
 
     ##### Initialize logging #####
-    logger = wandb.init(project='semantic_seg_project', name="Train-Pix2Pix-Unet-00", entity="semantic_seg", resume='allow', anonymous='must')
+    logger = wandb.init(project='semantic_seg_project', name="Train-Pix2Pix-Unet-35-80", entity="semantic_seg", resume='allow', anonymous='must')
     logger.config.update(vars(opt))
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -63,14 +63,27 @@ if __name__ == '__main__':
 
     ##### prepare dataloader #####
     dataset = BasicDataset(opt.dataroot+'/Images', opt.dataroot+'/Masks', 1.0)
+    SZ_dataset = BasicDataset('../data/SZ/Images', '../data/SZ/Masks', 1.0, '_mask') # use as the out-domain dataset
+    NIH_dataset = BasicDataset('../data/NIH/Images', '../data/NIH/Masks', 1.0, '_mask') # use as the extra dataset
+    NLM_dataset = BasicDataset('../data/NLM/Images', '../data/NLM/Masks', 1.0) # use as the out-domain dataset
+
     n_test = int(len(dataset)*(opt.test_percent/100))
-    n_train = 175
+    n_train = 35
     n_val = len(dataset) - n_train - n_test # int(len(dataset)*(opt.val_percent/100))
     train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
+    
+    len_extra = int(len(NIH_dataset) * 0.8)
+    extra_dataset, _ = random_split(NIH_dataset, [len_extra, len(NIH_dataset)-len_extra], generator=torch.Generator().manual_seed(0))
+    # train_set = torch.utils.data.ConcatDataset([train_set, extra_dataset])
     loader_args = dict(batch_size=opt.batch_size, num_workers=4, pin_memory=True)
     train_loader = DataLoader(train_set, shuffle=True, drop_last=True, **loader_args)
     val_loader = DataLoader(val_set, shuffle=False, drop_last=True, **loader_args)
     test_loader = DataLoader(test_set, shuffle=False, drop_last=True, **loader_args)
+
+    # NLM: out-domain dataset    
+    NLM_loader = DataLoader(NLM_dataset, shuffle=False, **loader_args)
+    # NIH_loader = DataLoader(NIH_dataset, shuffle=False, **loader_args)
+    SZ_loader = DataLoader(SZ_dataset, shuffle=False, **loader_args)
 
     ##### Training process of Pix2Pix model #####
     total_iters = 0
@@ -132,33 +145,8 @@ if __name__ == '__main__':
     os.mkdir(generate_path+'/Images')
     os.mkdir(generate_path+'/Masks')
     generate_index = 0
-    '''
-    if n_val > 0:
-        for i, data in enumerate(val_loader):
-            # fake_mapping = data['mask'].type(torch.cuda.FloatTensor).unsqueeze(0).to(device=device)
-            fake_mapping = data['mask'].type(torch.cuda.FloatTensor).to(device=device)
-
-            fake_images = model.netG(fake_mapping)
-            
-            fake_train_mask = fake_mapping
-            fake_images = fake_images
-
-            save_mask = fake_train_mask.squeeze()
-            save_image = fake_images.squeeze()
-            save_mask = Image.fromarray(save_mask.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-            save_image = Image.fromarray(save_image.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-            save_mask.convert('L').save(generate_path+'/Masks/%s.gif' % generate_index)
-            save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
-            logging.info('saved: %s' % generate_index)
-            generate_index = generate_index + 1
-    '''
+    
     for i in range(n_fake):
-        '''
-        if n_val > 0:
-            data = next(iter(val_loader))
-        else:
-            data = next(iter(train_loader))
-        '''
         data = next(iter(train_loader))
         # fake_mapping = data['mask'].to('cpu', torch.float).numpy()
         fake_mapping = data['mask'].to('cpu', torch.float).squeeze(0).numpy()
@@ -180,41 +168,11 @@ if __name__ == '__main__':
         save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
         logging.info('saved: %s' % generate_index)
         generate_index = generate_index + 1
-    '''
-    for i in range(20):
-        z = Variable(torch.randn(1, 100, 1, 1)).cuda(opt.cuda_index)
-        fake_mapping = model_wgan.G(z)
-        fake_mapping = fake_mapping.mul(0.5).add(0.5)
-        
-        fake_images = model.netG(fake_mapping)
-        
-        fake_train_mask = fake_mapping
-        fake_images = fake_images
+    
 
-        save_mask = fake_train_mask.squeeze()
-        save_image = fake_images.squeeze()
-        save_mask = Image.fromarray(save_mask.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-        save_image = Image.fromarray(save_image.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
-        save_mask.convert('L').save(generate_path+'/Masks/%s.gif' % generate_index)
-        save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
-        logging.info('saved: %s' % generate_index)
-        generate_index = generate_index + 1
-    '''
-
-    SZ_dataset = BasicDataset('../data/SZ/Images', '../data/SZ/Masks', 1.0, '_mask')
-    NIH_dataset = BasicDataset('../data/NIH/Images', '../data/NIH/Masks', 1.0, '_mask')
-    NLM_dataset = BasicDataset('../data/NLM/Images', '../data/NLM/Masks', 1.0)
-
-    len_extra = int(len(NIH_dataset) * 0.0)
-    extra_dataset, _ = random_split(NIH_dataset, [len_extra, len(NIH_dataset)-len_extra], generator=torch.Generator().manual_seed(0))
     fake_dataset = BasicDataset(generate_path+'/Images', generate_path+'/Masks', 1.0)
     train_set = torch.utils.data.ConcatDataset([train_set, fake_dataset, extra_dataset])
     train_loader = DataLoader(train_set, shuffle=True, drop_last=True, **loader_args)
-
-    # NLM: out-domain dataset    
-    NLM_loader = DataLoader(NLM_dataset, shuffle=False, **loader_args)
-    # NIH_loader = DataLoader(NIH_dataset, shuffle=False, **loader_args)
-    SZ_loader = DataLoader(SZ_dataset, shuffle=False, **loader_args)
 
     logging.info('The number of training images = %d' % n_train)
     logging.info('The number of validate images = %d' % n_val)
