@@ -71,8 +71,8 @@ if __name__ == '__main__':
 
     ##### prepare dataloader #####
     dataset = BasicDataset(opt.dataroot+'/Images', opt.dataroot+'/Masks', 1.0)
-    # n_test = int(len(dataset)*(opt.test_percent/100))
-    n_test = 0
+    n_test = int(len(dataset)*(opt.test_percent/100))
+    # n_test = 0
     n_val = len(dataset) - n_train - n_test # int(len(dataset)*(opt.val_percent/100))
     train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
     loader_args = dict(batch_size=opt.batch_size, num_workers=4, pin_memory=True)
@@ -235,7 +235,7 @@ if __name__ == '__main__':
             
             # Evaluation round
             if total_iters % opt.display_freq == 0:
-                test_score = evaluate(net, val_loader, device, opt.amp)                
+                test_score = evaluate(net, test_loader, device, opt.amp)                
                 if test_score > unet_best_score:
                     unet_best_score = test_score
                     torch.save(net.state_dict(), unet_save_path)
