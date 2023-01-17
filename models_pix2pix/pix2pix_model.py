@@ -95,6 +95,10 @@ class Pix2PixModel(BaseModel):
         # self.real_image = self.trans(self.real_image)
         # self.image_paths = input['A_paths' if AtoB else 'B_paths']
 
+    def set_input_1(self, input):
+        self.real_mask = input['mask'].type(torch.cuda.FloatTensor).to(self.device)
+        self.real_image = input['image'].type(torch.cuda.FloatTensor).to(self.device)
+
     def forward(self):
         """Run forward pass; called by both functions <optimize_parameters> and <test>."""
         self.fake_image = self.netG(self.real_mask)  # G(A)
@@ -139,8 +143,8 @@ class Pix2PixModel(BaseModel):
         self.optimizer_G.step()             # udpate G's weights
 
     def optimize_architect(self, valid_data):
-        real_mask = valid_data['mask_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
-        real_image = valid_data['image_pix2pix'].type(torch.cuda.FloatTensor).to(self.device)
+        real_mask = valid_data['mask'].type(torch.cuda.FloatTensor).to(self.device)
+        real_image = valid_data['image'].type(torch.cuda.FloatTensor).to(self.device)
         # real_mask = self.trans(real_mask)
         # real_image = self.trans(real_image)
 

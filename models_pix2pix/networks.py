@@ -582,20 +582,20 @@ class UnetSkipConnectionBlock(nn.Module):
         upnorm = norm_layer(outer_nc)
 
         if outermost:
-            upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc, kernel_size=4, stride=2, padding=1)
-            # upconv = Cell_upconv(inner_nc * 2, outer_nc, bias=True, layer_index=layer_index)
+            # upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc, kernel_size=4, stride=2, padding=1)
+            upconv = Cell_upconv(inner_nc * 2, outer_nc, bias=True, layer_index=layer_index)
             down = [downconv]
             up = [uprelu, upconv, nn.Tanh()]
             model = down + [submodule] + up
         elif innermost:
-            upconv = nn.ConvTranspose2d(inner_nc, outer_nc, kernel_size=4, stride=2, padding=1, bias=use_bias)
-            # upconv = Cell_upconv(inner_nc, outer_nc, bias=use_bias, layer_index=layer_index)
+            # upconv = nn.ConvTranspose2d(inner_nc, outer_nc, kernel_size=4, stride=2, padding=1, bias=use_bias)
+            upconv = Cell_upconv(inner_nc, outer_nc, bias=use_bias, layer_index=layer_index)
             down = [downrelu, downconv]
             up = [uprelu, upconv, upnorm]
             model = down + up
         else:
-            upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc, kernel_size=4, stride=2, padding=1, bias=use_bias)
-            # upconv = Cell_upconv(inner_nc * 2, outer_nc, bias=use_bias, layer_index=layer_index)
+            # upconv = nn.ConvTranspose2d(inner_nc * 2, outer_nc, kernel_size=4, stride=2, padding=1, bias=use_bias)
+            upconv = Cell_upconv(inner_nc * 2, outer_nc, bias=use_bias, layer_index=layer_index)
             down = [downrelu, downconv, downnorm]
             up = [uprelu, upconv, upnorm]
 

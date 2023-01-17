@@ -68,7 +68,7 @@ if __name__ == '__main__':
     NLM_dataset = BasicDataset('../data/NLM/Images', '../data/NLM/Masks', 1.0) # use as the out-domain dataset
 
     n_test = int(len(dataset)*(opt.test_percent/100))
-    n_train = 35
+    n_train = 9
     n_val = len(dataset) - n_train - n_test # int(len(dataset)*(opt.val_percent/100))
     train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
     
@@ -87,11 +87,13 @@ if __name__ == '__main__':
 
     ##### Training process of Pix2Pix model #####
     total_iters = 0
+    pix2pix_set = torch.utils.data.ConcatDataset([train_set, val_set])
+    pxi2pix_loader = DataLoader(pix2pix_set, shuffle=True, drop_last=True, **loader_args)
     logging.info('##### Start of Pix2Pix model Train #####')
     for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):
         model.update_learning_rate()    # update learning rates in the beginning of every epoch.
         epoch_iter = 0
-        for i, data in enumerate(train_loader):  # inner loop within one epoch
+        for i, data in enumerate(pxi2pix_loader):  # inner loop within one epoch
             total_iters += opt.batch_size
             epoch_iter += opt.batch_size
             model.set_input(data)         # unpack data from dataset and apply preprocessing
@@ -126,7 +128,7 @@ if __name__ == '__main__':
     # Image Augmenter
     seq = iaa.Sequential([
         iaa.Fliplr(0.5), # horizontal flips
-        iaa.Flipud(0.5), # vertical flips
+        # iaa.Flipud(0.25), # vertical flips
 
         iaa.CropAndPad(percent=(0, 0.1)), # random crops and pad
 
@@ -139,12 +141,31 @@ if __name__ == '__main__':
     ], random_order=True) # apply augmenters in random order
     # Data generate
     n_fake = 400
-    generate_path = './generate_data'
+    generate_path = './generate_data1'
     shutil.rmtree(generate_path+'/Images')
     shutil.rmtree(generate_path+'/Masks')
     os.mkdir(generate_path+'/Images')
     os.mkdir(generate_path+'/Masks')
     generate_index = 0
+    
+    if n_val > 0:
+        for i, data in enumerate(val_loader):
+            # fake_mapping = data['mask'].type(torch.cuda.FloatTensor).unsqueeze(0).to(device=device)
+            fake_mapping = data['mask'].type(torch.cuda.FloatTensor).to(device=device)
+
+            fake_images = model.netG(fake_mapping)
+            
+            fake_train_mask = fake_mapping
+            fake_images = fake_images
+
+            save_mask = fake_train_mask.squeeze()
+            save_image = fake_images.squeeze()
+            save_mask = Image.fromarray(save_mask.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
+            save_image = Image.fromarray(save_image.mul(255).add_(0.5).clamp_(0, 255).to("cpu", torch.uint8).numpy())
+            save_mask.convert('L').save(generate_path+'/Masks/%s.gif' % generate_index)
+            save_image.convert('L').save(generate_path+'/Images/%s.png' % generate_index)
+            logging.info('saved: %s' % generate_index)
+            generate_index = generate_index + 1
     
     for i in range(n_fake):
         data = next(iter(train_loader))
@@ -189,7 +210,7 @@ if __name__ == '__main__':
     NIH_best_score = 0.0           # the best score of NIH dataset
     SZ_best_score = 0.0            # the best score of SZ dataset
 
-    for epoch in range(100):
+    for epoch in range(200):
         epoch_start_time = time.time()  # timer for entire epoch
         epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch        
         
