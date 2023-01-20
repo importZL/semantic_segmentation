@@ -64,7 +64,6 @@ optimizer_unet = optim.RMSprop(net.parameters(), lr=opt.unet_learning_rate,
                                 weight_decay=1e-8, momentum=0.9, foreach=True)
 scheduler_unet = optim.lr_scheduler.ReduceLROnPlateau(optimizer_unet, 'max', patience=2)  # goal: maximize Dice score
 grad_scaler = torch.cuda.amp.GradScaler(enabled=opt.amp)
-criterion = nn.CrossEntropyLoss() if opt.classes > 1 else nn.BCEWithLogitsLoss()
 
 ##### prepare dataloader #####
 dataset = BasicDataset(opt.dataroot+'/Images', opt.dataroot+'/Masks', 1.0)
@@ -134,8 +133,8 @@ logging.info('##### End of Pix2Pix model Train #####')
 ##### create fake data samples #####
 # Image Augmenter
 seq = iaa.Sequential([
-    iaa.Fliplr(0.25), # horizontal flips
-    iaa.Flipud(0.25), # vertical flips
+    iaa.Fliplr(0.5), # horizontal flips
+    # iaa.Flipud(0.25), # vertical flips
 
     iaa.CropAndPad(percent=(0, 0.1)), # random crops and pad
 
@@ -163,10 +162,166 @@ iters = len(train_set) * n_epochs
 total_iters = 0                # the total number of training iterations
 unet_best_score = 0.0          # the best score of unet
 NLM_best_score = 0.0           # the best score of NLM dataset
-NIH_best_score = 0.0           # the best score of NIH dataset
 SZ_best_score = 0.0            # the best score of SZ dataset
 
+criterion = nn.CrossEntropyLoss() if opt.classes > 1 else nn.BCEWithLogitsLoss()
+criterionGAN = networks.GANLoss(opt.gan_mode).to(device)
+criterionL1 = torch.nn.L1Loss()
+class Generator(ImplicitProblem):
+    def training_step(self, batch):
+        real_mask = batch['mask'].type(torch.cuda.FloatTensor).to(device)
+        real_image = batch['image'].type(torch.cuda.FloatTensor).to(device)
+        fake_image = self.module(real_mask)
 
+        fake_mask_image = torch.cat((real_mask, fake_image), 1)
+        pred_fake = self.netD(fake_mask_image)
+        loss_G_GAN = criterionGAN(pred_fake, True)
+        # Second, G(A) = B
+        loss_G_L1 = criterionL1(fake_image, real_image) * opt.lambda_L1
+        # combine loss and calculate gradients
+        loss_G = loss_G_GAN + loss_G_L1
+        return loss_G
+
+
+class Discriminator(ImplicitProblem):
+    def training_step(self, batch):
+        real_mask = batch['mask'].type(torch.cuda.FloatTensor).to(device)
+        real_image = batch['image'].type(torch.cuda.FloatTensor).to(device)
+        fake_image = self.netG(real_mask)
+
+        fake_mask_image = torch.cat((real_mask, fake_image), 1)  # we use conditional GANs; we need to feed both input and output to the discriminator
+        pred_fake = self.module(fake_mask_image.detach())
+        loss_D_fake = criterionGAN(pred_fake, False)
+        # Real
+        real_mask_image = torch.cat((real_mask, real_image), 1)
+        pred_real = self.module(real_mask_image)
+        loss_D_real = criterionGAN(pred_real, True)
+        # combine loss and calculate gradients
+        loss_D = (loss_D_fake + loss_D_real) * 0.5
+        return loss_D
+
+
+class Unet(ImplicitProblem):
+    def training_step(self, batch):
+        images = data['image'].to(device=device, dtype=torch.float32)
+        true_masks = data['mask'].to(device=device, dtype=torch.long).squeeze(0)
+
+        fake_mask = next(iter(all_train_loader))['mask'].to('cpu', torch.float).squeeze(0).numpy()
+        fake_mask = seq(images=fake_mask)
+        fake_mask = torch.tensor(fake_mask).unsqueeze(0).type(torch.cuda.FloatTensor).to(device=device)
+        zero = torch.zeros_like(fake_mask)
+        one = torch.ones_like(fake_mask)
+        fake_mask = torch.where(fake_mask > 0.1, one, zero)
+        fake_image = model.netG(fake_mask)
+        fake_mask = fake_mask.squeeze(0)
+
+        masks_pred = net(images)
+        fake_pred = net(fake_image)
+        loss = criterion(masks_pred.squeeze(1), true_masks.float())
+        loss += dice_loss(torch.sigmoid(masks_pred.squeeze(1)), true_masks.float(), multiclass=False)
+        fake_loss = criterion(fake_pred.squeeze(1), fake_mask.float())
+        fake_loss += dice_loss(torch.sigmoid(fake_pred.squeeze(1)), fake_mask.float(), multiclass=False)
+        unet_loss = loss + 0.5 * fake_loss
+        return unet_loss
+
+
+class Arch(ImplicitProblem):
+    def training_step(self, batch):
+        mask_valid = batch['mask'].type(torch.cuda.FloatTensor).to(device).squeeze(0)
+        image_valid = batch['image'].type(torch.cuda.FloatTensor).to(device)
+        mask_pred = self.unet(image_valid)
+        loss_arch = criterion(mask_pred.squeeze(0), mask_valid.float())
+        loss_arch += dice_loss(torch.sigmoid(mask_pred.squeeze(0)), mask_valid.float(), multiclass=False)
+        return loss_arch
+
+
+class SSEngine(Engine):
+    @troch.no_grad()
+    def validation(self):
+        test_score = evaluate(self.unet, test_loader, device, opt.amp)
+        if test_score > unet_best_score:
+            unet_best_score = test_score
+            torch.save(net.state_dict(), unet_save_path)
+        message = 'Performance of UNet: '
+        message += '%s: %.5f ' % ('unet_test_score', test_score)
+        message += '%s: %.5f ' % ('unet_best_score', unet_best_score)
+        logging.info(message)
+        logger.log({'unet_test_score': test_score})
+        if it % len(train_set) == 0:
+            NLM_score = evaluate(self.unet, NLM_loader, device, opt.amp)
+            SZ_score = evaluate(self.unet, SZ_loader, device, opt.amp)
+            if NLM_score > NLM_best_score:
+                NLM_best_score = NLM_score
+            if SZ_score > SZ_best_score:
+                SZ_best_score = SZ_score
+            message = 'Performance on out-domain dataset: '
+            message += '%s: %.5f ' % ('NLM_score', NLM_score)
+            message += '%s: %.5f ' % ('NLM_best_score', NLM_best_score)
+            message += '%s: %.5f ' % ('SZ_score', SZ_score)
+            message += '%s: %.5f ' % ('SZ_best_score', SZ_best_score)
+            logging.info(message)
+            logger.log({'NLM_score': NLM_score,
+                        'SZ_score': SZ_score,})
+            scheduler_unet.step(unet_best_score)
+
+
+outer_config = Config(retain_graph=True)
+inner_config = Config(type="darts", unroll_steps=args.unroll_steps)
+engine_config = EngineConfig(
+    valid_step=opt.display_freq * opt.unroll_steps,
+    train_iters=iter,
+    roll_back=True,
+)
+
+netG = Generator(
+    name='netG',
+    module=model.netG,
+    optimizer=model.optimizer_G,
+    train_data_loader=train_loader,
+    config=inner_config,
+    device=device,
+)
+
+netD = Discriminator(
+    name='netD',
+    module=model.netD,
+    optimizer=model.optimizer_D,
+    train_data_loader=train_loader,
+    config=inner_config,
+    device=device,
+)
+
+unet = Unet(
+    name='unet',
+    module=net,
+    optimizer=optimizer_unet,
+    train_data_loader=train_loader,
+    config=inner_config,
+    device=device,
+)
+
+optimizer_arch = torch.optim.Adam(networks.arch_parameters(), lr=1e-4, betas=(0.5, 0.999), weight_decay=1e-3)
+arch = Arch(
+    name='arch',
+    module=net,
+    optimizer=optimizer_arch,
+    train_data_loader=val_loader,
+    config=outer_config,
+    device=device,
+)
+
+problems = [netG, netD, unet, arch]
+l2u = {netG: [arch], netD: [arch], unet:[arch]}
+u2l = {arch: [netG, netD, unet]}
+dependencies = {"l2u": l2u, "u2l": u2l}
+
+engine = NASEngine(config=engine_config, problems=problems, dependencies=dependencies)
+engine.run()
+
+
+
+
+'''
 for epoch in range(n_epochs):
     epoch_start_time = time.time()  # timer for entire epoch
     epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch        
@@ -216,7 +371,7 @@ for epoch in range(n_epochs):
                     multiclass=True
                 )
             
-            unet_loss = loss + 0.5*fake_loss
+            unet_loss = loss + fake_loss
             optimizer_unet.zero_grad(set_to_none=True)
             grad_scaler.scale(unet_loss).backward()
             # torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
@@ -275,4 +430,4 @@ for epoch in range(n_epochs):
         
 
     logging.info('End of epoch %d / %d \t Time Taken: %d sec' % (epoch, opt.n_epochs + opt.n_epochs_decay, time.time() - epoch_start_time))
-
+'''

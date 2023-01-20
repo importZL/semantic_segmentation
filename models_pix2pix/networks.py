@@ -479,6 +479,10 @@ _upconv_arch_parameters = [upconv_arch,]
 def upconv_arch_parameters():
     return _upconv_arch_parameters
 
+_arch_parameters = [upconv_arch, conv_arch]
+def arch_parameters():
+    return _arch_parameters
+
 class MixedOp_upconv(nn.Module):
 
     def __init__(self, C_in, C_out, bias):

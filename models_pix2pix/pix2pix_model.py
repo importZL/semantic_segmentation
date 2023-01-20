@@ -74,8 +74,8 @@ class Pix2PixModel(BaseModel):
             # initialize optimizers; schedulers will be automatically created by function <BaseModel.setup>.
             self.optimizer_G = torch.optim.Adam(self.netG.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(self.netD.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
-            self.optimizer_arch_upconv = torch.optim.Adam(networks.upconv_arch_parameters(), lr=3e-4, betas=(0.5, 0.999), weight_decay=1e-3)
-            self.optimizer_arch_conv = torch.optim.Adam(networks.conv_arch_parameters(), lr=3e-4, betas=(0.5, 0.999), weight_decay=1e-3)
+            self.optimizer_arch_upconv = torch.optim.Adam(networks.upconv_arch_parameters(), lr=1e-4, betas=(0.5, 0.999), weight_decay=1e-3)
+            self.optimizer_arch_conv = torch.optim.Adam(networks.conv_arch_parameters(), lr=1e-4, betas=(0.5, 0.999), weight_decay=1e-3)
             self.optimizers.append(self.optimizer_G)
             self.optimizers.append(self.optimizer_D)
             self.optimizers.append(self.optimizer_arch_upconv)
@@ -142,7 +142,7 @@ class Pix2PixModel(BaseModel):
         self.backward_G()                   # calculate graidents for G
         self.optimizer_G.step()             # udpate G's weights
 
-    def optimize_architect(self, valid_data):
+    def optimize_architect(self, unet, criterion, valid_data):
         real_mask = valid_data['mask'].type(torch.cuda.FloatTensor).to(self.device)
         real_image = valid_data['image'].type(torch.cuda.FloatTensor).to(self.device)
         # real_mask = self.trans(real_mask)
@@ -151,7 +151,7 @@ class Pix2PixModel(BaseModel):
         self.set_requires_grad(self.netD, False)  # D requires no gradients when optimizing G
         self.optimizer_arch_upconv.zero_grad()     # set arch's gradienets to zero
         self.optimizer_arch_conv.zero_grad()
-
+        
         fake_image = self.netG(real_mask)                   # compute fake images: G(A)
         fake_mask_image = torch.cat((real_mask, fake_image), 1)
         pred_fake = self.netD(fake_mask_image)
@@ -161,7 +161,7 @@ class Pix2PixModel(BaseModel):
         # combine loss and calculate gradients
         loss_G = loss_G_GAN + loss_G_L1
         loss_G.backward()
-                           
+             
         self.optimizer_arch_upconv.step()          # update arch's weights
         self.optimizer_arch_conv.step()
 
