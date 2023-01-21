@@ -39,13 +39,13 @@ from betty.problems import ImplicitProblem
 opt = TrainOptions().parse()   # get training options
 assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
 device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-35-80')
+save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-35-80-test')
 if not os.path.exists(save_path):
     os.mkdir(save_path) 
 unet_save_path = save_path+'/unet_175.pkl'  
 
 ##### Initialize logging #####
-logger = wandb.init(project='end2end_framework', name="Train-35-80", entity="semantic_seg", resume='allow', anonymous='must')
+logger = wandb.init(project='end2end_framework', name="Train-35-80-test", entity="semantic_seg", resume='allow', anonymous='must')
 logger.config.update(vars(opt))
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -130,7 +130,10 @@ for epoch in range(opt.epoch_count, opt.n_epochs):
             model.save_model(save_path)
 logging.info('##### End of Pix2Pix model Train #####')
 
-##### create fake data samples #####
+# re-create the pix2pix model to cut off any possible gradient path from pre-training
+model = create_model(opt)
+model.setup(opt)
+model.load_model(save_path+'/pix2pix_discriminator.pkl', save_path+'/pix2pix_generator.pkl')
 # Image Augmenter
 seq = iaa.Sequential([
     iaa.Fliplr(0.5), # horizontal flips
@@ -158,7 +161,7 @@ logging.info('The number of SZ images = %d' % len(SZ_dataset))
 ##### Training process of UNet #####
 ##### Datasets: train_loader, val_loader, test_loader, NLM_loader, SZ_loader, all_train_loader #####
 n_epochs = 100
-iters = len(train_set) * n_epochs
+train_iters = int(len(train_set) * n_epochs)
 total_iters = 0                # the total number of training iterations
 unet_best_score = 0.0          # the best score of unet
 NLM_best_score = 0.0           # the best score of NLM dataset
@@ -203,8 +206,8 @@ class Discriminator(ImplicitProblem):
 
 class Unet(ImplicitProblem):
     def training_step(self, batch):
-        images = data['image'].to(device=device, dtype=torch.float32)
-        true_masks = data['mask'].to(device=device, dtype=torch.long).squeeze(0)
+        images = batch['image'].to(device=device, dtype=torch.float32)
+        true_masks = batch['mask'].to(device=device, dtype=torch.long).squeeze(0)
 
         fake_mask = next(iter(all_train_loader))['mask'].to('cpu', torch.float).squeeze(0).numpy()
         fake_mask = seq(images=fake_mask)
@@ -236,9 +239,11 @@ class Arch(ImplicitProblem):
 
 
 class SSEngine(Engine):
-    @troch.no_grad()
+
+    @torch.no_grad()
     def validation(self):
-        test_score = evaluate(self.unet, test_loader, device, opt.amp)
+        global unet_best_score, NLM_best_score, SZ_best_score
+        test_score = evaluate(self.unet.module, test_loader, device, opt.amp)
         if test_score > unet_best_score:
             unet_best_score = test_score
             torch.save(net.state_dict(), unet_save_path)
@@ -247,9 +252,9 @@ class SSEngine(Engine):
         message += '%s: %.5f ' % ('unet_best_score', unet_best_score)
         logging.info(message)
         logger.log({'unet_test_score': test_score})
-        if it % len(train_set) == 0:
-            NLM_score = evaluate(self.unet, NLM_loader, device, opt.amp)
-            SZ_score = evaluate(self.unet, SZ_loader, device, opt.amp)
+        if self.global_step % len(train_set) == 0:
+            NLM_score = evaluate(self.unet.module, NLM_loader, device, opt.amp)
+            SZ_score = evaluate(self.unet.module, SZ_loader, device, opt.amp)
             if NLM_score > NLM_best_score:
                 NLM_best_score = NLM_score
             if SZ_score > SZ_best_score:
@@ -266,10 +271,10 @@ class SSEngine(Engine):
 
 
 outer_config = Config(retain_graph=True)
-inner_config = Config(type="darts", unroll_steps=args.unroll_steps)
+inner_config = Config(type="darts", unroll_steps=opt.unroll_steps)
 engine_config = EngineConfig(
     valid_step=opt.display_freq * opt.unroll_steps,
-    train_iters=iter,
+    train_iters=train_iters,
     roll_back=True,
 )
 
@@ -311,123 +316,11 @@ arch = Arch(
 )
 
 problems = [netG, netD, unet, arch]
-l2u = {netG: [arch], netD: [arch], unet:[arch]}
-u2l = {arch: [netG, netD, unet]}
+l2u = {netG: [unet], netG: [arch]}
+u2l = {arch: [netG]}
 dependencies = {"l2u": l2u, "u2l": u2l}
 
-engine = NASEngine(config=engine_config, problems=problems, dependencies=dependencies)
+engine = SSEngine(config=engine_config, problems=problems, dependencies=dependencies)
 engine.run()
 
 
-
-
-'''
-for epoch in range(n_epochs):
-    epoch_start_time = time.time()  # timer for entire epoch
-    epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch        
-    
-    for i, data in enumerate(train_loader):  # inner loop within one epoch
-        # prepare validation data and fake_mask
-        val_batch = next(iter(val_loader))
-        fake_mask = next(iter(all_train_loader))['mask'].to('cpu', torch.float).squeeze(0).numpy()
-
-        # prepare training data for pix2pix model
-        model.set_input_1(data)
-
-        total_iters += opt.batch_size
-        epoch_iter += opt.batch_size
-
-        # update parameters of pix2pix model
-        model.optimize_parameters() # calculate loss, get gradients, update network weights
-
-        # update parameters of unet
-        images = data['image'].to(device=device, dtype=torch.float32)
-        true_masks = data['mask'].to(device=device, dtype=torch.long).squeeze(0)
-
-        fake_mask = seq(images=fake_mask)
-        fake_mask = torch.tensor(fake_mask).unsqueeze(0).type(torch.cuda.FloatTensor).to(device=device)
-        zero = torch.zeros_like(fake_mask)
-        one = torch.ones_like(fake_mask)
-        fake_mask = torch.where(fake_mask > 0.1, one, zero)
-        fake_image = model.netG(fake_mask)
-        fake_mask = fake_mask.squeeze(0)
-
-
-        with torch.cuda.amp.autocast(enabled=opt.amp):
-        # with torch.autocast(device.type if device.type != 'mps' else 'cpu', enabled=opt.amp):
-            masks_pred = net(images)
-            fake_pred = net(fake_image)
-            if net.n_classes == 1:
-                loss = criterion(masks_pred.squeeze(1), true_masks.float())
-                loss += dice_loss(torch.sigmoid(masks_pred.squeeze(1)), true_masks.float(), multiclass=False)
-
-                fake_loss = criterion(fake_pred.squeeze(1), fake_mask.float())
-                fake_loss += dice_loss(torch.sigmoid(fake_pred.squeeze(1)), fake_mask.float(), multiclass=False)
-            else:
-                loss = criterion(masks_pred, true_masks)
-                loss += dice_loss(
-                    F.softmax(masks_pred, dim=1).float(),
-                    F.one_hot(true_masks, net.n_classes).permute(0, 3, 1, 2).float(),
-                    multiclass=True
-                )
-            
-            unet_loss = loss + fake_loss
-            optimizer_unet.zero_grad(set_to_none=True)
-            grad_scaler.scale(unet_loss).backward()
-            # torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
-            grad_scaler.step(optimizer_unet)
-            grad_scaler.update()
-        
-        # update architecture of pix2pix model
-        mask_valid = val_batch['mask'].type(torch.cuda.FloatTensor).to(device).squeeze(0)
-        image_valid = val_batch['image'].type(torch.cuda.FloatTensor).to(device)
-
-        model.set_requires_grad(model.netD, False)  # D requires no gradients when optimizing G
-        model.optimizer_arch_upconv.zero_grad()     # set arch's gradienets to zero
-        model.optimizer_arch_conv.zero_grad()
-        
-        mask_pred = net(image_valid)
-        loss_arch = criterion(mask_pred.squeeze(0), mask_valid.float())
-        loss_arch += dice_loss(torch.sigmoid(mask_pred.squeeze(0)), mask_valid.float(), multiclass=False)
-             
-        model.optimizer_arch_upconv.step()          # update arch's weights
-        model.optimizer_arch_conv.step()
-        
-
-        # Evaluation round
-        if total_iters % opt.display_freq == 0:
-            test_score = evaluate(net, test_loader, device, opt.amp)                
-            if test_score > unet_best_score:
-                unet_best_score = test_score
-                torch.save(net.state_dict(), unet_save_path)
-            # scheduler_unet.step(test_score)
-
-            message = 'Performance of UNet: '
-            message += '%s: %.5f ' % ('unet_train_loss', unet_loss)
-            message += '%s: %.5f ' % ('unet_test_score', test_score)
-            message += '%s: %.5f ' % ('unet_best_score', unet_best_score)
-            logging.info(message)
-            logger.log({'unet_train_loss': unet_loss,
-                        'unet_test_score': test_score,
-            })
-
-    NLM_score = evaluate(net, NLM_loader, device, opt.amp)
-    SZ_score = evaluate(net, SZ_loader, device, opt.amp)
-    if NLM_score > NLM_best_score:
-        NLM_best_score = NLM_score
-    if SZ_score > SZ_best_score:
-        SZ_best_score = SZ_score
-    message = 'Performance on out-domain dataset: '
-    message += '%s: %.5f ' % ('NLM_score', NLM_score)
-    message += '%s: %.5f ' % ('NLM_best_score', NLM_best_score)
-    message += '%s: %.5f ' % ('SZ_score', SZ_score)
-    message += '%s: %.5f ' % ('SZ_best_score', SZ_best_score)
-    logging.info(message)
-    logger.log({'NLM_score': NLM_score,
-                'SZ_score': SZ_score,})
-
-    scheduler_unet.step(unet_best_score)
-        
-
-    logging.info('End of epoch %d / %d \t Time Taken: %d sec' % (epoch, opt.n_epochs + opt.n_epochs_decay, time.time() - epoch_start_time))
-'''
