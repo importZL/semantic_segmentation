@@ -24,5 +24,6 @@
 ### Run skin segmentation experiments
 
 ```bash
-python train_betty.py --model pix2pix  --is_train True --cuda True --gpu_ids 0 --cuda_index 0 --dataroot ../data/JSRT --amp --loss_lambda 1.0 --n_epochs 50 --unet_epoch 20 --lr 2e-5 --lr_dcgan 4e-5 --lr_d_dcgan 0 --display_freq 20 --classes 1
+python train_betty_ISIC.py --model pix2pix  --is_train True --cuda True --gpu_ids 0 --cuda_index 0 --dataroot ../data/ISIC2018 --amp --loss_lambda 1.0 --n_epochs 25 --unet_epoch 20 --lr 2e-5 --lr_dcgan 4e-5 --lr_d_dcgan 0 --display_freq 20 --classes 1 --output_nc 3 --input_nc 1
+
 ```
