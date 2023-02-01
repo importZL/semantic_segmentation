@@ -20,3 +20,5 @@
  - Train a diffusion based generator to generate XRay images and then an encoder to encode the mask into the input of Generator
 - Do we use extra data for Diffusion model (pretraining)
 - Check if this has been implemented before
+
+### Run skin segmentation experiments
