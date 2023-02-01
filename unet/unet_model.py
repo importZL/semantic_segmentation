@@ -1,5 +1,6 @@
 """ Full assembly of the parts to form the complete network """
-
+import sys
+sys.path.append('.')
 from .unet_parts import *
 
 
@@ -46,3 +47,13 @@ class UNet(nn.Module):
         self.up3 = torch.utils.checkpoint(self.up3)
         self.up4 = torch.utils.checkpoint(self.up4)
         self.outc = torch.utils.checkpoint(self.outc)
+
+if __name__ == '__main__':
+    net = UNet(3, n_classes=1)
+
+    net.eval()
+    image = torch.randn(1, 3, 256, 256)
+
+    # print(net)
+    print("input:", image.shape)
+    print("output:", net(image).shape)
