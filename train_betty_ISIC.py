@@ -29,7 +29,6 @@ from models_pix2pix import networks
 from unet import UNet
 from models_dcgan.dcgan_darts import DCGAN_MODEL
 from model_wgan.wgan_gradient_penalty import WGAN_GP
-from deeplab.deeplab import *
 
 from betty.engine import Engine
 from betty.configs import Config, EngineConfig
@@ -98,8 +97,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 model = create_model(opt)      # create a model given opt.model and other options
 model.setup(opt)               # regular setup: load and print networks; create schedulers
 
-# net = UNet(n_channels=opt.output_nc, n_classes=opt.classes, bilinear=opt.bilinear)
-net = DeepLab(n_classes=1, n_blocks=[3, 4, 15, 3], atrous_rates=[4, 8, 12], multi_grids=[1, 2, 4], output_stride=8,)
+net = UNet(n_channels=opt.output_nc, n_classes=opt.classes, bilinear=opt.bilinear)
 net = net.to(device=device)
 
 ##### define optimizer for pix2pix model #####
@@ -118,7 +116,7 @@ dermIS_dataset = BasicDataset('../data/DermIS/Images', '../data/DermIS/Masks', 1
 dermQuest_dataset = BasicDataset('../data/DermQuest/Images', '../data/DermQuest/Masks', 1.0) # use as the out-domain dataset
 
 n_test = 594
-n_train = 200 # 165, 35, 9
+n_train = 40 # 165, 35, 9
 n_val = len(dataset) - n_train - n_test
 train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
 
