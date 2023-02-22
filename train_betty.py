@@ -93,7 +93,7 @@ pix2pix_set = torch.utils.data.ConcatDataset([train_set, val_set])
 all_train_loader = DataLoader(pix2pix_set, shuffle=True, drop_last=True, **loader_args)
 logging.info('##### Start of Pix2Pix model Train #####')
 
-for epoch in range(opt.epoch_count, opt.n_epochs):
+for epoch in range(opt.n_epochs):
     model.update_learning_rate()    # update learning rates in the beginning of every epoch.
     epoch_iter = 0
     for i, data in enumerate(all_train_loader):  # inner loop within one epoch
@@ -124,6 +124,8 @@ for epoch in range(opt.epoch_count, opt.n_epochs):
         if total_iters % opt.save_latest_freq == 0: 
             logging.info('saving the model')
             model.save_model(save_path)
+
+model.save_model(save_path)
 logging.info('##### End of Pix2Pix model Train #####')
 
 # re-create the pix2pix model to cut off any possible gradient path from pre-training
