@@ -19,7 +19,6 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
 
 from util import util
-#from util.data_loading import BasicDataset
 from util.JSRT_loader import CarvanaDataset as BasicDataset
 from util.dice_score import dice_loss
 from options.train_options import TrainOptions
@@ -42,7 +41,7 @@ device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
 save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-9-00')
 if not os.path.exists(save_path):
     os.mkdir(save_path) 
-unet_save_path = save_path+'/unet_175.pkl'  
+unet_save_path = save_path+'/unet_9.pkl'  
 
 ##### Initialize logging #####
 logger = wandb.init(project='end2end_JSRT', name="Train-9-00", resume='allow', anonymous='must')
@@ -90,7 +89,7 @@ NLM_loader = DataLoader(NLM_dataset, shuffle=False, **loader_args)
 SZ_loader = DataLoader(SZ_dataset, shuffle=False, **loader_args)
 
 
-##### Training process of Pix2Pix model #####
+##### Pre-Training process of Pix2Pix model #####
 total_iters = 0
 pix2pix_set = torch.utils.data.ConcatDataset([train_set, val_set])
 all_train_loader = DataLoader(pix2pix_set, shuffle=True, drop_last=True, **loader_args)
@@ -104,7 +103,6 @@ for epoch in range(opt.epoch_count, opt.n_epochs):
         epoch_iter += opt.batch_size
         model.set_input(data)         # unpack data from dataset and apply preprocessing
         model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
-        
         
         # display images on wandb
         if total_iters % opt.display_freq == 0:
