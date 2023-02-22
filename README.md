@@ -8,7 +8,8 @@
 pip install -r requirements.txt
 ```
 
-[JSRT](http://db.jsrt.or.jp/eng.php)
+## Datasets download
+we use [JSRT](http://db.jsrt.or.jp/eng.php) as the in-domain dataset, which is used to train and evaluate the model. Further, we use two additional datasets, [NLM(MC)]() and [NLM(SZ)](https://drive.google.com/drive/folders/1TewVvRjoZ1Ynm9AVsVzauGmlQYjA1QDH?usp=share_link), as the out-of-domain datasets, which are only used to evaluate.
 
 
 ## how to run the training
