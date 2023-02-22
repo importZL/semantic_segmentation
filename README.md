@@ -9,7 +9,20 @@ pip install -r requirements.txt
 ```
 
 ## Datasets download
-we use [JSRT](http://db.jsrt.or.jp/eng.php) as the in-domain dataset, which is used to train and evaluate the model. Further, we use two additional datasets, [NLM(MC)]() and [NLM(SZ)](https://drive.google.com/drive/folders/1TewVvRjoZ1Ynm9AVsVzauGmlQYjA1QDH?usp=share_link), as the out-of-domain datasets, which are only used to evaluate.
+we use [JSRT](http://db.jsrt.or.jp/eng.php) as the in-domain dataset, which is used to train and evaluate the model. Further, we use two additional datasets, [NLM(MC)]() and [NLM(SZ)](https://drive.google.com/drive/folders/1TewVvRjoZ1Ynm9AVsVzauGmlQYjA1QDH?usp=share_link), as the out-of-domain datasets, which are only used to evaluate. (*For some image examples, their lung segmentation masks are divided into the right and the left lung mask. For these, the masks need to be combined first.*)
+
+Dataset tree structure example:
+```
+data/JSRT
+├── Images
+│   ├── JPCLN001.png
+│   ├── JPCLN002.png
+│   ├── ...
+├── Masks
+│   ├── JPCLN001.gif
+│   ├── JPCLN002.gif
+│   ├── ...
+```
 
 
 ## how to run the training
