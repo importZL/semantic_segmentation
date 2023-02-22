@@ -3,7 +3,7 @@
 ## Requirements
 - Python 3.7 + and Pytorch 1.12.1 + are recommended.
 - This code is tested with CUDA 11.3 toolkit and Wandb.
-- Please  check the python package requirement from [requirements.txt](./requirements.txt), and install using
+- Please  check the python package requirement from [requirements.yaml](./requirements.yaml), and install using
 ```bash
 conda env create -f requirements.yaml
 ```
