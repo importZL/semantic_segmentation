@@ -26,8 +26,8 @@ project code
 ├── ...
 ```
 
-## Training process
-We pre-train the augmentation model on the training and validation sets first, and then, we train and test our method on an in-domain dataset and test on several out-of-domain datasets without training. Training process can be run by:
+## Training and test process
+We pre-train the augmentation model on the training and validation sets first, and then, we train and test our method on an in-domain dataset and test on several out-of-domain datasets without training. The results of in-domain and out-of-domain test are shown on the wandb during the training process. Training process can be run by:
 
 ```bash
 python train_betty.py \
