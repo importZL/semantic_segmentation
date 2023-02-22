@@ -1,10 +1,15 @@
-# semantic_segmentation
+# Data Augmentation with NAS-GAN: An End-to-End framework to train semantic segmentation model
 
-## install
-- packages
-- datasets
+## Requirements
+- Python 3.7 + and Pytorch 1.12.1 + are recommended.
+- This code is tested with CUDA 11.3 toolkit and Wandb.
+- Please  check the python package requirement from [requirements.txt](./requirements.txt), and install using
+```bash
+pip install -r requirements.txt
+```
 
 [JSRT](http://db.jsrt.or.jp/eng.php)
+
 
 ## how to run the training
 
