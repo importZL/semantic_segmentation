@@ -1,8 +1,0 @@
-imgaug
-wandb
-tqdm
--f https://download.pytorch.org/whl/cu113
-torch==1.12.1+cu113 
--f https://download.pytorch.org/whl/cu113
-torchvision==0.13.1+cu113
-protobuf==3.20.*
