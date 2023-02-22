@@ -5,7 +5,7 @@
 - This code is tested with CUDA 11.3 toolkit and Wandb.
 - Please  check the python package requirement from [requirements.txt](./requirements.txt), and install using
 ```bash
-pip install -r requirements.txt
+conda env create -f requirements.yaml
 ```
 
 ## Datasets download
