@@ -27,8 +27,6 @@ from models_pix2pix import create_model
 from models_pix2pix import networks
 from unet import UNet
 from unet.evaluate import evaluate
-from models_dcgan.dcgan_darts import DCGAN_MODEL
-from model_wgan.wgan_gradient_penalty import WGAN_GP
 
 from betty.engine import Engine
 from betty.configs import Config, EngineConfig
