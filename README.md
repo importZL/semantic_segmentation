@@ -45,6 +45,10 @@ python train_betty.py \
 --batch_size [batch_size]
 ```
 
+## Pre-trained model
+
+A pre-trained model is available for the JSRT dataset (*trained with 9 labeled data examples*). It can be download from: 
+
 ## how to run the training
 
 ## how to test the model
