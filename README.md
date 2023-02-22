@@ -1,5 +1,18 @@
 # semantic_segmentation
 
+## install
+- packages
+- datasets
+
+## how to run the training
+
+## how to test the model
+
+## checkpoints
+
+## reference
+
+
 
 ## To Ask
 
