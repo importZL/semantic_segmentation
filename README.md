@@ -29,8 +29,19 @@ project code
 ## Training process
 
 ```bash
-python train_betty.py \--model pix2pix  --is_train True --cuda True --gpu_ids [cuda_index] --cuda_index [cuda_index] --dataroot [dataroot] --amp --loss_lambda 1.0 --n_epochs [pre-train epoch]  --display_freq [display_req] --classes [number of class] --batch_size [batch_size]
-
+python train_betty.py \
+--model pix2pix \
+--is_train True \
+--cuda True \
+--gpu_ids [cuda_index] \
+--cuda_index [cuda_index] \
+--dataroot [dataroot] \
+--amp \
+--loss_lambda 1.0 \
+--n_epochs [pre-train epoch] \
+--display_freq [display_req] \
+--classes [number of class] \
+--batch_size [batch_size]
 ```
 
 ## how to run the training
