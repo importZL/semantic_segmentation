@@ -69,9 +69,10 @@ NIH_dataset = BasicDataset('../data/NIH/Images', '../data/NIH/Masks', 1.0, '_mas
 NLM_dataset = BasicDataset('../data/NLM/Images', '../data/NLM/Masks', 1.0) # use as the out-domain dataset
 
 n_test = int(len(dataset)*(opt.test_percent/100))
-n_train = 9 # 165, 35, 9
-n_val = len(dataset) - n_train - n_test
-train_set, val_set, test_set = random_split(dataset, [n_train, n_val, n_test], generator=torch.Generator().manual_seed(0))
+n_train = 8 # 165, 35, 9
+n_val = 1
+n_extra = len(dataset) - n_train - n_test - n_val
+train_set, val_set, test_set, _ = random_split(dataset, [n_train, n_val, n_test, n_extra], generator=torch.Generator().manual_seed(0))
 
 len_extra = int(len(NIH_dataset) * 0.0)
 extra_dataset, _ = random_split(NIH_dataset, [len_extra, len(NIH_dataset)-len_extra], generator=torch.Generator().manual_seed(0))
