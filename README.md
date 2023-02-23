@@ -70,10 +70,8 @@ arguments:
 
 ## Pre-trained model
 
-A pre-trained model is available for the JSRT dataset (*trained with 9 labeled data examples*). [Pix2Pix-generator](https://drive.google.com/file/d/1dkl55IFI_sAUCVQAPKq67aKvY_8p4yn3/view?usp=share_link) | [Pix2Pix-generator](https://drive.google.com/file/d/1cOAG_tf6bdVfqO424a6IIyYaEHXXji8n/view?usp=share_link) | [U-Net](https://drive.google.com/file/d/1V8mrJYAwE22Y3svy21bV2AjKvEMrsQ8G/view?usp=share_link)
+Models pre-trained on the JSRT dataset (*trained with 9 labeled data examples*) are available through the following links: [Pix2Pix-generator](https://drive.google.com/file/d/1dkl55IFI_sAUCVQAPKq67aKvY_8p4yn3/view?usp=share_link) | [Pix2Pix-generator](https://drive.google.com/file/d/1cOAG_tf6bdVfqO424a6IIyYaEHXXji8n/view?usp=share_link) | [U-Net](https://drive.google.com/file/d/1V8mrJYAwE22Y3svy21bV2AjKvEMrsQ8G/view?usp=share_link)
 
-- [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) 
+## Code Dependencies
 
-- [U-Net](https://github.com/milesial/Pytorch-UNet)
-
-- [Betty framework](https://github.com/leopard-ai/betty)
+Our code is based on the following repositories: [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) | [U-Net](https://github.com/milesial/Pytorch-UNet) | [Betty framework](https://github.com/leopard-ai/betty)
