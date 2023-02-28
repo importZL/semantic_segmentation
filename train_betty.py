@@ -90,14 +90,13 @@ SZ_loader = DataLoader(SZ_dataset, shuffle=False, **loader_args)
 
 ##### Pre-Training process of Pix2Pix model #####
 total_iters = 0
-pix2pix_set = torch.utils.data.ConcatDataset([train_set, val_set])
-all_train_loader = DataLoader(pix2pix_set, shuffle=True, drop_last=True, **loader_args)
 logging.info('##### Start of Pix2Pix model Train #####')
 
 for epoch in range(opt.n_epochs):
     model.update_learning_rate()    # update learning rates in the beginning of every epoch.
     epoch_iter = 0
-    for i, data in enumerate(all_train_loader):  # inner loop within one epoch
+    for i, data in enumerate(train_loader):  # inner loop within one epoch
+        
         total_iters += opt.batch_size
         epoch_iter += opt.batch_size
         model.set_input(data)         # unpack data from dataset and apply preprocessing
@@ -208,7 +207,7 @@ class Unet(ImplicitProblem):
         images = batch['image'].to(device=device, dtype=torch.float32)
         true_masks = batch['mask'].to(device=device, dtype=torch.long).squeeze(0)
 
-        fake_mask = next(iter(all_train_loader))['mask'].to('cpu', torch.float).squeeze(0).numpy()
+        fake_mask = next(iter(train_loader))['mask'].to('cpu', torch.float).squeeze(0).numpy()
         fake_mask = seq(images=fake_mask)
         fake_mask = torch.tensor(fake_mask).unsqueeze(0).type(torch.cuda.FloatTensor).to(device=device)
         zero = torch.zeros_like(fake_mask)
