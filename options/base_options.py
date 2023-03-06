@@ -3,7 +3,6 @@ import os
 from util import util
 import torch
 import models_pix2pix
-import data
 
 
 class BaseOptions():
