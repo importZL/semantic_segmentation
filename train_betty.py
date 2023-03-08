@@ -36,13 +36,13 @@ from betty.problems import ImplicitProblem
 opt = TrainOptions().parse()   # get training options
 assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
 device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-9-00')
+save_path = './checkpoint/'+time.strftime("%Y%m%d-%H%M%S"+'-pix2pix-unet-175-00')
 if not os.path.exists(save_path):
     os.mkdir(save_path) 
 unet_save_path = save_path+'/unet_9.pkl'  
 
 ##### Initialize logging #####
-logger = wandb.init(project='end2end_JSRT', name="Train-9-00", resume='allow', anonymous='must')
+logger = wandb.init(project='end2end_JSRT', name="Train-175-00", resume='allow', anonymous='must')
 logger.config.update(vars(opt))
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
