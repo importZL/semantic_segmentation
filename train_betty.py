@@ -16,7 +16,7 @@ from torch import optim
 import torch.nn.functional as F
 from torch.autograd import Variable
 import torchvision.transforms as transforms
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader, random_split, Subset
 
 from util import util
 from util.JSRT_loader import CarvanaDataset as BasicDataset
