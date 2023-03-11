@@ -72,7 +72,11 @@ n_test = int(len(dataset)*(opt.test_percent/100))
 n_train = 165 # 165, 35, 9
 n_val = 10
 n_extra = len(dataset) - n_train - n_test - n_val
-train_set, val_set, test_set, _ = random_split(dataset, [n_train, n_val, n_test, n_extra], generator=torch.Generator().manual_seed(0))
+indices = list(range(len(dataset)))
+train_set = Subset(dataset, indices[:n_train])
+val_set = Subset(dataset, indices[n_train:n_train+n_val])
+test_set = Subset(dataset, indices[-n_test:])
+# train_set, val_set, test_set, _ = random_split(dataset, [n_train, n_val, n_test, n_extra], generator=torch.Generator().manual_seed(0))
 
 len_extra = int(len(NIH_dataset) * 0.0)
 extra_dataset, _ = random_split(NIH_dataset, [len_extra, len(NIH_dataset)-len_extra], generator=torch.Generator().manual_seed(0))
