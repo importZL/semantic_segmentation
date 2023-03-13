@@ -60,6 +60,7 @@ net = net.to(device=device)
 optimizer_unet = optim.RMSprop(net.parameters(), lr=opt.unet_learning_rate, 
                                 weight_decay=1e-8, momentum=0.9, foreach=True)
 scheduler_unet = optim.lr_scheduler.ReduceLROnPlateau(optimizer_unet, 'max', patience=2)  # goal: maximize Dice score
+scheduler_unet = optim.lr_scheduler.CosineAnnealingLR(optimizer_unet, T_max=100, eta_min=1e-9)
 grad_scaler = torch.cuda.amp.GradScaler(enabled=opt.amp)
 
 ##### prepare dataloader #####
@@ -269,7 +270,7 @@ class SSEngine(Engine):
             logging.info(message)
             logger.log({'NLM_score': NLM_score,
                         'SZ_score': SZ_score,})
-            scheduler_unet.step(unet_best_score)
+            scheduler_unet.step()
 
 
 outer_config = Config(retain_graph=True)
