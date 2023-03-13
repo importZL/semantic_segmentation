@@ -59,7 +59,7 @@ net = net.to(device=device)
 ##### define optimizer for unet #####
 optimizer_unet = optim.RMSprop(net.parameters(), lr=opt.unet_learning_rate, 
                                 weight_decay=1e-8, momentum=0.9, foreach=True)
-scheduler_unet = optim.lr_scheduler.ReduceLROnPlateau(optimizer_unet, 'max', patience=2)  # goal: maximize Dice score
+# scheduler_unet = optim.lr_scheduler.ReduceLROnPlateau(optimizer_unet, 'max', patience=2)  # goal: maximize Dice score
 scheduler_unet = optim.lr_scheduler.CosineAnnealingLR(optimizer_unet, T_max=100, eta_min=1e-9)
 grad_scaler = torch.cuda.amp.GradScaler(enabled=opt.amp)
 
