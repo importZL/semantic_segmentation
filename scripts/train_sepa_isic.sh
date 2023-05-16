@@ -1,4 +1,4 @@
-python train_sepa_isic.py \
+python running_files/train_sepa_isic.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

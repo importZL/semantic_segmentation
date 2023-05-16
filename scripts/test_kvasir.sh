@@ -1,4 +1,4 @@
-python test_kvasir.py \
+python running_files/test_kvasir.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

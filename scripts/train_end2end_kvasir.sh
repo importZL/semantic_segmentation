@@ -1,4 +1,4 @@
-python train_end2end_kvasir.py \
+pythonrunning_files/train_end2end_kvasir.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

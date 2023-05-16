@@ -1,4 +1,4 @@
-python train_betty.py \
+python running_files/train_betty.py \
     --datasource B_subtilis \
     --seg_model unet \
     --model pix2pix  \

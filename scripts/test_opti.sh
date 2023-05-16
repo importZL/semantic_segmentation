@@ -1,4 +1,4 @@
-python test_opti.py \
+python running_files/test_opti.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

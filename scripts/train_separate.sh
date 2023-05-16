@@ -1,4 +1,4 @@
-python train_separate.py \
+python running_files/train_separate.py \
     --datasource omnipose \
     --model pix2pix  \
     --is_train True \

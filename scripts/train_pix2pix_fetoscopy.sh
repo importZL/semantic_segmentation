@@ -1,4 +1,4 @@
-python train_pix2pix_fetoscopy.py \
+python running_files/train_pix2pix_fetoscopy.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

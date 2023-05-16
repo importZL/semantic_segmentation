@@ -1,4 +1,4 @@
-python train_first_isic.py \
+python running_files/train_first_isic.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

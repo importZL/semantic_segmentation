@@ -1,4 +1,4 @@
-python train_deeplab_isic.py \
+python running_files/train_deeplab_isic.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

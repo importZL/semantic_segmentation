@@ -1,4 +1,4 @@
-python test_omni.py \
+python running_files/test_omni.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

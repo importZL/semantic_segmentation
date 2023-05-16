@@ -1,4 +1,4 @@
-python test_breast.py \
+python running_files/test_breast.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

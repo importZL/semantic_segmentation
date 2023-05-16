@@ -1,4 +1,4 @@
-python train_unet_liver.py \
+python running_files/train_unet_liver.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

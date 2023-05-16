@@ -1,4 +1,4 @@
-python train_isic_abla.py \
+python running_files/train_isic_abla.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

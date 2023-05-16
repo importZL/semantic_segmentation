@@ -1,4 +1,4 @@
-python train_abla_lung.py \
+python running_files/train_abla_lung.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

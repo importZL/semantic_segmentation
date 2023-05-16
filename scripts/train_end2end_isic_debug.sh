@@ -1,4 +1,4 @@
-python train_end2end_isic_debug.py \
+python running_files/train_end2end_isic_debug.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

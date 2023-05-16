@@ -1,4 +1,4 @@
-python train_unet_kvasir.py \
+python running_files/train_unet_kvasir.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

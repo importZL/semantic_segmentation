@@ -1,4 +1,4 @@
-python train_unet_se_sepa.py \
+python running_files/train_unet_se_sepa.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \

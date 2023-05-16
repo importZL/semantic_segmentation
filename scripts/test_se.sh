@@ -1,4 +1,4 @@
-python test_se.py \
+python running_files/test_se.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \
