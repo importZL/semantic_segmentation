@@ -7,7 +7,7 @@ Python 3.7+ and Pytorch 1.12.1+ and CUDA 11.3 are recommended. Docker can be use
 ```bash
 conda create -n semantic python=3.8
 conda activate semantic
-pip install -r requirements.yaml
+pip install -r requirements.txt
 ```
 
 ## Datasets
@@ -37,34 +37,14 @@ We pre-train the GAN-based augmentation model on the train and val sets of the i
 To train the models from scratch, use the following command:
 
 ```
-python train_betty.py \
-    --model pix2pix \
-    --is_train True \
-    --cuda True \
-    --gpu_ids 0 \
-    --cuda_index 0 \
-    --dataroot ./data/JSRT \
-    --amp \
-    --loss_lambda 1.0 \
-    --n_epochs 50 \
-    --display_freq 32 \
-    --classes 2 \
-    --batch_size 64
+# Pre-train the augmentation model
+bash scripts/train_pix2pix.sh
 
-arguments:
+# Train the segmentation based on our framework
+bash scripts/train_end2end_isic.sh
 
---model             Specify GAN model for Augmentation
---is_train          Set False to test the model
---cuda              Whether to use GPU for training 
---gpu_ids           Index of GPU used for training
---cuda_index        Index of GPU used for training
---dataroot          Path to dataset 
---amp               Use Half Precision for training
---loss_lambda       Pix2Pix specific loss
---n_epochs          Number of epochs to pre-train the Augmentation model
---display_freq      Display Pre Training Loss and epoch number
---classes 2         Number of segmentation classes
---batch_size 64
+# Inference the trained segmentation model
+bash scripts/test.sh
 
 ```
 
