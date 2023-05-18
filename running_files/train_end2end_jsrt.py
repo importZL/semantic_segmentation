@@ -40,14 +40,14 @@ from betty.problems import ImplicitProblem
 opt = TrainOptions().parse()   # get training options
 assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
 device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-save_path = './checkpoint_lung_new/'+'end2end-translate-JSRT-9-'+str(opt.seg_model)+'-'+str(opt.loss_lambda)+'-'+time.strftime("%Y%m%d-%H%M%S")
+save_path = './checkpoint_lung_new/'+'end2end-JSRT-9-'+str(opt.seg_model)+'-'+str(opt.loss_lambda)+'-'+time.strftime("%Y%m%d-%H%M%S")
 if not os.path.exists(save_path):
     os.mkdir(save_path) 
 unet_save_path = save_path+'/'+str(opt.seg_model)+'.pkl'  
 
 ##### Initialize logging #####
 # logger = wandb.init(project='end2end-unet-ISIC', name="unet-200", resume='allow', anonymous='must')
-logger = wandb.init(project='end2end-JSRT', name=str(opt.seg_model)+"-translate-9-"+str(opt.loss_lambda), resume='allow', anonymous='must')
+logger = wandb.init(project='end2end-JSRT', name=str(opt.seg_model)+"-9-"+str(opt.loss_lambda), resume='allow', anonymous='must')
 logger.config.update(vars(opt))
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -98,17 +98,17 @@ SZ_loader = DataLoader(SZ_dataset, shuffle=False, **loader_args)
 
 # Image Augmenter
 seq = iaa.Sequential([
-    # iaa.Fliplr(0.5), # horizontal flips
+    iaa.Fliplr(0.5), # horizontal flips
     # iaa.Flipud(0.25), # vertical flips
 
-    # iaa.CropAndPad(percent=(0, 0.1)), # random crops and pad
+    iaa.CropAndPad(percent=(0, 0.1)), # random crops and pad
 
     # Apply affine transformations to each image.
     # Scale/zoom them, translate/move them, rotate them and shear them.        
-    # iaa.Affine(scale={"x": (0.8, 1.2), "y": (0.8, 1.2)},),
+    iaa.Affine(scale={"x": (0.8, 1.2), "y": (0.8, 1.2)},),
     iaa.Affine(translate_percent={"x": (-0.1, 0.1), "y": (-0.1, 0.1)},),
-    # iaa.Affine(rotate=(-15, 15),),
-    # iaa.Affine(shear=(-8, 8),)
+    iaa.Affine(rotate=(-15, 15),),
+    iaa.Affine(shear=(-8, 8),)
 ], random_order=True) # apply augmenters in random order
 
 fake_trans = transforms.Compose([

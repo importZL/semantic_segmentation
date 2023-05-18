@@ -17,5 +17,5 @@ python running_files/train_end2end_breast.py \
     --output_nc 1 \
     --input_nc 1 \
     --batch_size 2 \
-    --seg_model deeplab \
+    --seg_model unet \
     --unet_learning_rate 1e-5

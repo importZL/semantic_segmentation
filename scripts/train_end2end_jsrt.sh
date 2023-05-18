@@ -6,7 +6,7 @@ python running_files/train_end2end_jsrt.py \
     --cuda_index 0 \
     --dataroot ../data/JSRT \
     --amp \
-    --loss_lambda 1.5 \
+    --loss_lambda 1.0 \
     --n_epochs 5000 \
     --unet_epoch 20 \
     --lr 2e-6 \

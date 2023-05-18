@@ -34,17 +34,17 @@ project code
 
 We pre-train the GAN-based augmentation model on the train and val sets of the in-domain dataset followed by training both augmentation and semantic segmentation models end-to-end on the in-domain dataset. Finally, we test the trained models on the out-of-domain datasets. The results on the test set of both in-domain and out-of-domain datasets are shown using wandb during training.
 
-To train the models from scratch, use the following command:
+To train the models from scratch, use the following command (Related configurations of model path should be changed mutually):
 
 ```
 # Pre-train the augmentation model
-bash scripts/train_pix2pix.sh
+bash scripts/train_pix2pix_jsrt.sh
 
 # Train the segmentation based on our framework
-bash scripts/train_end2end_isic.sh
+bash scripts/train_end2end_jsrt.sh
 
 # Inference the trained segmentation model
-bash scripts/test.sh
+bash scripts/test_lung.sh
 
 ```
 

@@ -17,5 +17,5 @@ python running_files/train_end2end_liver.py \
     --output_nc 1 \
     --input_nc 1 \
     --batch_size 2 \
-    --seg_model unet \
+    --seg_model deeplab \
     --unet_learning_rate 1e-4

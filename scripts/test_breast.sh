@@ -17,4 +17,4 @@ python running_files/test_breast.py \
     --input_nc 1 \
     --batch_size 2 \
     --seg_model unet \
-    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_ablation/unet-breast-100-separate20230502-190204/unet.pkl
+    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_breast/end2end-100-unet-1.0-20230518-041834/unet.pkl

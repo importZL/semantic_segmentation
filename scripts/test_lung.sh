@@ -2,8 +2,8 @@ python running_files/test_lung.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \
-    --gpu_ids 1 \
-    --cuda_index 1 \
+    --gpu_ids 0 \
+    --cuda_index 0 \
     --dataroot ../data/JSRT \
     --amp \
     --loss_lambda 1.0 \
@@ -16,5 +16,5 @@ python running_files/test_lung.py \
     --output_nc 1 \
     --input_nc 1 \
     --batch_size 2 \
-    --seg_model deeplab \
-    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_ablation_JSRT/deeplab-JSRT-35-separate20230513-164303/unet.pkl
+    --seg_model unet \
+    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_lung_new/end2end-JSRT-9-unet-1.0-20230323-205933/unet.pkl

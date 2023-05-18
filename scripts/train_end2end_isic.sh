@@ -7,7 +7,7 @@ python running_files/train_end2end_isic.py \
     --dataroot ../data/ISIC2018 \
     --amp \
     --loss_lambda 1.0 \
-    --n_epochs 5000 \
+    --n_epochs 10000 \
     --unet_epoch 20 \
     --lr 1e-6 \
     --arch_lr 1e-6 \

@@ -2,8 +2,8 @@ python running_files/test.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \
-    --gpu_ids 0 \
-    --cuda_index 0 \
+    --gpu_ids 1 \
+    --cuda_index 1 \
     --dataroot ../data/ISIC2018 \
     --amp \
     --loss_lambda 1.0 \
@@ -17,4 +17,4 @@ python running_files/test.py \
     --input_nc 1 \
     --batch_size 2 \
     --seg_model unet \
-    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_skin_more/end2end-ISIC-40-unet-1.0-20230516-063649/unet.pkl
+    --model_dir /home/li/workspace/semantic_segmentation/checkpoint_skin_more/end2end-ISIC-40-unet-1.0-20230516-163031/unet_final.pkl
