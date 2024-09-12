@@ -1,4 +1,4 @@
-# E2EAug: An End-to-End Data Augmentation Framework for Medical Image Semantic Segmentation
+# Generative AI Enables Medical Image Segmentation in Ultra Low-Data Regimes
 
 ## Requirements
 
