@@ -55,3 +55,7 @@ Models pre-trained on the JSRT dataset (*trained with 9 labeled data examples*) 
 ## Code Dependencies
 
 Our code is based on the following repositories: [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) | [U-Net](https://github.com/milesial/Pytorch-UNet) | [Betty framework](https://github.com/leopard-ai/betty)
+
+## License
+
+GenSeg is licensed under the [Apache 2.0 License](LICENSE).
