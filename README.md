@@ -17,7 +17,7 @@ We use [JSRT](http://db.jsrt.or.jp/eng.php) as the in-domain dataset to train an
 Download the data and place it in the [data](./data) folder. Dataset tree structure example:
 
 ```bash
-data/JSRT
+[data/JSRT](https://drive.google.com/file/d/1L3Hj-G5g5g7WLcK85LJ6PkslEsJun2o2/view?usp=sharing)
 ├── Images
 │   ├── JPCLN001.png
 │   ├── JPCLN002.png
