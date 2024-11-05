@@ -32,7 +32,7 @@ project code
 
 ## Training and Testing
 
-We pre-train the GAN-based augmentation model on the train and val sets of the in-domain dataset followed by training both augmentation and semantic segmentation models end-to-end on the in-domain dataset. Finally, we test the trained models on the out-of-domain datasets. The results on the test set of both in-domain and out-of-domain datasets are shown using wandb during training.
+We pre-train the GAN-based augmentation model on the train and val sets of the in-domain dataset followed by training both augmentation and semantic segmentation models end-to-end on the in-domain dataset. Finally, we test the trained models on the out-of-domain datasets. The results on the test set of both in-domain and out-of-domain datasets are shown using wandb during training. The training process needs about 1.5 hours on the NVIDIA A100 device with 40G memory.
 
 To train the models from scratch, use the following command (Related configurations of model path should be changed mutually):
 
