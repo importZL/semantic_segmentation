@@ -52,6 +52,19 @@ bash scripts/test_lung.sh
 
 Models pre-trained on the JSRT dataset (*trained with 9 labeled data examples*) are available through the following links: [Pix2Pix-generator](https://drive.google.com/file/d/1dkl55IFI_sAUCVQAPKq67aKvY_8p4yn3/view?usp=share_link) | [Pix2Pix-discriminator](https://drive.google.com/file/d/1cOAG_tf6bdVfqO424a6IIyYaEHXXji8n/view?usp=share_link) | [U-Net](https://drive.google.com/file/d/1V8mrJYAwE22Y3svy21bV2AjKvEMrsQ8G/view?usp=share_link)
 
+## Citation
+If you find this project useful in your research, please consider citing:
+```bash
+@article{zhang2024generative,
+  title={Generative AI Enables Medical Image Segmentation in Ultra Low-Data Regimes},
+  author={Zhang, Li and Jindal, Basu and Alaa, Ahmed and Weinreb, Robert and Wilson, David and Segal, Eran and Zou, James and Xie, Pengtao},
+  journal={medRxiv},
+  pages={2024--08},
+  year={2024},
+  publisher={Cold Spring Harbor Laboratory Press}
+}
+```
+
 ## Code Dependencies
 
 Our code is based on the following repositories: [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) | [U-Net](https://github.com/milesial/Pytorch-UNet) | [Betty framework](https://github.com/leopard-ai/betty)
