@@ -1,0 +1,8 @@
+name: edges2shoes
+
+train:
+  _target_ : datasets.Edge2Shoe
+  img_dir : ${paths.data_dir}/train/
+val:
+  _target_ : datasets.Edge2Shoe
+  img_dir : ${paths.data_dir}/val/

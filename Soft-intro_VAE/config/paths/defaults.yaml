@@ -1,0 +1,8 @@
+# path to data directory
+root_dir: /data/li/Image-to-Image-Translation
+data_dir: /data2/li/workspace/data/ISIC2018
+checkpoints_dir: ${paths.root_dir}/checkpoints
+# for inference
+inference_dir : ${paths.root_dir}/inference_results
+
+

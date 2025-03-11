@@ -1,0 +1,8 @@
+name: mask2image
+
+train:
+  _target_ : datasets.Mask2Image
+  img_dir : ${paths.data_dir}/train/
+val:
+  _target_ : datasets.Mask2Image
+  img_dir : ${paths.data_dir}/test/

@@ -1,0 +1,4 @@
+# @package _global_
+defaults:
+  - override /model: BCGAN_small_multi
+

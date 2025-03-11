@@ -1,0 +1,17 @@
+defaults:
+  - datas: edge2shoes
+  - model: defaults
+  - paths: defaults
+  - metrics: defaults
+
+experiment_name : bicyclegan_experiment_Gen_${model.names.netG_name}_WhereAdd_${model.names.where_add_type}_Discrim_${model.names.netD_name}
+experiment_path : runs/${experiment_name}
+type : "gan"
+params:
+  lambda_pixel : 10       # Loss weights for pixel loss
+  lambda_latent : 0.5      # Loss weights for latent regression 
+  lambda_kl : 0.01          # Loss weights for kl divergence
+  batch_size : 1
+  num_epochs : 10
+  num_styles: 10 # Number of styles to sample
+  num_images : 8  # Number of images to test

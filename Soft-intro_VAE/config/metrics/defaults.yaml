@@ -1,0 +1,5 @@
+init:
+  _target_: metrics.PerceptualLoss
+  model : "net-lin"
+  net : "alex"
+  use_gpu : True

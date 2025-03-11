@@ -1,0 +1,28 @@
+defaults:
+  - datas: mask2image
+  - model: defaults_vae
+  - paths: defaults
+  - optimizers: defaults_vae
+  - schedulers: defaults_vae
+
+experiment_name : SIVAE_experiment_kl_${params.beta_kl}_rec_${params.beta_rec}_neg_${params.beta_neg}_zdim_${model.names.latent_dim}
+experiment_path : runs/${experiment_name}
+type: gan
+pretrained : False
+
+params:
+  beta_kl : 1.0       # Loss weights for pixel loss
+  beta_rec : 1.0     # Loss weights for latent regression 
+  beta_neg : 1536        # Loss weights for kl divergence
+  gamma_r : 1e-8
+  batch_size : 16
+  start_epoch : 0
+  num_epochs : 50
+  test_batch_size : 10
+  test_img_num : 5  # Number of images to test
+  save_interval : 2
+  seed : 99
+  recon_loss_type: "mse"
+  num_vae : 0
+  test_iters : 1000
+  visualize_epoch : 2

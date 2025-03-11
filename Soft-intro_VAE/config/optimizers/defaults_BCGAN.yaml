@@ -1,0 +1,20 @@
+encoder:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0002
+  betas: [0.5, 0.999]
+decoder:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0002
+  betas: [0.5, 0.999]
+DVAE:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0002
+  betas: [0.5, 0.999]
+DLR:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0002
+  betas: [0.5, 0.999]

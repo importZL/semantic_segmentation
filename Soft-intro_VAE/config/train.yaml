@@ -1,0 +1,21 @@
+defaults:
+  - datas: edge2shoes
+  - model: defaults
+  - paths: defaults
+  - optimizers: defaults_BCGAN
+  - schedulers: defaults_BCGAN
+
+experiment_name : bicyclegan_experiment_Gen_${model.names.netG_name}_WhereAdd_${model.names.where_add_type}_Discrim_${model.names.netD_name}
+experiment_path : runs/${experiment_name}
+type: train
+
+params:
+  lambda_pixel : 10       # Loss weights for pixel loss
+  lambda_latent : 0.5      # Loss weights for latent regression 
+  lambda_kl : 0.01          # Loss weights for kl divergence
+  batch_size : 8
+  num_epochs : 20
+  test_batch_size : 10
+  test_img_num : 5  # Number of images to test
+  recon_loss_type: "l1"
+

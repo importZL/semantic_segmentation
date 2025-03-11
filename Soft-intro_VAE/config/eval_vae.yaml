@@ -1,0 +1,17 @@
+defaults:
+  - datas: edge2shoes
+  - model: defaults_vae
+  - paths: defaults
+  - metrics: defaults
+
+experiment_name : SIVAE_experiment_kl_${params.beta_kl}_rec_${params.beta_rec}_neg_${params.beta_neg}_zdim_${model.names.latent_dim}
+experiment_path : runs/${experiment_name}
+type : vae
+params:
+  beta_kl : 1.0       # Loss weights for pixel loss
+  beta_rec : 1.5      # Loss weights for latent regression 
+  beta_neg : 1024         # Loss weights for kl divergence
+  batch_size : 1
+  num_epochs : 10
+  num_styles: 10 # Number of styles to sample
+  num_images : 8  # Number of images to test

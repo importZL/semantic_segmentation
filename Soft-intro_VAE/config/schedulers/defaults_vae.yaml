@@ -1,0 +1,10 @@
+encoder:
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  _partial_: true
+  milestones: [25, 38]
+  gamma: 0.1
+decoder:
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  _partial_: true
+  milestones: [25, 38]
+  gamma: 0.1
