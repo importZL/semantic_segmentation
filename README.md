@@ -53,7 +53,12 @@ Models pre-trained on the JSRT dataset (*trained with 9 labeled data examples*) 
 
 ## Extension for 3D medical image segmentaiton
 
-We also extended GenSeg for [3D medical image segmentation](./GenSeg-3D)
+We extended GenSeg for [3D medical image segmentation](./GenSeg-3D/)
+
+
+## Extension on diffusion-based and VAE-based mask-to-image generative models
+
+We verify the effectiveness of GenSeg with diffusion-based and VAE-based mask-to-image generative models by replacing the original Pix2Pix model by [BBDM](./BBDM/) and [Soft-intro VAE](./Soft-intro_VAE/).
 
 ## Citation
 If you find this project useful in your research, please consider citing:
