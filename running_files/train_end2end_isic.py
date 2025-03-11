@@ -31,7 +31,7 @@ from models_pix2pix import networks
 from unet import UNet
 from deeplab import *
 from deeplabv2 import DeepLabV2 as deeplab
-# from swin_unet.vision_transformer import SwinUnet as ViT_seg
+from swin_unet.vision_transformer import SwinUnet as ViT_seg
 
 from betty.engine import Engine
 from betty.configs import Config, EngineConfig
@@ -88,14 +88,14 @@ opt = TrainOptions().parse()   # get training options
 config = get_config(opt)
 assert opt.cuda_index == int(opt.gpu_ids[0]), 'gpu types should be same'
 device = torch.device('cuda:0' if opt.cuda_index == 0 else 'cuda:1')
-save_path = './checkpoint_skin_more/'+'end2end-ISIC-40-'+str(opt.seg_model)+'-'+str(opt.loss_lambda)+'-'+time.strftime("%Y%m%d-%H%M%S")
+save_path = './checkpoint_skin/'+'end2end-ISIC-40-'+str(opt.seg_model)+'-'+str(opt.loss_lambda)+'-'+time.strftime("%Y%m%d-%H%M%S")
 if not os.path.exists(save_path):
     os.mkdir(save_path) 
 unet_save_path = save_path+'/'+str(opt.seg_model)+'.pkl'  
 
 ##### Initialize logging #####
 # logger = wandb.init(project='end2end-unet-ISIC', name="unet-200", resume='allow', anonymous='must')
-logger = wandb.init(project='end2end-ISIC', name=str(opt.seg_model)+"-40-"+str(opt.loss_lambda), resume='allow', anonymous='must')
+logger = wandb.init(project='end2end-ISIC', name=str(opt.seg_model)+"-40-"+str(opt.loss_lambda), resume='allow', anonymous='must', mode='disabled')
 logger.config.update(vars(opt))
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -103,7 +103,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 model = create_model(opt)      # create a model given opt.model and other options
 model.setup(opt)               # regular setup: load and print networks; create schedulers
 # load pre-trained model
-model_path =  './pix2pix_model/20230314-210809-pix2pix-UNet-40' # './pix2pix_model/20230315-055526-pix2pix-UNet-200' './pix2pix_model/20230320-194227-pix2pix-UNet-100' # 
+model_path =  '/data/li/semantic_segmentation1/pix2pix_model/20250207-145805-pix2pix-isic-40' # './pix2pix_model/20230315-055526-pix2pix-UNet-200' './pix2pix_model/20230320-194227-pix2pix-UNet-100' # 
 model.load_model(model_path + '/pix2pix_discriminator.pkl', model_path + '/pix2pix_generator.pkl')
 
 '''
@@ -141,8 +141,8 @@ grad_scaler = torch.cuda.amp.GradScaler(enabled=opt.amp)
 
 ##### prepare dataloader #####
 dataset = BasicDataset(opt.dataroot+'/Images', opt.dataroot+'/Masks', 1.0, '_segmentation')
-PH2_dataset = BasicDataset('../data/PH2/Images', '../data/PH2/Masks', 1.0, '_lesion') # use as the out-domain dataset
-dermIS_dataset = BasicDataset('../data/DermIS/Images', '../data/DermIS/Masks', 1.0) # use as the extra dataset
+PH2_dataset = BasicDataset('/data2/li/workspace/data/PH2/Images', '/data2/li/workspace/data/PH2/Masks', 1.0, '_lesion') # use as the out-domain dataset
+dermIS_dataset = BasicDataset('/data2/li/workspace/data/DermIS/Images', '/data2/li/workspace/data/DermIS/Masks', 1.0) # use as the extra dataset
 
 n_test = 594
 n_train = 32 # 165, 35, 9

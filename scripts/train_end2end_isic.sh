@@ -2,9 +2,9 @@ python running_files/train_end2end_isic.py \
     --model pix2pix  \
     --is_train True \
     --cuda True \
-    --gpu_ids 1 \
-    --cuda_index 1 \
-    --dataroot ../data/ISIC2018/train \
+    --gpu_ids 0 \
+    --cuda_index 0 \
+    --dataroot /data2/li/workspace/data/ISIC2018/train \
     --amp \
     --loss_lambda 1.0 \
     --n_epochs 10000 \

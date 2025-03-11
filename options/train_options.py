@@ -67,7 +67,7 @@ class TrainOptions(BaseOptions):
         # parameter for swin_unet
         parser.add_argument('--resume', type=str, default="", help='')
         parser.add_argument(
-            '--cfg', type=str, default="/home/li/workspace/semantic_segmentation/swin_unet/swin_tiny_patch4_window7_224_lite.yaml", help='path to config file', )
+            '--cfg', type=str, default="./swin_unet/swin_tiny_patch4_window7_224_lite.yaml", help='path to config file', )
         parser.add_argument(
             "--opts",
             help="Modify config options by adding 'KEY VALUE' pairs. ",
