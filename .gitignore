@@ -5,4 +5,5 @@ data
 model_soups*
 soup_result
 */__pycache__
+*.pth
 
