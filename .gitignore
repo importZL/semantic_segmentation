@@ -2,7 +2,6 @@ checkpoint*
 pix2pix*
 wandb
 data
-swin_unet
 model_soups*
 soup_result
 */__pycache__
