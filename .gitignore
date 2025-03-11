@@ -1,5 +1,4 @@
 checkpoint*
-pix2pix*
 wandb
 data
 model_soups*
