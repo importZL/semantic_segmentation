@@ -50,6 +50,11 @@ bash scripts/test_lung.sh
 
 Models pre-trained on the JSRT dataset (*trained with 9 labeled data examples*) are available through the following links: [Pix2Pix-generator](https://drive.google.com/file/d/1dkl55IFI_sAUCVQAPKq67aKvY_8p4yn3/view?usp=share_link) | [Pix2Pix-discriminator](https://drive.google.com/file/d/1cOAG_tf6bdVfqO424a6IIyYaEHXXji8n/view?usp=share_link) | [U-Net](https://drive.google.com/file/d/1V8mrJYAwE22Y3svy21bV2AjKvEMrsQ8G/view?usp=share_link)
 
+
+## Extension for 3D medical image segmentaiton
+
+We also extended GenSeg for [3D medical image segmentation](./GenSeg-3D)
+
 ## Citation
 If you find this project useful in your research, please consider citing:
 ```bash
