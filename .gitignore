@@ -5,6 +5,5 @@ data
 swin_unet
 model_soups*
 soup_result
-swin_unet
 */__pycache__
 
