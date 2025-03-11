@@ -1,6 +1,5 @@
 checkpoint*
 wandb
-data
 model_soups*
 soup_result
 */__pycache__

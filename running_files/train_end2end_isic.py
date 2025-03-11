@@ -30,7 +30,6 @@ from models_pix2pix import create_model
 from models_pix2pix import networks
 from unet import UNet
 from deeplab import *
-from deeplabv2 import DeepLabV2 as deeplab
 from swin_unet.vision_transformer import SwinUnet as ViT_seg
 
 from betty.engine import Engine

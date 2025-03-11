@@ -5,9 +5,7 @@
 Python 3.7+ and Pytorch 1.12.1+ and CUDA 11.3 are recommended. Docker can be used with the given Dockerfile to quickly setup the enviornment or a local conda env can be create using the following:
 
 ```bash
-conda create -n semantic python=3.8
-conda activate semantic
-pip install -r requirements.txt
+bash env.sh
 ```
 
 ## Datasets
