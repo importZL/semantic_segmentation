@@ -6,6 +6,7 @@ Python 3.9 and Pytorch 1.13.1 and CUDA 11.6 are recommended. A local conda env c
 
 ```bash
 bash env.sh
+conda activate semantic
 ```
 
 ## Datasets
