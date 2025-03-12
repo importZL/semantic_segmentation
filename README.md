@@ -76,7 +76,7 @@ If you find this project useful in your research, please consider citing:
 
 ## Code Dependencies
 
-Our code is based on the following repositories: [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) | [U-Net](https://github.com/milesial/Pytorch-UNet) | [Betty framework](https://github.com/leopard-ai/betty)
+Our code is based on the following repositories: [Pix2Pix model](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/master/models) | [Betty framework](https://github.com/leopard-ai/betty)
 
 ## License
 
